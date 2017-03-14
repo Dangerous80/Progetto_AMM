@@ -1,37 +1,57 @@
 <!DOCTYPE html>
 <html>
-    <!inseriamo le meta-informazioni nel head>
+    <!--inseriamo le meta-informazioni nel head-->
     <head>
-        <title>Login NerdBook</title>
+        <title>Descrizione NerdBook</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Social Network per Nerd">
         <meta name="author" content="Daniele Pisano">
         <meta name="keywords" content="Nerd Star Wars word of warcraft scacchi dungeons and dragons software programmazione computer tecnologia giochi di ruolo film fantascienza serie tv fumetti videogiochi">
+        <meta http-equiv="refresh" content="30">
     </head>
     
-    <!inseriamo il corpo della pagina nel body>
+    <!--inseriamo il corpo della pagina nel body-->
     <body>
-        <!inseriamo il Titolo della pagina>
+        <!--inseriamo il Titolo della pagina-->
         <header>
             <div id="titolo">
-                <h1>NerdBook Be a Nerd Join the Herd!</h1>
+                NerdBook - Login
             </div>
         </header>
-        <!inseriamo il form di login>
-        
-        
-        
-        
-        
-        
-        
-        <!link alle altre pagine>
+        <!--Inseriamo una barra di navigazione che contenga i link delle altre pagine che possono essere raggiunte dalla pagina login.html-->
         <nav>
-            <ol>
+            <ul>
                 <li><a href="descrizione.html">Descrizione di NerdBook</a></li>
-                <li><a href="profilo.html">Profilo NedBook personale</a></li>
-                <li><a href="bacheca.html">Bacheca NedBook personale</a></li>
-            </ol>
+                <li><a href="profilo.html">Profilo NedBook</a></li>
+                <li><a href="bacheca.html">Bacheca NedBook</a></li>
+            </ul>
         </nav>
+        <!---->
+        <div id="divBody">
+            <!--Inseriamo la form per richiedere userid e password all'utente che vuole effettuare l'accesso-->
+            <div id="formLogin">
+                <form action="servlet.java" method="post">
+                    <div>
+                        <h2>Per Entrare in NerdBook inserire Userid e Password</h2>
+                       
+                        <label for="userid">Userid</label>
+                        <input type="text" name="userid" id="userid" value=""/><br>
+                        
+                        <label for="pswd">Password</label>
+                        <input type="password" name="pswd" id="pswd" value=""><br>
+                    </div>
+                                     
+                    <div>
+                        <button type="submit">
+                            <img src="../Asset/Button.jpg/" alt="flag" width="20" height="20"> Invia!
+                        </button>
+                    </div>
+                    <div>
+                        <h3>Se non possiedi un account clicca sulla barra di navigazione la voce "Profilo NerdBook" e creane uno</h3>
+                    </div>    
+                </form>
+            </div>
+        </div>
     </body>
 </html>
