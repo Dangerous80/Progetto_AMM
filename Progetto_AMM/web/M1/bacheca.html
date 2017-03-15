@@ -2,7 +2,7 @@
 <html>
     <!--inseriamo le meta-informazioni nel head-->
     <head>
-        <title>Descrizione NerdBook</title>
+        <title>NerdBook Be a Nerd Join the Herd</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Social Network per Nerd">
@@ -23,13 +23,45 @@
         <nav>
             <ul>
                 <li><a href="descrizione.html">Descrizione di NerdBook</a></li>
-                <li><a href="profilo.html">Profilo NedBook</a></li>
-                <li><a href="bacheca.html">Bacheca NedBook</a></li>
+                <li><a href="login.html">NerdBook Login</a></li>
             </ul>
         </nav>
         <!---->
         <div id="divBody">
+            <!--inseriamo i dati dell'utente proprietario della bacheca-->
+            <div id="profiloUtente">
+                <h1>Bacheca Personale</h1>
+                <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                <p id="UserName">Nome:Utente Corrente</p>
+                <p>Frase Bacheca Utente</p>
+            </div>
             
-        </div>
+            <!--Inseriamo i post da visualizzare sulla Bacheca-->
+            <div id="Bacheca">
+                <!--post1 solo testuale-->
+                <div id="post1">
+                    <h1>Post 1</h1>
+                    <img title="fotoProfilo1" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                    <p id="UserName1">Nome:User 1</p>
+                    <p id="testoPost1">Testo post 1</p>
+                </div>
+                <!--post2 testo e immagine-->
+                <div id="post2">
+                    <h1>Post 2</h1>
+                    <img title="fotoProfilo2" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                    <p id="UserName2">Nome:User 2</p>
+                    <p id="testoPost2">Testo post 2</p>
+                    <img title="ImmaginePost2" alt="Immagine Post" src="../Asset/post.jpg">
+                </div>
+                <!--post3 testo e allegato-->
+                <div id="post3">
+                    <h1>Post 3</h1>
+                    <img title="fotoProfilo3" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                    <p id="UserName3">Nome:User 3</p>
+                    <p id="testoPost3">Testo post 3</p>
+                    <a Id="allegato3" href="http://www.vistanet.it/cagliari/blog/2017/03/07/la-cagliari-che-non-ce-piu-storia-dei-casotti-colorati-della-spiaggia-del-poetto-e-la-citta-estiva/">Allegato</a>
+                </div>
+            </div>
+        </div> 
     </body>
 </html>
