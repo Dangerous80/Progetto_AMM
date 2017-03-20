@@ -32,8 +32,8 @@
             <!--Inseriamo la form per richiedere userid e password all'utente che vuole effettuare l'accesso-->
             <div id="formLogin">
                 <form action="servlet.java" method="post">
-                    <div>
-                        <h1>Per accedere a NerdBook inserire Userid e Password</h1>
+                    <div id=inputDatiUtente>
+                        <h2>Per accedere a NerdBook inserire Userid e Password</h2>
                        
                         <label for="userid">Userid</label>
                         <input type="text" name="userid" id="userid" value=""/><br>
@@ -41,7 +41,7 @@
                         <label for="pswd">Password</label>
                         <input type="password" name="pswd" id="pswd" value=""><br>
                     </div>
-                    <div>
+                    <div id="pulsanteValidazione">
                         <button type="submit">
                             <img src="../Asset/Button.jpg/" alt="flag"> Accedi
                         </button>
