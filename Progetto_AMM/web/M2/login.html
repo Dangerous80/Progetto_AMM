@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <!--inseriamo le meta-informazioni nel head-->
+    <head>
+        <title>NerdBook Be a Nerd Join the Herd</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Social Network per Nerd">
+        <meta name="author" content="Daniele Pisano">
+        <meta name="keywords" content="Nerd Star Wars word of warcraft scacchi dungeons and dragons software programmazione computer tecnologia giochi di ruolo film fantascienza serie tv fumetti videogiochi">
+        <meta http-equiv="refresh" content="30">
+    </head>
+    
+    <!--inseriamo il corpo della pagina nel body-->
+    <body>
+        <!--inseriamo il Titolo della pagina-->
+        <header>
+            <div id="titolo">
+                NerdBook - Login
+            </div>
+        </header>
+        <!--Inseriamo una barra di navigazione che contenga i link delle altre pagine che possono essere raggiunte dalla pagina login.html-->
+        <nav>
+            <ul>
+                <li><a href="descrizione.html">Descrizione di NerdBook</a></li>
+                <li><a href="profilo.html">Profilo NedBook</a></li>
+                <li><a href="bacheca.html">Bacheca NedBook</a></li>
+            </ul>
+        </nav>
+        <!---->
+        <div id="divBody">
+            <!--Inseriamo la form per richiedere userid e password all'utente che vuole effettuare l'accesso-->
+            <div id="formLogin">
+                <form action="servlet.java" method="post">
+                    <div id=inputDatiUtente>
+                        <h2>Per accedere a NerdBook inserire Userid e Password</h2>
+                       
+                        <label for="userid">Userid</label>
+                        <input type="text" name="userid" id="userid" value=""><br>
+                        
+                        <label for="pswd">Password</label>
+                        <input type="password" name="pswd" id="pswd" value=""><br>
+                    </div>
+                    <div id="pulsanteValidazione">
+                        <button type="submit">
+                            <img src="../Asset/Button.jpg/" alt="flag"> Accedi
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

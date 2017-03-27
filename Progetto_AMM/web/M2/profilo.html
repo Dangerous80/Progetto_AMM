@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <!--inseriamo le meta-informazioni nel head-->
+    <head>
+        <title>NerdBook Be a Nerd Join the Herd</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Social Network per Nerd">
+        <meta name="author" content="Daniele Pisano">
+        <meta name="keywords" content="Nerd Star Wars word of warcraft scacchi dungeons and dragons software programmazione computer tecnologia giochi di ruolo film fantascienza serie tv fumetti videogiochi">
+        <meta http-equiv="refresh" content="30">
+    </head>
+    
+    <!--inseriamo il corpo della pagina nel body-->
+    <body>
+        <!--inseriamo il Titolo della pagina-->
+        <header>
+            <div id="titolo">
+                NerdBook - Profilo Personale
+            </div>
+        </header>
+        <!--Inseriamo il link alle altre pagine-->
+        <nav>
+            <ul>
+                <li><a href="descrizione.html">Descrizione di NerdBook</a></li>
+                <li><a href="login.html">NerdBook Login</a></li>
+            </ul>
+        </nav>
+        <!---->
+        <div id="divBody">
+            <!--Inseriamo la form per l'inserimento/modifica del profilo utente-->
+            <div id="formProfilo">
+                <form action="servlet.java" method="post">
+                    <div id="inputUtente">
+                        <h2>Inserisci le informazione del profilo</h2>
+                       
+                        <label for="nomeUtente">Inserire Nome Utente</label>
+                        <input type="text" name="nomeUtente" id="nomeUtente" value=""><br>
+                        
+                        <label for="cognomeUtente">Inserire Cognome Utente</label>
+                        <input type="text" name="cognomeUtente" id="cognomeUtente" value=""><br>
+                        
+                        <label for="fotoProfilo">Inserire Foto Profilo</label>
+                        <input type="url" name="fotoProfilo" id="fotoProfilo"><br>
+                        
+                        <label for="fraseProfilo">Inserire Frase Profilo</label>
+                        <textarea rows="2" cols="20" name="fraseProfilo" id="fraseProfilo"></textarea><br>
+                    
+                        <label for="dataNascita">Inserire Data Nascita</label>
+                        <input type="date" name="dataNascita" id="dataNascita"><br>
+                        
+                        <label for="pswdUtente">Inserire una Password</label>
+                        <input type="password" name="pswdUtente" id="pswdUtente" value=""><br>
+                        
+                        <label for="pswdConferma">Reinserire la Password per verifica</label>
+                        <input type="password" name="pswdConferma" id="pswdConferma" value=""><br>
+                    </div>
+                    <div id="pulsanteInvio">
+                        <button type="submit">
+                            <img src="../Asset/Button.jpg/" alt="flag"> Invia!
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
