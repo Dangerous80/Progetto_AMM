@@ -34,9 +34,7 @@ h3{
     font: 25px/40px "Calibri" , Arial, sans-serif;
     font-weight: bold;
 }
-
-/*definiamo le caratteristiche dei link,prima eliminiamo il defolt e poi impostiamo sottolineato, grassetto e cambio colore al passaggio del mouse*/
-
+/*definiamo le caratteristiche dei link,prima eliminiamo il default e poi impostiamo sottolineato, grassetto e cambio colore al passaggio del mouse*/
 a:link, a:visited {
     font-size: 20px; 
     text-decoration: none;
@@ -47,4 +45,16 @@ a:hover {
     font-weight: bold;
     text-decoration: underline;
     color: #003366;
+}
+/*definiamo le caratteristiche del sommario, eliminiamo il default e poi impostiamo il margine sinistro a zero*/
+#sommario>ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+/*definiamo le caratteristiche degli input, all'attivazione i bordi si illuminano di azzurro*/
+#inputDatiUtente input:focus, #inputUtente input:focus, #inputUtente textArea:focus{
+    outline:none;
+    border-color: #0af;
+    box-shadow: 0 0 10px #0af;
 }
