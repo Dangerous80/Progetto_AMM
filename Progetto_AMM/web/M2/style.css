@@ -12,26 +12,26 @@ and open the template in the editor.
 body {
     background-color: #b9dcef;
     color: #111111;
-    font: 20px/25px "Calibri" , Arial, sans-serif;
+    font: 20px/25px "PT Sans" , Calibri, sans-serif;
 }
 
 /*definiamo le caratteristiche dei titoli, colore, font e grassetto*/
 
 h1{
     color: #003366;
-    font: 35px/40px "Calibri" , Arial, sans-serif;
+    font: 35px/40px "PT Sans" , Calibri, sans-serif;
     font-weight: bold;
 }
 
 h2{
     color: #003366;
-    font: 30px/25px "Calibri" , Arial, sans-serif;
+    font: 30px/25px "PT Sans" , Calibri, sans-serif;
     font-weight: bold;
 }
 
 h3{
     color: #003366;
-    font: 25px/40px "Calibri" , Arial, sans-serif;
+    font: 25px/40px "PT Sans" , Calibri, sans-serif;
     font-weight: bold;
 }
 /*definiamo le caratteristiche dei link,prima eliminiamo il default e poi impostiamo sottolineato, grassetto e cambio colore al passaggio del mouse*/
@@ -53,7 +53,7 @@ a:hover {
 }
 
 /*definiamo le caratteristiche degli input, all'attivazione i bordi si illuminano di azzurro*/
-#inputDatiUtente input:focus, #inputUtente input:focus, #inputUtente textArea:focus{
+#inputDatiUtente input:focus, #inputUtente input:focus, #inputUtente textArea:focus, #cercaPersoneGruppi input:focus, #formNuovoPost textArea:focus, #formNuovoPost input:focus{
     outline:none;
     border-color: #0af;
     box-shadow: 0 0 10px #0af;
