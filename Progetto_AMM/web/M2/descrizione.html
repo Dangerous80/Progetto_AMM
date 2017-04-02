@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="it">
-    <!--inseriamo le meta-informazioni nel head-->
+    <!--inseriamo le meta-informazioni della pagina-->
     <head>
         <title>NerdBook - Join the Herd</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Social Network per Nerd">
+        <link rel="shortcut icon" type="image/x-icon" href="../Asset/nerdLogo.jpg">
         <meta name="author" content="Daniele Pisano">
         <meta name="keywords" content="Nerd Star Wars word of warcraft scacchi dungeons and dragons software programmazione computer tecnologia giochi di ruolo film fantascienza serie tv fumetti videogiochi">
         <meta http-equiv="refresh" content="30">
-        <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="../CSS/style.css" rel="stylesheet" type="text/css" media="screen" />
     </head>
     
-    <!--inseriamo il corpo della pagina nel body-->
     <body>
-        <!--inseriamo il Titolo della pagina-->
-        <header>
-            <div id="titolo">
-                NerdBook - Descrizione
-            </div>
-        </header>
-        <!--Inseriamo una barra di navigazxione che contenga i link alle pagine che devono essere raggiunte dalla pagina descrizione.html-->
-        <nav>
-            <ul>
-                <li><a href="login.html">NerdBook Login</a></li>
-            </ul>
-        </nav>
-        <!--Inseriamo la descrizione del Social Network e creiamo un sommario con i link interni al documento-->
-        <div id="divBody">
-            <!--Inseriamo il sommario con i link interni alle sezioni della pagina-->
+        <div id="page">
+            <!--header-->
+            <header>
+                <!--inseriamo il titolo della pagina-->
+                <div>
+                    <h1 id="titolo">NerdBook - Descrizione</h1>
+                </div>
+                <!--inseriamo una barra di navigazione che contenga i link alle altre pagine html che devono essere raggiunte-->
+                <nav id="linkPagine">
+                    <ul>
+                        <li><a href="login.html">NerdBook Login</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <!--sommario-->
             <div id="sommario">
+                <!--inseriamo il sommario con i link interni al documento-->
                 <h1>Sommario</h1>
                     <ul>
                         <li><a href="#social_network">Cosa è un Social Network</a></li>
@@ -43,8 +44,9 @@
                         </li>
                     </ul>
             </div>
-            <!--Inseriamo la descrizione dei social network-->
-            <div>
+            <!--contenuto-->  
+            <div id="contenuto">
+                <!--Inseriamo la descrizione dei social network-->
                 <a id="social_network">
                     <h1>Cosa è un Social Network</h1>
                 </a>
@@ -58,9 +60,8 @@
                        Una volta creato il proprio profilo è possibile invitare i propri amici a far parte del proprio network, i quali a loro volta possono fare lo stesso, 
                        in questo modo ci si trova ad allargare la cerchia di contatti con gli amici degli amici e così via.
                     </p>            
-            </div>
-            <!--Inseriamo la descrizione di cosa è NerdBook-->
-            <div>
+               
+                <!--Inseriamo la descrizione di cosa è NerdBook-->
                 <a id="descrizione_nerdbook">
                     <h1>Cosa è NerdBook e a chi si rivolge</h1>
                 </a>
@@ -96,6 +97,6 @@
                 </a>
                     <p>Per accedere a NerdBook clicca sul link "NerdBook Login" inserito nella barra di navigazione, inserisci Userid e password. Se non possiedi un profilo creane uno, potrai inserire una frase ed una foto nella tua bacheca personale.</p>
             </div>
-        </div> 
+        </div>
     </body>
 </html>

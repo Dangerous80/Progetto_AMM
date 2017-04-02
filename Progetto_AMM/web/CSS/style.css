@@ -8,34 +8,54 @@ and open the template in the editor.
     Author     : Pisano Daniele
 */
 
-/*definiamo le caratteristiche generali del body, colore sfondo, colore testo e font*/
+/*definiamo le caratteristiche impostazioni principali del layout */
 body {
-    background-color:#c8f0fc;
-    color: #111111;
+    background-color: white;
+    font: 15px/25px "PT Sans" , Calibri, sans-serif;
+}
+#page{
+    background-color:white;
+}
+header{
+    background-color: #003366;
+}
+/*
+#linkPagine ul li a:link{
+    color: white;
+}
+#linkPagine ul li a:visited{
+    color: #5b86ff;
+}
+a:link, a:visited{
+    color: #2738f7;
+}
+a:link:hover, a:visited:hover{
+    font-weight: bold;
+}
+h1#titolo{
+    color: white;
+    font: 30px/25px "PT Sans" , Calibri, sans-serif;
+    font-weight: bold;
+}
+h1{
+    color: #003366;
+    font: 25px/25px "PT Sans" , Calibri, sans-serif;
+    font-weight: bold;
+}
+h2{
+    color: #003366;
     font: 20px/25px "PT Sans" , Calibri, sans-serif;
+    font-weight: bold;
+}
+h3{
+    color: #003366;
+    font: 25px/25px "PT Sans" , Calibri, sans-serif;
+    font-weight: bold;
 }
 
-/*definiamo le caratteristiche dell'Header
-header {
-    font: 35px/40px "PT Sans" , Calibri, sans-serif;
-    color: white; 
-    background-color: #003366;
-    margin-top: 0px;
-    margin-left: 0px;
-    margin-bottom: 0px;
-    padding-top: 10px;
-    padding-left: 10px;
-    box-shadow: 0 0 10px rgba (0,0,0,0.2);
-    float: left;
-    width: 30%;
- }
- #titolo{
-    padding-left: 5px;
- }
-  #titolo::before{
-    content: url(../Asset/nerdLogo.jpg);
- }
- */
+/* decorazioni degli elementi */
+
+
  
 /*definiamo le caratteristiche della navabar
 nav {
@@ -45,6 +65,7 @@ nav {
     float: right;
     width: 69%;
  }
+
 nav ul, nav li {
     list-style-type: none;
     display:inline-block;
@@ -78,23 +99,7 @@ nav li p{
 */
 
 /*definiamo le caratteristiche dei titoli, colore, font e grassetto
-h1{
-    color: #003366;
-    font: 35px/40px "PT Sans" , Calibri, sans-serif;
-    font-weight: bold;
-}
 
-h2{
-    color: #003366;
-    font: 30px/25px "PT Sans" , Calibri, sans-serif;
-    font-weight: bold;
-}
-
-h3{
-    color: #003366;
-    font: 25px/40px "PT Sans" , Calibri, sans-serif;
-    font-weight: bold;
-}
 */
 
 /*definiamo le caratteristiche dei link,prima eliminiamo il default e poi impostiamo sottolineato, grassetto e cambio colore al passaggio del mouse

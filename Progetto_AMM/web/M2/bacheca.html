@@ -1,146 +1,128 @@
 <!DOCTYPE html>
 <html>
-    <!--inseriamo le meta-informazioni nel head-->
+    <!--inseriamo le meta-informazioni della pagina-->
     <head>
         <title>NerdBook - Join the Herd</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Social Network per Nerd">
+        <link rel="shortcut icon" type="image/x-icon" href="../Asset/nerdLogo.jpg">
         <meta name="author" content="Daniele Pisano">
         <meta name="keywords" content="Nerd Star Wars word of warcraft scacchi dungeons and dragons software programmazione computer tecnologia giochi di ruolo film fantascienza serie tv fumetti videogiochi">
         <meta http-equiv="refresh" content="30">
-        <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="../CSS/style.css" rel="stylesheet" type="text/css" media="screen" />
     </head>
-    
-    <!--inseriamo il corpo della pagina nel body-->
     <body>
-        
-        <!--inseriamo il Titolo della pagina-->
-        <header>
-            <div id="titolo">
-                NerdBook - Bacheca Personale
-            </div>
-            <!--Inseriamo il link alle altre pagine-->
-            <nav>
-                <ul id="linkPagine">
-                   <li><a href="descrizione.html">Descrizione di NerdBook</a></li>
-                   <li><a href="login.html">NerdBook Login</a></li>
-                </ul>
-            </nav>    
-            <!--Inseriamo i dati utente per il logout-->
-            <div id="logout">
-                <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
-                <p id="Name">Nome Utente</p>
-                <form action="servlet.java" method="post">
-                    <div id="pulsanteLogout">
-                       <button type="button">Logout</button>
-                    </div>
-                </form>
-            </div>
-        </header>
-        
-        <!--inseriamo gli elementi nel corpo del divBody-->
-        <div id="divBody">
-            <!--inseriamo gli elementi per la ricerca di persone e Gruppi-->
-            <div id="cercaPersoneGruppi">
+        <div id="page">
+            <!--header-->
+            <header>
+                <!--inseriamo il titolo della pagina-->
+                <div>
+                    <h1 id="titolo">NerdBook - Bacheca</h1>
+                </div>
+                <!--inseriamo una barra di navigazione che contenga i link alle altre pagine html che devono essere raggiunte-->
+                <nav id="linkPagine">
+                    <ul>
+                       <li><a href="descrizione.html">Descrizione di NerdBook</a></li>
+                       <li><a href="login.html">NerdBook Login</a></li>
+                    </ul>
+                </nav>
+                <!--inseriamo i dati utente per il logout-->
+                <div id="logout">
+                    <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                    <p id="name">Nome Utente</p>
+                    <form action="servlet.java" method="post">
+                        <div id="pulsanteLogout">
+                          <button type="button">Logout</button>
+                        </div>
+                    </form>
+                </div>
+            </header>
+            <!--sidebar, inseriamo gli elementi per la ricerca di persone e Gruppi-->
+            <div id="sidebar">
                 <!--barra ricerca-->
                 <form action="servlet.java" method="post">
                     <div id="ricerca">
-                       <input type="text" name="cerca" id="cerca" value="Cerca..">
-                       <button type="submit" id="pulsanteRicerca">
+                        <input type="text" name="cerca" id="cerca" value="Cerca..">
+                        <button type="submit" id="pulsanteRicerca">
                             <img src="../Asset/lente.png" alt="lente">
                         </button>
                     </div>
                 </form>
                 <!--elenco persone-->
-                <div id="elencoPersone">
-                    <h2>Persone</h2>
-                       <div id="persona1">
-                           <a href="bacheca.html">Pinco Pallino</a>
-                       </div>
-                       <div id="persona2">
-                           <a href="bacheca.html">Riccardo Rossi</a>
-                       </div> 
-                       <div id="persona3">
-                           <a href="bacheca.html">Mario Bianchi</a>
-                       </div> 
-                </div>
-                <!--elenco gruppi-->
-                <div id="elencoGruppi">
-                    <h2>Gruppi</h2>
+                <ul>
+                    <li id="persone">
+                        <h2>Persone</h2>
+                        <ul>
+                            <li><a href="bacheca.html">Pinco Pallino</a></li>
+                            <li><a href="bacheca.html">Riccardo Rossi</a></li>
+                            <li><a href="bacheca.html">Mario Bianchi</a></li>
+                        </ul>           
+                    </li>
+                    <li id="gruppi">
+                        <h2>Gruppi</h2>
+                        <form action="servlet.java" method="post">
+                            <div id="aggiungiGruppi">
+                                <button type="submit" id="pulsanteAggiungiGruppi">
+                                    <img src="../Asset/add.jpg" alt="aggiungi gruppi">
+                                </button>
+                        </div>
+                        </form>
+                        <ul>
+                            <li><a href="bacheca.html">Star Trek</a></li>
+                            <li><a href="bacheca.html">Star Wars</a></li>
+                        </ul>           
+                    </li>
+                </ul>
+            </div>       
+            <!--contenuto-->
+            <div id="contenuto">     
+                <!--inseriamo i dati dell'utente proprietario della bacheca-->
+                <div id="infoUtente">
+                    <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                    <p id="userName">Nome Utente Corrente:</p>
+                    <p id="fraseBacheca">Frase Bacheca Utente</p>
+                </div> 
+                <!--inseriamo gli elementi per la definizione dei nuovi post-->
+                <div id="formNewPost">
                     <form action="servlet.java" method="post">
-                        <div id="aggiungiGruppi">
-                            <button type="submit" id="pulsanteAggiungiGruppi">
-                                <img src="../Asset/add.jpg" alt="aggiungi gruppi">
-                            </button>
-                        </div>
-                    </form>
-                    <div id="Gruppo1">
-                        <a href="bacheca.html">Star Trek</a>
-                    </div>
-                    <div id="Gruppo2">
-                        <a href="bacheca.html">Star Wars</a>
-                    </div> 
-                </div>
-            </div>
-            
-            <!--inseriamo i dati dell'utente proprietario della bacheca-->
-            <div id="infoUtente">
-                <h2>Bacheca Personale</h2>
-                <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
-                <p id="UserName">Nome Utente Corrente</p>
-                <p>:</p>
-                <p id="fraseBacheca">Frase Bacheca Utente</p>
-            </div>
-            
-            <!--inseriamo gli elementi per la definizione dei nuovi post-->
-            <div id="formNuovoPost">
-                <form action="servlet.java" method="post">
-                    <div id="contenutoPost">
-                        <div>
-                            <textarea name="testoPost" id="testoPost" rows="5" cols="40"></textarea>
-                        </div>
-                        <div>
+                        <div id="contenutoPost">
+                            <textarea name="testoPost" id="testoPost" rows="5" cols="40"></textarea><br>
                             <input type="url" name="urlPost" id="urlPost">
                         </div>
-                    </div>             
-                    <div id="tipoPost">
-                        <div>
+                        <div id="tipoPost">
                             <input type="radio" name="tipoPost" value="imgType" id="tipoImmagine">
                             <label for="tipoImmagine">Immagine</label>
-                        </div>
-                        <div>
                             <input type="radio" name="tipoPost" value="linkType" id="tipoLink">
                             <label for="tipoLink">Link</label>
                         </div>
-                    </div>
-                    <button type="submit" id="pulsanteCreaPost">Crea Post</button>
-                </form>
-            </div>
-            
-            <!--Inseriamo i post da visualizzare sulla Bacheca-->
-            <div id="Bacheca">
+                        <button type="submit" id="pulsanteCreaPost">Crea Post</button>
+                    </form>
+                </div>
+                <!--Inseriamo i post da visualizzare sulla Bacheca-->
+                <div id="Bacheca">
                 <!--post1 solo testuale-->
-                <div id="post1">
-                    <img title="fotoProfilo1" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
-                    <p id="UserName1">Nome User 1</p>
-                    <p id="testoPost1">Testo post 1</p>
-                </div>
+                    <div id="post1">
+                        <img title="fotoProfilo1" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                        <p id="UserName1">Nome User 1</p>
+                        <p id="testoPost1">Testo post 1</p>
+                    </div>
                 <!--post2 testo e immagine-->
-                <div id="post2">
-                    <img title="fotoProfilo2" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
-                    <p id="UserName2">Nome User 2</p>
-                    <p id="testoPost2">Testo post 2</p>
-                    <img title="ImmaginePost2" alt="Immagine Post" src="../Asset/post.jpg">
-                </div>
+                    <div id="post2">
+                        <img title="fotoProfilo2" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                        <p id="UserName2">Nome User 2</p>
+                        <p id="testoPost2">Testo post 2</p>
+                        <img title="ImmaginePost2" alt="Immagine Post" src="../Asset/post.jpg">
+                    </div>
                 <!--post3 testo e allegato-->
-                <div id="post3">
-                    <img title="fotoProfilo3" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
-                    <p id="UserName3">Nome User 3</p>
-                    <p id="testoPost3">Testo post 3</p>
-                    <a Id="allegato3" href="http://www.vistanet.it/cagliari/blog/2017/03/07/la-cagliari-che-non-ce-piu-storia-dei-casotti-colorati-della-spiaggia-del-poetto-e-la-citta-estiva/">Allegato</a>
+                    <div id="post3">
+                        <img title="fotoProfilo3" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                        <p id="UserName3">Nome User 3</p>
+                        <p id="testoPost3">Testo post 3</p>
+                        <a Id="allegato3" href="http://www.vistanet.it/cagliari/blog/2017/03/07/la-cagliari-che-non-ce-piu-storia-dei-casotti-colorati-della-spiaggia-del-poetto-e-la-citta-estiva/">Allegato</a>
+                    </div>
                 </div>
-            </div>
-        </div> 
+            </div> 
+        </div>    
     </body>
 </html>

@@ -1,112 +1,97 @@
 <!DOCTYPE html>
 <html>
-    <!--inseriamo le meta-informazioni nel head-->
+    <!--inseriamo le meta-informazioni della pagina-->
     <head>
         <title>NerdBook - Join the Herd</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Social Network per Nerd">
+        <link rel="shortcut icon" type="image/x-icon" href="../Asset/nerdLogo.jpg">
         <meta name="author" content="Daniele Pisano">
         <meta name="keywords" content="Nerd Star Wars word of warcraft scacchi dungeons and dragons software programmazione computer tecnologia giochi di ruolo film fantascienza serie tv fumetti videogiochi">
         <meta http-equiv="refresh" content="30">
-        <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+        <link href="../CSS/style.css" rel="stylesheet" type="text/css" media="screen" />
     </head>
-    
-    <!--inseriamo il corpo della pagina nel body-->
-    <body>        
-        <!--inseriamo il Titolo della pagina-->
-        <header>
-            <div id="titolo">
-                NerdBook - Profilo Personale
-            </div>
-            <!--Inseriamo il link alle altre pagine-->
-            <nav>
-                <ul id="linkPagine">
-                   <li><a href="descrizione.html">Descrizione di NerdBook</a></li>
-                   <li><a href="login.html">NerdBook Login</a></li>
-                </ul>
-            </nav>    
-            <!--Inseriamo i dati utente per il logout-->
-            <div id="logout">
-                <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
-                <p id="Name">Nome Utente</p>
-                <form action="servlet.java" method="post">
-                    <div id="pulsanteLogout">
-                       <button type="button">Logout</button>
-                    </div>
-                </form>
-            </div>
-        </header>
-             
-        <!---->
-        <div id="divBody">
-             <!--inseriamo gli elementi per la ricerca di persone e Gruppi-->
-            <div id="cercaPersoneGruppi">
+    <body>
+        <div id="page">
+            <!--header-->
+            <header>
+                <!--inseriamo il titolo della pagina-->
+                <div>
+                    <h1 id="titolo">NerdBook - Profilo</h1>
+                </div>
+                <!--inseriamo una barra di navigazione che contenga i link alle altre pagine html che devono essere raggiunte-->
+                <nav id="linkPagine">
+                    <ul>
+                       <li><a href="descrizione.html">Descrizione di NerdBook</a></li>
+                       <li><a href="login.html">NerdBook Login</a></li>
+                    </ul>
+                </nav>
+                <!--inseriamo i dati utente per il logout-->
+                <div id="logout">
+                    <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                    <p id="name">Nome Utente</p>
+                    <form action="servlet.java" method="post">
+                        <div id="pulsanteLogout">
+                          <button type="button">Logout</button>
+                        </div>
+                    </form>
+                </div>
+            </header>
+            <!--sidebar, inseriamo gli elementi per la ricerca di persone e Gruppi-->
+            <div id="sidebar">
                 <!--barra ricerca-->
                 <form action="servlet.java" method="post">
                     <div id="ricerca">
-                       <input type="text" name="cerca" id="cerca" value="Cerca..">
-                       <button type="submit" id="pulsanteRicerca">
+                        <input type="text" name="cerca" id="cerca" value="Cerca..">
+                        <button type="submit" id="pulsanteRicerca">
                             <img src="../Asset/lente.png" alt="lente">
                         </button>
                     </div>
                 </form>
                 <!--elenco persone-->
-                <div id="elencoPersone">
-                    <h2>Persone</h2>
-                       <div id="persona1">
-                           <a href="bacheca.html">Pinco Pallino</a>
-                       </div>
-                       <div id="persona2">
-                           <a href="bacheca.html">Riccardo Rossi</a>
-                       </div> 
-                       <div id="persona3">
-                           <a href="bacheca.html">Mario Bianchi</a>
-                       </div> 
-                </div>
-                <!--elenco gruppi-->
-                <div id="elencoGruppi">
-                    <h2>Gruppi</h2>
-                    <form action="servlet.java" method="post">
-                        <div id="aggiungiGruppi">
-                            <button type="submit" id="pulsanteAggiungiGruppi">
-                                <img src="../Asset/add.jpg" alt="aggiungi gruppi">
-                            </button>
+                <ul>
+                    <li id="persone">
+                        <h2>Persone</h2>
+                        <ul>
+                            <li><a href="bacheca.html">Pinco Pallino</a></li>
+                            <li><a href="bacheca.html">Riccardo Rossi</a></li>
+                            <li><a href="bacheca.html">Mario Bianchi</a></li>
+                        </ul>           
+                    </li>
+                    <li id="gruppi">
+                        <h2>Gruppi</h2>
+                        <form action="servlet.java" method="post">
+                            <div id="aggiungiGruppi">
+                                <button type="submit" id="pulsanteAggiungiGruppi">
+                                    <img src="../Asset/add.jpg" alt="aggiungi gruppi">
+                                </button>
                         </div>
-                    </form>
-                    <div id="Gruppo1">
-                        <a href="bacheca.html">Star Trek</a>
-                    </div>
-                    <div id="Gruppo2">
-                        <a href="bacheca.html">Star Wars</a>
-                    </div> 
-                </div>
-            </div>
-             
-            <!--Inseriamo la form per l'inserimento/modifica del profilo utente-->
-            <div id="formProfilo">
+                        </form>
+                        <ul>
+                            <li><a href="bacheca.html">Star Trek</a></li>
+                            <li><a href="bacheca.html">Star Wars</a></li>
+                        </ul>           
+                    </li>
+                </ul>
+            </div>    
+            <!--contenuto, inseriamo la form per l'inserimento/modifica del profilo utente-->
+            <div id="contenuto">
                 <form action="servlet.java" method="post">
                     <div id="inputUtente">
-                        <h2>Inserisci le informazione del profilo</h2>
-                       
+                        <h2>Inserisci le informazione del profilo</h2>                       
                         <label for="nomeUtente">Inserire Nome Utente</label>
-                        <input type="text" name="nomeUtente" id="nomeUtente" value=""><br>
-                        
+                        <input type="text" name="nomeUtente" id="nomeUtente" value=""><br>                        
                         <label for="cognomeUtente">Inserire Cognome Utente</label>
-                        <input type="text" name="cognomeUtente" id="cognomeUtente" value=""><br>
-                        
+                        <input type="text" name="cognomeUtente" id="cognomeUtente" value=""><br>                        
                         <label for="fotoProfilo">Inserire Foto Profilo</label>
-                        <input type="url" name="fotoProfilo" id="fotoProfilo"><br>
-                        
+                        <input type="url" name="fotoProfilo" id="fotoProfilo"><br>                        
                         <label for="fraseProfilo">Inserire Frase Profilo</label>
-                        <textarea rows="2" cols="20" name="fraseProfilo" id="fraseProfilo"></textarea><br>
-                    
+                        <textarea rows="2" cols="20" name="fraseProfilo" id="fraseProfilo"></textarea><br>                    
                         <label for="dataNascita">Inserire Data Nascita</label>
-                        <input type="date" name="dataNascita" id="dataNascita"><br>
-                        
+                        <input type="date" name="dataNascita" id="dataNascita"><br>                        
                         <label for="pswdUtente">Inserire una Password</label>
-                        <input type="password" name="pswdUtente" id="pswdUtente" value=""><br>
-                        
+                        <input type="password" name="pswdUtente" id="pswdUtente" value=""><br>                        
                         <label for="pswdConferma">Reinserire la Password per verifica</label>
                         <input type="password" name="pswdConferma" id="pswdConferma" value=""><br>
                     </div>
