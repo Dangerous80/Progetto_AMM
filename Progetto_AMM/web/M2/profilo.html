@@ -13,22 +13,76 @@
     </head>
     
     <!--inseriamo il corpo della pagina nel body-->
-    <body>
+    <body>        
         <!--inseriamo il Titolo della pagina-->
         <header>
             <div id="titolo">
                 NerdBook - Profilo Personale
             </div>
+            <!--Inseriamo il link alle altre pagine-->
+            <nav>
+                <ul id="linkPagine">
+                   <li><a href="descrizione.html">Descrizione di NerdBook</a></li>
+                   <li><a href="login.html">NerdBook Login</a></li>
+                </ul>
+            </nav>    
+            <!--Inseriamo i dati utente per il logout-->
+            <div id="logout">
+                <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                <p id="Name">Nome Utente</p>
+                <form action="servlet.java" method="post">
+                    <div id="pulsanteLogout">
+                       <button type="button">Logout</button>
+                    </div>
+                </form>
+            </div>
         </header>
-        <!--Inseriamo il link alle altre pagine-->
-        <nav>
-            <ul>
-                <li><a href="descrizione.html">Descrizione di NerdBook</a></li>
-                <li><a href="login.html">NerdBook Login</a></li>
-            </ul>
-        </nav>
+             
         <!---->
         <div id="divBody">
+             <!--inseriamo gli elementi per la ricerca di persone e Gruppi-->
+            <div id="cercaPersoneGruppi">
+                <!--barra ricerca-->
+                <form action="servlet.java" method="post">
+                    <div id="ricerca">
+                       <input type="text" name="cerca" id="cerca" value="Cerca..">
+                       <button type="submit" id="pulsanteRicerca">
+                            <img src="../Asset/lente.png" alt="lente">
+                        </button>
+                    </div>
+                </form>
+                <!--elenco persone-->
+                <div id="elencoPersone">
+                    <h2>Persone</h2>
+                       <div id="persona1">
+                           <a href="bacheca.html">Pinco Pallino</a>
+                       </div>
+                       <div id="persona2">
+                           <a href="bacheca.html">Riccardo Rossi</a>
+                       </div> 
+                       <div id="persona3">
+                           <a href="bacheca.html">Mario Bianchi</a>
+                       </div> 
+                </div>
+                <!--elenco gruppi-->
+                <div id="elencoGruppi">
+                    <h2>Gruppi</h2>
+                    <form action="servlet.java" method="post">
+                        <div id="aggiungiGruppi">
+                            <button type="submit" id="pulsanteAggiungiGruppi">
+                                <img src="../Asset/add.jpg" alt="aggiungi gruppi">
+                            </button>
+                        </div>
+                    </form>
+                    <div id="Gruppo1">
+                        <a href="bacheca.html">Star Trek</a>
+                    </div>
+                    <div id="Gruppo2">
+                        <a href="bacheca.html">Star Wars</a>
+                    </div> 
+                </div>
+            </div>
+             
             <!--Inseriamo la form per l'inserimento/modifica del profilo utente-->
             <div id="formProfilo">
                 <form action="servlet.java" method="post">

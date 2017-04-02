@@ -10,13 +10,74 @@ and open the template in the editor.
 
 /*definiamo le caratteristiche generali del body, colore sfondo, colore testo e font*/
 body {
-    background-color: #b9dcef;
+    background-color:#c8f0fc;
     color: #111111;
     font: 20px/25px "PT Sans" , Calibri, sans-serif;
 }
 
-/*definiamo le caratteristiche dei titoli, colore, font e grassetto*/
+/*definiamo le caratteristiche dell'Header
+header {
+    font: 35px/40px "PT Sans" , Calibri, sans-serif;
+    color: white; 
+    background-color: #003366;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    padding-top: 10px;
+    padding-left: 10px;
+    box-shadow: 0 0 10px rgba (0,0,0,0.2);
+    float: left;
+    width: 30%;
+ }
+ #titolo{
+    padding-left: 5px;
+ }
+  #titolo::before{
+    content: url(../Asset/nerdLogo.jpg);
+ }
+ */
+ 
+/*definiamo le caratteristiche della navabar
+nav {
+    background-color: white;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    float: right;
+    width: 69%;
+ }
+nav ul, nav li {
+    list-style-type: none;
+    display:inline-block;
+}
+nav ul {
+    margin-top: 35px;
+    margin-bottom: 5px;
+}
+nav li a{
+    font: 35px/31px "PT Sans" , Calibri, sans-serif;    
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
 
+nav img{
+    width: 5%;
+    padding-left: 20px;
+    padding-right: 5px;
+}
+nav li p{
+    padding-left: 20px;
+    padding-right: 0px;
+}
+*/
+
+/*distanzioamo i vari div dalla testata
+#sommario, #formLogin, #formProfilo, #cercaPersoneGruppi{
+    padding-top: 80px;
+}
+*/
+
+/*definiamo le caratteristiche dei titoli, colore, font e grassetto
 h1{
     color: #003366;
     font: 35px/40px "PT Sans" , Calibri, sans-serif;
@@ -34,27 +95,31 @@ h3{
     font: 25px/40px "PT Sans" , Calibri, sans-serif;
     font-weight: bold;
 }
-/*definiamo le caratteristiche dei link,prima eliminiamo il default e poi impostiamo sottolineato, grassetto e cambio colore al passaggio del mouse*/
+*/
+
+/*definiamo le caratteristiche dei link,prima eliminiamo il default e poi impostiamo sottolineato, grassetto e cambio colore al passaggio del mouse
 a:link, a:visited {
-    font-size: 20px; 
     text-decoration: none;
     color:#111111;
 }
 
 a:hover {
     font-weight: bold;
-    text-decoration: underline;
     color: #003366;
 }
-/*definiamo le caratteristiche del sommario, eliminiamo il default e poi impostiamo il margine sinistro a zero*/
+*/
+
+/*Pagina Descrizione: definiamo le caratteristiche del sommario, eliminiamo il default e poi impostiamo il margine sinistro a zero
 #sommario>ul{
     list-style-type: none;
     padding-left: 0px;
 }
+*/
 
-/*definiamo le caratteristiche degli input, all'attivazione i bordi si illuminano di azzurro*/
+/*definiamo le caratteristiche degli input, all'attivazione i bordi si illuminano di azzurro
 #inputDatiUtente input:focus, #inputUtente input:focus, #inputUtente textArea:focus, #cercaPersoneGruppi input:focus, #formNuovoPost textArea:focus, #formNuovoPost input:focus{
     outline:none;
     border-color: #0af;
     box-shadow: 0 0 10px #0af;
 }
+*/
