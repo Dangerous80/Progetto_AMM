@@ -17,7 +17,7 @@
             <!--header-->
             <header>
                 <!--inseriamo il titolo della pagina-->
-                <div>
+                <div id="logo">
                     <h1 id="titolo">NerdBook - Profilo</h1>
                 </div>
                 <!--inseriamo una barra di navigazione che contenga i link alle altre pagine html che devono essere raggiunte-->
@@ -29,7 +29,9 @@
                 </nav>
                 <!--inseriamo i dati utente per il logout-->
                 <div id="logout">
-                    <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                    <div class="fotoProfiloLogout">
+                        <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                    </div>
                     <p id="name">Nome Utente</p>
                     <form action="servlet.java" method="post">
                         <div id="pulsanteLogout">
@@ -76,7 +78,7 @@
                 </ul>
             </div>    
             <!--contenuto, inseriamo la form per l'inserimento/modifica del profilo utente-->
-            <div id="contenuto">
+            <div id="contenutoProfilo">
                 <form action="servlet.java" method="post">
                     <div id="inputUtente">
                         <h2>Inserisci le informazione del profilo</h2>                       
@@ -96,8 +98,7 @@
                         <input type="password" name="pswdConferma" id="pswdConferma" value=""><br>
                     </div>
                     <div id="pulsanteInvio">
-                        <button type="submit">
-                            <img src="../Asset/Button.jpg/" alt="flag"> Invia!
+                        <button type="submit">Invia
                         </button>
                     </div>
                 </form>

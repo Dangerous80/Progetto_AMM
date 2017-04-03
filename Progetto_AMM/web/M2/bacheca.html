@@ -17,7 +17,7 @@
             <!--header-->
             <header>
                 <!--inseriamo il titolo della pagina-->
-                <div>
+                <div id="logo">
                     <h1 id="titolo">NerdBook - Bacheca</h1>
                 </div>
                 <!--inseriamo una barra di navigazione che contenga i link alle altre pagine html che devono essere raggiunte-->
@@ -29,8 +29,10 @@
                 </nav>
                 <!--inseriamo i dati utente per il logout-->
                 <div id="logout">
-                    <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
-                    <p id="name">Nome Utente</p>
+                    <div class="fotoProfiloLogout">
+                        <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                    </div>
+                    <p id="name"><strong>Nome Utente</strong></p>
                     <form action="servlet.java" method="post">
                         <div id="pulsanteLogout">
                           <button type="button">Logout</button>
@@ -76,11 +78,13 @@
                 </ul>
             </div>       
             <!--contenuto-->
-            <div id="contenuto">     
+            <div id="contenutoBacheca">     
                 <!--inseriamo i dati dell'utente proprietario della bacheca-->
                 <div id="infoUtente">
-                    <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
-                    <p id="userName">Nome Utente Corrente:</p>
+                    <div class="fotoProfilo">
+                        <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                    </div>
+                    <p id="userName"><p>Nome Utente></p>
                     <p id="fraseBacheca">Frase Bacheca Utente</p>
                 </div> 
                 <!--inseriamo gli elementi per la definizione dei nuovi post-->
@@ -103,20 +107,26 @@
                 <div id="Bacheca">
                 <!--post1 solo testuale-->
                     <div id="post1">
-                        <img title="fotoProfilo1" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                        <div class="fotoProfilo">
+                            <img title="fotoProfilo1" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                        </div>
                         <p id="UserName1">Nome User 1</p>
                         <p id="testoPost1">Testo post 1</p>
                     </div>
                 <!--post2 testo e immagine-->
                     <div id="post2">
-                        <img title="fotoProfilo2" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                        <div class="fotoProfilo">
+                            <img title="fotoProfilo2" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                        </div>
                         <p id="UserName2">Nome User 2</p>
                         <p id="testoPost2">Testo post 2</p>
                         <img title="ImmaginePost2" alt="Immagine Post" src="../Asset/post.jpg">
                     </div>
                 <!--post3 testo e allegato-->
                     <div id="post3">
-                        <img title="fotoProfilo3" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                        <div class="fotoProfiloProfilo">
+                            <img title="fotoProfilo3" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                        </div>
                         <p id="UserName3">Nome User 3</p>
                         <p id="testoPost3">Testo post 3</p>
                         <a Id="allegato3" href="http://www.vistanet.it/cagliari/blog/2017/03/07/la-cagliari-che-non-ce-piu-storia-dei-casotti-colorati-della-spiaggia-del-poetto-e-la-citta-estiva/">Allegato</a>

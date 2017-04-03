@@ -8,22 +8,45 @@ and open the template in the editor.
     Author     : Pisano Daniele
 */
 
-/*definiamo le caratteristiche impostazioni principali del layout */
+/*definiamo le caratteristiche del layout */
 body {
     background-color: white;
     font: 15px/25px "PT Sans" , Calibri, sans-serif;
 }
 #page{
     background-color:white;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 25px;
+    margin-bottom:25px;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    padding-bottom: 5px;
 }
 header{
     background-color: #003366;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    color: white;
+    text-align: center;
+    border: 2px solid #111111;
+    margin-right: 1px; 
 }
-
+#linkPagine ul li a{
+    color: white;
+    text-decoration: none;
+    font: 30px/25px "PT Sans" , Calibri, sans-serif;
+}
+#linkPagine ul li a:hover{
+    font-weight: bold;
+}
+#linkPagine ul {
+    padding-left: 0px;
+}
 h1#titolo{
     color: white;
     font: 30px/25px "PT Sans" , Calibri, sans-serif;
     font-weight: bold;
+    margin-top: 0px;
 }
 h1{
     color: #003366;
@@ -37,119 +60,75 @@ h2{
 }
 h3{
     color: #003366;
-    font: 25px/25px "PT Sans" , Calibri, sans-serif;
+    font: 17px/25px "PT Sans" , Calibri, sans-serif;
     font-weight: bold;
 }
-nav ul li {
-    list-style-type: none;
-    display:inline-block;
-    
-}
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font: 30px/25px "PT Sans" , Calibri, sans-serif;
-}
-div ul{
-    list-style-type: none;
-    padding-left: 0px;
-}
-div ul li{
-    list-style-type: none;
-    padding-left: 0px;
-}
-div ul li ul li{
-    list-style-type: none;
-    padding-left: 15px;
-}
-
-/*
-ul li a{
-    text-decoration: none;
-    color: white;
-}
-
-#linkPagine ul li a:link{
-    color: #5b86ff;
-}
-
 a:link, a:visited{
-    color: #2738f7;
-}
-a:link:hover, a:visited:hover{
-    font-weight: bold;
-}
-
-
-/* decorazioni degli elementi */
-
-
- 
-/*definiamo le caratteristiche della navabar
-nav {
-    background-color: white;
-    text-align: left;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    float: right;
-    width: 69%;
- }
-
-
-nav ul {
-    margin-top: 35px;
-    margin-bottom: 5px;
-}
-nav li a{
-    font: 35px/31px "PT Sans" , Calibri, sans-serif;    
-    margin-top: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-nav img{
-    width: 5%;
-    padding-left: 20px;
-    padding-right: 5px;
-}
-nav li p{
-    padding-left: 20px;
-    padding-right: 0px;
-}
-*/
-
-/*distanzioamo i vari div dalla testata
-#sommario, #formLogin, #formProfilo, #cercaPersoneGruppi{
-    padding-top: 80px;
-}
-*/
-
-/*definiamo le caratteristiche dei titoli, colore, font e grassetto
-
-*/
-
-/*definiamo le caratteristiche dei link,prima eliminiamo il default e poi impostiamo sottolineato, grassetto e cambio colore al passaggio del mouse
-a:link, a:visited {
-    text-decoration: none;
-    color:#111111;
-}
-
-a:hover {
-    font-weight: bold;
+    text-decoration: underline;
     color: #003366;
 }
-*/
-
-/*Pagina Descrizione: definiamo le caratteristiche del sommario, eliminiamo il default e poi impostiamo il margine sinistro a zero
-#sommario>ul{
-    list-style-type: none;
-    padding-left: 0px;
+a:hover{
+    font-weight: bold;
 }
-*/
-
-/*definiamo le caratteristiche degli input, all'attivazione i bordi si illuminano di azzurro
-#inputDatiUtente input:focus, #inputUtente input:focus, #inputUtente textArea:focus, #cercaPersoneGruppi input:focus, #formNuovoPost textArea:focus, #formNuovoPost input:focus{
+#sommario{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#contenutoDescrizione{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+#contenutoLogin{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: 400px;
+    margin-bottom: 10px;
+}
+#sommario li, #sidebar li, #linkPagine li {
+    list-style: none;
+}
+#linkPagine li {
+    list-style-type: none;
+    display: inline-block;
+}
+nav li {
+    padding-left: 20px;
+    padding-right: 20px;
+    border-right: 3px solid #111111
+}
+nav li:last-child{
+    border-right: none;
+}
+#sommario ul, #sidebar ul{
+    padding-left: 10px;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+#inputDatiUtente input:focus, #inputUtente input:focus, #inputUtente textArea:focus, #sidebar input:focus, #formNewPost textArea:focus, #formNewPost input:focus{
     outline:none;
     border-color: #0af;
     box-shadow: 0 0 10px #0af;
 }
-*/
+#sidebar button img{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+/* gestione dei dispositivi */
+@media only screen and (min-width: 1024px) {
+    #sidebar {
+        float: left;
+        width: 25%;
+        padding-left: 5px;
+        padding-top:10px;
+    }
+    #contenutoProfilo, #contenutoBacheca{
+        margin-left: 25%;
+        margin-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 20px;
+    }
+}

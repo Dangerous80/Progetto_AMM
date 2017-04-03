@@ -17,7 +17,7 @@
             <!--header-->
             <header>
                 <!--inseriamo il titolo della pagina-->
-                <div>
+                <div id="logo">
                     <h1 id="titolo">NerdBook - Login</h1>
                 </div>
                 <!--inseriamo una barra di navigazione che contenga i link alle altre pagine html che devono essere raggiunte-->
@@ -28,12 +28,24 @@
                         <li><a href="bacheca.html">Bacheca NerdBook</a></li>
                     </ul>
                 </nav>
+                <!--inseriamo i dati utente per il logout-->
+                <div id="logout">
+                    <div class="fotoProfiloLogout">
+                        <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                    </div>
+                    <p id="name">Nome Utente</p>
+                    <form action="servlet.java" method="post">
+                        <div id="pulsanteLogout">
+                          <button type="button">Logout</button>
+                        </div>
+                    </form>
+                </div>
             </header>
             <!--contenuto, inseriamo la form per richiedere userid e password all'utente che vuole effettuare l'accesso-->
-            <div id="contenuto">
+            <div id="contenutoLogin">
                 <form action="servlet.java" method="post">
                     <div id=inputDatiUtente>
-                        <h2>Per accedere a NerdBook inserire Userid e Password</h2>
+                        <h2>Inserire Userid e Password</h2>
                         <label for="userid">Userid</label>
                         <input type="text" name="userid" id="userid" value=""><br>
                         <label for="pswd">Password</label>
