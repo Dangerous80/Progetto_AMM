@@ -19,19 +19,7 @@ body {
 header{
     background-color: #003366;
 }
-/*
-#linkPagine ul li a:link{
-    color: white;
-}
-#linkPagine ul li a:visited{
-    color: #5b86ff;
-}
-a:link, a:visited{
-    color: #2738f7;
-}
-a:link:hover, a:visited:hover{
-    font-weight: bold;
-}
+
 h1#titolo{
     color: white;
     font: 30px/25px "PT Sans" , Calibri, sans-serif;
@@ -52,6 +40,46 @@ h3{
     font: 25px/25px "PT Sans" , Calibri, sans-serif;
     font-weight: bold;
 }
+nav ul li {
+    list-style-type: none;
+    display:inline-block;
+    
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font: 30px/25px "PT Sans" , Calibri, sans-serif;
+}
+div ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+div ul li{
+    list-style-type: none;
+    padding-left: 0px;
+}
+div ul li ul li{
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+/*
+ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+#linkPagine ul li a:link{
+    color: #5b86ff;
+}
+
+a:link, a:visited{
+    color: #2738f7;
+}
+a:link:hover, a:visited:hover{
+    font-weight: bold;
+}
+
 
 /* decorazioni degli elementi */
 
@@ -66,10 +94,7 @@ nav {
     width: 69%;
  }
 
-nav ul, nav li {
-    list-style-type: none;
-    display:inline-block;
-}
+
 nav ul {
     margin-top: 35px;
     margin-bottom: 5px;
