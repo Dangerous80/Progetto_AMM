@@ -116,7 +116,23 @@ nav li:last-child{
     height: 20px;
     vertical-align: middle;
 }
+ 
+/*-----------------Continuare da qui----------------------*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*--------------------------------------------------------*/
 /* gestione dei dispositivi */
 @media only screen and (min-width: 1024px) {
     #sidebar {

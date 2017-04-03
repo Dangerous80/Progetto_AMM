@@ -8,16 +8,11 @@ and open the template in the editor.
     Author     : Pisano Daniele
 */
 /*definiamo le caratteristiche principali del layout */
-
 #formNewPost{
     width: 400px;
     margin-left:auto;
     margin-right: auto;
-} 
-
-#formNewPost label{
-    font: 20px/25px "Open Sans", Arial, sans-serif;
-} 
+}
 
 #postType{
     padding-top: 10px;
