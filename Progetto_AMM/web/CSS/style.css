@@ -18,24 +18,23 @@ body {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 25px;
-    margin-bottom:25px;
+    margin-top: 20px;
+    margin-bottom:20px;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
-    padding-bottom: 5px;
 }
-header{
+#header{
     background-color: #003366;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     color: white;
-    text-align: center;
     border: 2px solid #111111;
-    margin-right: 1px; 
+    height: 120px;
+    width: auto;
 }
 #linkPagine ul li a{
     color: white;
     text-decoration: none;
-    font: 30px/25px "PT Sans" , Calibri, sans-serif;
-}
+    font: 20px/25px "PT Sans" , Calibri, sans-serif;
+ }
 #linkPagine ul li a:hover{
     font-weight: bold;
 }
@@ -46,7 +45,7 @@ h1#titolo{
     color: white;
     font: 30px/25px "PT Sans" , Calibri, sans-serif;
     font-weight: bold;
-    margin-top: 0px;
+    text-align: center;
 }
 h1{
     color: #003366;
@@ -70,6 +69,8 @@ a:link, a:visited{
 a:hover{
     font-weight: bold;
 }
+
+/*-----------------Continuare da qui----------------------*/
 #sommario{
     margin-left: 5px;
     margin-right: 5px;
@@ -92,11 +93,12 @@ a:hover{
 #linkPagine li {
     list-style-type: none;
     display: inline-block;
+    background-color: #003366;
 }
 nav li {
     padding-left: 20px;
     padding-right: 20px;
-    border-right: 3px solid #111111
+    border-right: 3px solid white;
 }
 nav li:last-child{
     border-right: none;
@@ -116,25 +118,29 @@ nav li:last-child{
     height: 20px;
     vertical-align: middle;
 }
+#logout img {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+}
  
-/*-----------------Continuare da qui----------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*--------------------------------------------------------*/
 /* gestione dei dispositivi */
 @media only screen and (min-width: 1024px) {
+   #logo{
+        float:left;
+        margin-left: 2px;
+        width: 200px;
+    }
+    nav{
+        float:left;
+        width: 800px;
+    }
+    #logout{
+        float:left;
+        width:300px;
+        height: 200px;
+        margin-left: 2px;
+    }
     #sidebar {
         float: left;
         width: 25%;

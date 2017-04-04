@@ -14,12 +14,14 @@
     </head>
     <body>
         <div id="page">
-            <!--header-->
-            <header>
-                <!--inseriamo il titolo della pagina-->
-                <div id="logo">
-                    <h1 id="titolo">NerdBook - Profilo</h1>
-                </div>
+            <!--testata, la testata conterrà header, navbar ed il div di logout-->
+            <div id="header">
+                <!--inseriamo il titolo della pagina nell'header-->
+                <header>
+                    <div id="logo">
+                        <h1 id="titolo">NerdBook</h1>
+                    </div>
+                </header>
                 <!--inseriamo una barra di navigazione che contenga i link alle altre pagine html che devono essere raggiunte-->
                 <nav id="linkPagine">
                     <ul>
@@ -29,17 +31,17 @@
                 </nav>
                 <!--inseriamo i dati utente per il logout-->
                 <div id="logout">
-                    <div class="fotoProfiloLogout">
-                        <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
-                    </div>
+                    <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
                     <p id="name">Nome Utente</p>
                     <form action="servlet.java" method="post">
                         <div id="pulsanteLogout">
-                          <button type="button">Logout</button>
+                            <button type="button">Logout</button>
                         </div>
                     </form>
                 </div>
-            </header>
+                <!--inseriamo un div clear-->
+                <div id="clear"></div>
+            </div>            
             <!--sidebar, inseriamo gli elementi per la ricerca di persone e Gruppi-->
             <div id="sidebar">
                 <!--barra ricerca-->
@@ -68,7 +70,7 @@
                                 <button type="submit" id="pulsanteAggiungiGruppi">
                                     <img src="../Asset/add.jpg" alt="aggiungi gruppi">
                                 </button>
-                        </div>
+                            </div>
                         </form>
                         <ul>
                             <li><a href="bacheca.html">Star Trek</a></li>

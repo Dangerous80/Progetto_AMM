@@ -14,33 +14,25 @@
     </head>
     <body>
         <div id="page">
-            <!--header-->
-            <header>
-                <!--inseriamo il titolo della pagina-->
-                <div id="logo">
-                    <h1 id="titolo">NerdBook - Login</h1>
-                </div>
+            <!--testata, la testata conterrà header e navbar-->
+            <div id="header">
+                <!--inseriamo il titolo della pagina nell'header-->
+                <header>
+                    <div id="logo">
+                        <h1 id="titolo">NerdBook</h1>
+                    </div>
+                </header>    
                 <!--inseriamo una barra di navigazione che contenga i link alle altre pagine html che devono essere raggiunte-->
                 <nav id="linkPagine">
                     <ul>
-                        <li><a href="descrizione.html">Descrizione di NerdBook</a></li>
-                        <li><a href="profilo.html">Profilo NerdBook</a></li>
-                        <li><a href="bacheca.html">Bacheca NerdBook</a></li>
+                       <li><a href="descrizione.html">Descrizione di NerdBook</a></li>
+                       <li><a href="profilo.html">Profilo NerdBook</a></li>
+                       <li><a href="bacheca.html">Bacheca NerdBook</a></li>
                     </ul>
                 </nav>
-                <!--inseriamo i dati utente per il logout-->
-                <div id="logout">
-                    <div class="fotoProfiloLogout">
-                        <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
-                    </div>
-                    <p id="name">Nome Utente</p>
-                    <form action="servlet.java" method="post">
-                        <div id="pulsanteLogout">
-                          <button type="button">Logout</button>
-                        </div>
-                    </form>
-                </div>
-            </header>
+                <!--inseriamo un div clear per fermare il float-->
+                <div id="clear"></div>
+            </div>
             <!--contenuto, inseriamo la form per richiedere userid e password all'utente che vuole effettuare l'accesso-->
             <div id="contenutoLogin">
                 <form action="servlet.java" method="post">
@@ -52,8 +44,7 @@
                         <input type="password" name="pswd" id="pswd" value=""><br>
                     </div>
                     <div id="pulsanteValidazione">
-                        <button type="submit">Accedi
-                        </button>
+                        <button type="submit">Accedi</button>
                     </div>
                 </form>
             </div>
