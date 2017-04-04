@@ -19,7 +19,7 @@
                 <!--inseriamo il titolo della pagina nell'header-->
                 <header>
                     <div id="logo">
-                        <h1>NerdBook</h1>
+                        <h1 id='titolo'>NerdBook</h1>
                     </div>
                 </header>
                 <!--inseriamo una barra di navigazione che contenga i link alle altre pagine html che devono essere raggiunte-->
@@ -99,26 +99,28 @@
                             <label for="tipoImmagine">Immagine</label>
                             <input type="radio" name="tipoPost" value="linkType" id="tipoLink">
                             <label for="tipoLink">Link</label>
-                        </div>
-                        <button type="submit" id="pulsanteCreaPost">Crea Post</button>
+                            <div id='creaPost'>
+                               <button type="submit" id="pulsanteCreaPost">Crea Post</button>
+                            </div>
+                        </div>    
                     </form>
                 </div>
                 <!--Inseriamo i post da visualizzare sulla Bacheca-->
                 <div id="Bacheca">
-                <!--post1 solo testuale-->
+                    <!--post1 solo testuale-->
                     <div id="post1">
                         <img title="fotoProfilo1" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
                         <p id="UserName1">Nome User 1</p>
                         <p id="testoPost1">Testo post 1</p>
                     </div>
-                <!--post2 testo e immagine-->
+                    <!--post2 testo e immagine-->
                     <div id="post2">
                         <img title="fotoProfilo2" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
                         <p id="UserName2">Nome User 2</p>
                         <p id="testoPost2">Testo post 2</p>
                         <img title="ImmaginePost2" alt="Immagine Post" src="../Asset/post.jpg">
                     </div>
-                <!--post3 testo e allegato-->
+                    <!--post3 testo e allegato-->
                     <div id="post3">
                         <img title="fotoProfilo3" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
                         <p id="UserName3">Nome User 3</p>

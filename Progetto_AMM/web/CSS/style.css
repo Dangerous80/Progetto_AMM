@@ -8,16 +8,14 @@ and open the template in the editor.
     Author     : Pisano Daniele
 */
 
-/*definiamo le caratteristiche del layout */
+/*definiamo le caratteristiche generali del layout */
 body {
     background-color: white;
-    font: 15px/25px "PT Sans" , Calibri, sans-serif;
+    font: 17px/25px "PT Sans" , Calibri, sans-serif;
 }
 #page{
     background-color:white;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;    
     margin-top: 20px;
     margin-bottom:20px;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
@@ -27,25 +25,30 @@ body {
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     color: white;
     border: 2px solid #111111;
-    height: 120px;
+    height: auto;
     width: auto;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+#sidebar, #contenutoBacheca, #infoUtente, #formNewPost, #Bacheca, #sommario, #contenutoDescrizione, #contenutoLogin, #contenutoProfilo{
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    height: auto;
+    width: auto;
+}
+#sommario li, #sidebar li, #linkPagine li {
+    list-style: none;
 }
 #linkPagine ul li a{
     color: white;
     text-decoration: none;
-    font: 20px/25px "PT Sans" , Calibri, sans-serif;
- }
+    font: 25px/25px "PT Sans" , Calibri, sans-serif;
+}
 #linkPagine ul li a:hover{
     font-weight: bold;
 }
 #linkPagine ul {
     padding-left: 0px;
-}
-h1#titolo{
-    color: white;
-    font: 30px/25px "PT Sans" , Calibri, sans-serif;
-    font-weight: bold;
-    text-align: center;
 }
 h1{
     color: #003366;
@@ -62,6 +65,11 @@ h3{
     font: 17px/25px "PT Sans" , Calibri, sans-serif;
     font-weight: bold;
 }
+h1#titolo{
+    color: white;
+    font: 30px/25px "PT Sans" , Calibri, sans-serif;
+    font-weight: bold;
+}
 a:link, a:visited{
     text-decoration: underline;
     color: #003366;
@@ -69,27 +77,70 @@ a:link, a:visited{
 a:hover{
     font-weight: bold;
 }
-
-/*-----------------Continuare da qui----------------------*/
-#sommario{
-    margin-left: 5px;
-    margin-right: 5px;
+/*----------definiamo le caratteristiche generali della pagina descrizione--------------*/
+#sommario, #contenutoDescrizione {
+    padding-left: 10px;
+    padding-bottom: 10px;
 }
-#contenutoDescrizione{
-    margin-left: 5px;
-    margin-right: 5px;
+#sommario ul{
+    padding-left: 0px;
 }
-#contenutoLogin{
-    margin-top: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    height: auto;
+#sommario ul li ul{
+    padding-left: 20px;
+}
+#sommario h1, #socialNetwork h1{
+    margin-top: 0px;
+    padding-top: 10px;
+}
+/*----------definiamo le caratteristiche generali della pagina login--------------------*/
+#contenutoLogin {
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 500px;
+}
+#contenutoLogin h1{
+    position: relative;
+    bottom: 70px;
+    left: 80px;
+}
+#inputDatiUtente{
+    border: 2px solid #003366;
+    position: relative;
+    bottom: 50px;
     width: 400px;
-    margin-bottom: 10px;
 }
-#sommario li, #sidebar li, #linkPagine li {
-    list-style: none;
+#inputDatiUtente label{
+    font-weight: bold;
+    padding-left: 45px;
 }
+#inputDatiUtente label:after{
+    content: '\A';
+    white-space: pre;
+} 
+#userid {
+    margin-left: 45px;
+    width: 300px;
+}
+#inputDatiUtente input:after{
+    content: '\A';
+    white-space: pre;
+} 
+#pswd {
+    margin-left: 45px;
+    width: 300px;
+}
+#pulsanteValidazione{
+    padding-top: 10px;
+    padding-left: 45px;
+    padding-bottom: 10px;
+}
+#pulsanteValidazione button{
+    width: 300px;
+}
+/*definiamo le caratteristiche generali della pagina Profilo*/
+/*-----------------Continuare da qui----------------------*/
+/*
+
 #linkPagine li {
     list-style-type: none;
     display: inline-block;
@@ -123,8 +174,8 @@ nav li:last-child{
     height: 40px;
     vertical-align: middle;
 }
- 
 /* gestione dei dispositivi */
+/*
 @media only screen and (min-width: 1024px) {
    #logo{
         float:left;
@@ -154,3 +205,4 @@ nav li:last-child{
         padding-left: 20px;
     }
 }
+*/

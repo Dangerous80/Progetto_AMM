@@ -35,16 +35,17 @@
             </div>
             <!--contenuto, inseriamo la form per richiedere userid e password all'utente che vuole effettuare l'accesso-->
             <div id="contenutoLogin">
+                <img src='../Asset/nerd.jpg' alt='Logo NerdBook'>
+                <h1>NerdBook</h1>
                 <form action="servlet.java" method="post">
                     <div id=inputDatiUtente>
-                        <h2>Inserire Userid e Password</h2>
-                        <label for="userid">Userid</label>
-                        <input type="text" name="userid" id="userid" value=""><br>
+                        <label for="userid">Nome Utente</label>
+                        <input type="text" name="userid" id="userid" value="text">
                         <label for="pswd">Password</label>
-                        <input type="password" name="pswd" id="pswd" value=""><br>
-                    </div>
-                    <div id="pulsanteValidazione">
-                        <button type="submit">Accedi</button>
+                        <input type="password" name="pswd" id="pswd" value="**********">
+                        <div id="pulsanteValidazione">
+                            <button type="submit">Accedi</button>
+                        </div>    
                     </div>
                 </form>
             </div>
