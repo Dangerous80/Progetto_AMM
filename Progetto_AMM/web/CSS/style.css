@@ -13,7 +13,7 @@ body {
     background-color: white;
     font: 17px/25px "PT Sans" , Calibri, sans-serif;
 }
-#page{
+#pageBacheca, #pageDescrizione, #pageProfilo, #pageLogin{
     background-color:white;
     width: 100%;    
     margin-top: 20px;
@@ -29,6 +29,8 @@ body {
     width: auto;
     padding-left: 10px;
     padding-bottom: 10px;
+    height: auto;
+    width: auto;
 }
 #sidebar, #contenutoBacheca, #infoUtente, #formNewPost, #Bacheca, #sommario, #contenutoDescrizione, #contenutoLogin, #contenutoProfilo{
     background-color: white;
@@ -49,6 +51,31 @@ body {
 }
 #linkPagine ul {
     padding-left: 0px;
+}
+#linkPagine ul li{
+    display: inline-block;
+    padding-right: 10px;
+    border-right: 2px solid white;
+}
+#linkPagine ul li:last-child{
+    border-right: none;
+}
+#logout{
+    height: 85px;
+}
+#logout img{
+    width: 50px;
+    height: 50px;
+}
+#logout p{
+    position: relative;
+    left: 60px;
+    bottom: 43px;
+}
+#logout form button{
+    position: relative;
+    left: 40px;
+    bottom: 50px;
 }
 h1{
     color: #003366;
@@ -78,7 +105,20 @@ a:hover{
     font-weight: bold;
 }
 /*----------definiamo le caratteristiche generali della pagina descrizione--------------*/
-#sommario, #contenutoDescrizione {
+/*sommario*/
+#sommario {
+    border-top: 1px solid #003366;
+    border-bottom: 1px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366; 
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+#contenutoDescrizione {
+    border-top: 1px solid #003366;
+    border-bottom: 2px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366; 
     padding-left: 10px;
     padding-bottom: 10px;
 }
@@ -93,7 +133,16 @@ a:hover{
     padding-top: 10px;
 }
 /*----------definiamo le caratteristiche generali della pagina login--------------------*/
+/*header*/
+#pageLogin #header #linkPagine{
+    display: none;
+}
+/*login*/
 #contenutoLogin {
+    border-top: 1px solid #003366;
+    border-bottom: 2px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366; 
     padding-top: 10px;
     padding-left: 10px;
     padding-bottom: 500px;
@@ -121,10 +170,6 @@ a:hover{
     margin-left: 45px;
     width: 300px;
 }
-#inputDatiUtente input:after{
-    content: '\A';
-    white-space: pre;
-} 
 #pswd {
     margin-left: 45px;
     width: 300px;
@@ -137,44 +182,292 @@ a:hover{
 #pulsanteValidazione button{
     width: 300px;
 }
-/*definiamo le caratteristiche generali della pagina Profilo*/
-/*-----------------Continuare da qui----------------------*/
-/*
-
-#linkPagine li {
-    list-style-type: none;
-    display: inline-block;
-    background-color: #003366;
-}
-nav li {
-    padding-left: 20px;
-    padding-right: 20px;
-    border-right: 3px solid white;
-}
-nav li:last-child{
-    border-right: none;
-}
-#sommario ul, #sidebar ul{
-    padding-left: 10px;
-    margin-top: 0px;
-    margin-left: 0px;
-}
+/*--------definiamo le caratteristiche generali delle pagine Profilo e Bacheca-----------*/
 #inputDatiUtente input:focus, #inputUtente input:focus, #inputUtente textArea:focus, #sidebar input:focus, #formNewPost textArea:focus, #formNewPost input:focus{
     outline:none;
     border-color: #0af;
     box-shadow: 0 0 10px #0af;
 }
+/*sidebar*/
+#sidebar {
+    border-top: 1px solid #003366;
+    border-bottom: 1px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    width: auto;
+}
+#sidebar ul{
+    padding-left: 0px;    
+}
+
+#sidebar ul li a{
+    padding-left: 50px;    
+}
+#ricerca #cerca{
+    height: 25px;
+}
 #sidebar button img{
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
+    width: 25px;
+    height: 25px;
 }
-#logout img {
-    width: 40px;
-    height: 40px;
-    vertical-align: middle;
+#ricerca #pulsanteRicerca{
+    height: 33px;
+    position: relative;
+    top: 7px;
+    right:6px; 
 }
-/* gestione dei dispositivi */
+#gruppi #pulsanteAggiungiGruppi{
+    height: 33px;
+    position: relative;
+    bottom: 48px;
+    left:140px; 
+}
+#gruppi ul li{
+    position: relative;
+    bottom: 30px;
+}
+/*--------definiamo le caratteristiche generali della pagina Profilo-----------*/
+#contenutoProfilo{
+    border-top: 1px solid #003366;
+    border-bottom: 2px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    height: 350px;
+    width: auto;
+}
+#contenutoProfilo img {
+    padding-top: 20px;
+    padding-left: 10px;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+#inputUtente {
+    padding-left: 10px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    height: 300px;;
+    width: 360px;
+    float: left;
+}
+#inputUtente label {
+    font-size: 20px;
+    font-weight: bold;
+}
+#inputUtente input, #inputUtente textarea {
+    width: 150px;
+}
+#inputUtente #nome{
+    padding-left: 0px;
+    padding-right: 140px; 
+} 
+#inputUtente #cognome{
+    padding-left: 0px;
+    padding-right: 112px;
+}
+#inputUtente #data{
+    padding-left: 0px;
+    padding-right: 135px;
+}
+#inputUtente #frase{
+    position: relative;
+    bottom: 8px;
+    padding-left: 0px;
+    padding-right: 4px;
+}
+#inputUtente #fraseProfilo{
+    position: relative;
+    top: 1px;
+}
+#inputUtente #foto{
+    position: relative;
+    top: 1px;
+    padding-left: 0px;
+    padding-right: 93px;
+}
+#inputUtente #fotoProfilo{
+    position: relative;
+    bottom: 1px;
+}
+#inputUtente #password{
+    padding-left: 0px;
+    padding-right: 111px;
+}
+#inputUtente #pswdUtente{
+    position: relative;
+    bottom: 1px;
+}
+#inputUtente #conferma{
+    padding-left: 0px;
+    padding-right: 25px;
+}
+#inputUtente #pswdConferma{
+    position: relative;
+    bottom: 1px;
+}
+#inputUtente #pulsanteInvio button{
+    position: relative;
+    top: 20px;
+    width: 352px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*--------definiamo le caratteristiche generali della pagina Bacheca-----------*/
+/*informazioni utente*/
+#infoUtente{
+    border-top: 1px solid #003366;
+    border-bottom: 1px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: 80px;
+    width: auto;
+}
+#infoUtente img{
+    float: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 50px;
+    height: 50px;
+}
+#infoUtente p{
+    float: left;
+    padding-top: 6px;
+    padding-left: 10px;
+}
+/*tipo post*/
+#formNewPost{
+    border-top: 1px solid #003366;
+    border-bottom: 1px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    width: auto;
+}
+#formNewPost #testoPost{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 127px;
+}
+#formNewPost #urlPost{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 127px;
+    width: 338px;
+}
+#formNewPost #tipoPost{
+    margin-top: 10px;
+    margin-left: 127px;
+    padding-bottom: 10px;
+}
+#formNewPost #creaPost{
+    margin-top: 10px;
+}
+#formNewPost #creaPost button{
+    width: 344px;
+}
+/*Bacheca*/
+#bacheca{
+    border-top: 1px solid #003366;
+    border-bottom: 1px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    width: auto;
+}
+#bacheca #post1{
+    border-top: 2px solid #003366;
+    border-bottom: 2px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 150px;
+    width: auto;
+}
+#bacheca #post2{
+    border-top: 2px solid #003366;
+    border-bottom: 2px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 450px;
+    width: auto;
+}   
+#bacheca #post3{
+    border-top: 2px solid #003366;
+    border-bottom: 2px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    height: auto;
+    width: auto;
+}   
+#bacheca #post1 img, #bacheca #post2 img, #bacheca #post3 img {
+    width: 60px;
+    height: 60px;
+}
+#bacheca #post2 #immagineAllegata{
+    width: 446px;
+    height: 350px;
+}
+#bacheca #post1 img, #bacheca #post1 #UserName1, #bacheca #post2 img, #bacheca #post2 #UserName1, #bacheca #post3 img, #bacheca #post3 #UserName1{
+    float: left;    
+}
+#bacheca #post1 #clear1, #bacheca #post2 #clear2, #bacheca #post3 #clear3{
+    clear: both;
+}
+#bacheca #post1 #userName1{
+    position: relative;
+    left: 10px;
+}
+#bacheca #post1 #testoPost1{
+    position: relative;
+    top: 10px;
+}
+#bacheca #post2 #userName2{
+    position: relative;
+    left: 10px;
+}
+#bacheca #post2 #testoPost2{
+    position: relative;
+    top: 10px;
+}
+#bacheca #post3 #userName3{
+    position: relative;
+    left: 10px;
+}
+#bacheca #post3 #testoPost3{
+    position: relative;
+    top: 10px;
+}
+/*----------------gestione delle visualizzazioni sui vari dispositivi--------------------*/
 /*
 @media only screen and (min-width: 1024px) {
    #logo{
@@ -204,5 +497,17 @@ nav li:last-child{
         padding-bottom: 20px;
         padding-left: 20px;
     }
+    #sidebar ul li #starTrek:before{
+        content: url(../Asset/StarTrek.png);
+    }
+    #sidebar ul li #starWars:before{
+        content: url(../Asset/StarWars.jpg);
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 1024px){
+
+}
+@media only screen and (max-width: 480px) {
+
 }
 */

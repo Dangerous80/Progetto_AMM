@@ -13,7 +13,7 @@
         <link href="../CSS/style.css" rel="stylesheet" type="text/css" media="screen" />
     </head>
     <body>
-        <div id="page">
+        <div id="pageProfilo">
             <!--testata, la testata conterrà header, navbar ed il div di logout-->
             <div id="header">
                 <!--inseriamo il titolo della pagina nell'header-->
@@ -25,8 +25,9 @@
                 <!--inseriamo una barra di navigazione che contenga i link alle altre pagine html che devono essere raggiunte-->
                 <nav id="linkPagine">
                     <ul>
-                       <li><a href="descrizione.html">Descrizione di NerdBook</a></li>
-                       <li><a href="login.html">NerdBook Login</a></li>
+                       <li><a href="descrizione.html">Descrizione</a></li>
+                       <li><a href="login.html">Login</a></li>
+                       <li><a href="bacheca.html">Bacheca</a></li>
                     </ul>
                 </nav>
                 <!--inseriamo i dati utente per il logout-->
@@ -81,28 +82,28 @@
             </div>    
             <!--contenuto, inseriamo la form per l'inserimento/modifica del profilo utente-->
             <div id="contenutoProfilo">
-                <form action="servlet.java" method="post">
-                    <div id="inputUtente">
-                        <h2>Inserisci le informazione del profilo</h2>                       
-                        <label for="nomeUtente">Inserire Nome Utente</label>
-                        <input type="text" name="nomeUtente" id="nomeUtente" value=""><br>                        
-                        <label for="cognomeUtente">Inserire Cognome Utente</label>
-                        <input type="text" name="cognomeUtente" id="cognomeUtente" value=""><br>                        
-                        <label for="fotoProfilo">Inserire Foto Profilo</label>
-                        <input type="url" name="fotoProfilo" id="fotoProfilo"><br>                        
-                        <label for="fraseProfilo">Inserire Frase Profilo</label>
-                        <textarea rows="2" cols="20" name="fraseProfilo" id="fraseProfilo"></textarea><br>                    
-                        <label for="dataNascita">Inserire Data Nascita</label>
-                        <input type="date" name="dataNascita" id="dataNascita"><br>                        
-                        <label for="pswdUtente">Inserire una Password</label>
-                        <input type="password" name="pswdUtente" id="pswdUtente" value=""><br>                        
-                        <label for="pswdConferma">Reinserire la Password per verifica</label>
-                        <input type="password" name="pswdConferma" id="pswdConferma" value=""><br>
+                <img title="fotoProfiloUtente" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
+                <div id="inputUtente">
+                    <form action="servlet.java" method="post">
+                        <label id="nome" for="nomeUtente">Nome</label>
+                        <input type="text" name="nomeUtente" id="nomeUtente" value="">                        
+                        <label id="cognome" for="cognomeUtente">Cognome</label>
+                        <input type="text" name="cognomeUtente" id="cognomeUtente" value="">
+                        <label id="data" for="dataNascita">Nato il</label>
+                        <input type="date" name="dataNascita" id="dataNascita"> 
+                        <label id="frase" for="fraseProfilo">Frase di presentazione</label>
+                        <textarea rows="1" cols="35" name="fraseProfilo" id="fraseProfilo"></textarea>                        
+                        <label id="foto" for="fotoProfilo">Foto Profilo</label>
+                        <input type="url" name="fotoProfilo" id="fotoProfilo">                        
+                        <label id="password" for="pswdUtente">Password</label>
+                        <input type="password" name="pswdUtente" id="pswdUtente" value="">                        
+                        <label id="conferma"for="pswdConferma">Conferma Password</label>
+                        <input type="password" name="pswdConferma" id="pswdConferma" value="">
                         <div id="pulsanteInvio">
-                           <button type="submit">Invia</button>
+                            <button type="submit">Aggiorna</button>
                         </div>
-                    </div>    
-                </form>
+                    </form>
+                </div>    
             </div>
         </div>
     </body>
