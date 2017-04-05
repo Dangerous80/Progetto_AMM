@@ -64,8 +64,8 @@ body {
     height: 85px;
 }
 #logout img{
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
 }
 #logout p{
     position: relative;
@@ -75,7 +75,7 @@ body {
 #logout form button{
     position: relative;
     left: 40px;
-    bottom: 50px;
+    bottom: 60px;
 }
 h1{
     color: #003366;
@@ -430,8 +430,8 @@ a:hover{
     width: auto;
 }   
 #bacheca #post1 img, #bacheca #post2 img, #bacheca #post3 img {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
 }
 #bacheca #post2 #immagineAllegata{
     width: 446px;
@@ -468,23 +468,40 @@ a:hover{
     top: 10px;
 }
 /*----------------gestione delle visualizzazioni sui vari dispositivi--------------------*/
-/*
 @media only screen and (min-width: 1024px) {
-   #logo{
-        float:left;
-        margin-left: 2px;
-        width: 200px;
+    #header{
+        width: auto;
+        height: 80px;
+        padding-bottom: 0px;
     }
-    nav{
+    #logo{
         float:left;
-        width: 800px;
+        padding-top: 15px;
+        margin-left: 60px;
+        width: 200px;
+        height: auto;
+        border-right: 2px solid white;
+        
+    }
+    #linkPagine{
+        float:left;
+        padding-top: 20px;
+        width: 1300px;
+        height: auto;
+    }
+    #linkPagine ul li a{
+        padding-left: 50px;
+        padding-right: 50px;
     }
     #logout{
         float:left;
-        width:300px;
-        height: 200px;
-        margin-left: 2px;
+        width:200px;
+        height: 100px;
+        padding-top: 5px;
+        padding-left: 100px;
     }
+}
+    /*
     #sidebar {
         float: left;
         width: 25%;
@@ -503,9 +520,38 @@ a:hover{
     #sidebar ul li #starWars:before{
         content: url(../Asset/StarWars.jpg);
     }
-}
 @media only screen and (min-width: 480px) and (max-width: 1024px){
-
+    #header{
+        width: auto;
+        height: 80px;
+        padding-bottom: 0px;
+    }
+    #logo{
+        float:left;
+        padding-top: 15px;
+        margin-left: 60px;
+        width: 10px;
+        height: auto;
+        border-right: 2px solid white;
+        
+    }
+    #linkPagine{
+        float:left;
+        padding-top: 20px;
+        width: 800px;
+        height: auto;
+    }
+    #linkPagine ul li a{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    #logout{
+        float:left;
+        width:200px;
+        height: 100px;
+        padding-top: 5px;
+        padding-left: 100px;
+    }
 }
 @media only screen and (max-width: 480px) {
 
