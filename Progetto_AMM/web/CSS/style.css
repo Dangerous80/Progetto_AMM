@@ -19,12 +19,14 @@ body {
     margin-top: 20px;
     margin-bottom:20px;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
+    border-radius: 10px 10px 10px 10px;
 }
 #header{
     background-color: #003366;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     color: white;
     border: 2px solid #111111;
+    border-radius: 10px 10px 0px 0px;
     height: auto;
     width: auto;
     padding-left: 10px;
@@ -41,8 +43,19 @@ body {
 #sommario li, #sidebar li, #linkPagine li {
     list-style: none;
 }
+#sidebar ul li a {
+    text-decoration: none;
+}    
 #linkPagine ul li a{
     color: white;
+    text-decoration: none;
+    font: 25px/25px "PT Sans" , Calibri, sans-serif;
+}
+#linkPagine ul li a.active{
+    color: #003366;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    border: 2px solid #003366;
     text-decoration: none;
     font: 25px/25px "PT Sans" , Calibri, sans-serif;
 }
@@ -54,11 +67,6 @@ body {
 }
 #linkPagine ul li{
     display: inline-block;
-    padding-right: 10px;
-    border-right: 2px solid white;
-}
-#linkPagine ul li:last-child{
-    border-right: none;
 }
 #logout{
     height: 85px;
@@ -69,7 +77,7 @@ body {
 }
 #logout p{
     position: relative;
-    left: 60px;
+    left: 50px;
     bottom: 43px;
 }
 #logout form button{
@@ -118,7 +126,8 @@ a:hover{
     border-top: 1px solid #003366;
     border-bottom: 2px solid #003366;
     border-left: 2px solid #003366; 
-    border-right: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    border-radius: 0px 0px 10px 10px;
     padding-left: 10px;
     padding-bottom: 10px;
 }
@@ -142,7 +151,8 @@ a:hover{
     border-top: 1px solid #003366;
     border-bottom: 2px solid #003366;
     border-left: 2px solid #003366; 
-    border-right: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    border-radius: 0px 0px 10px 10px;
     padding-top: 10px;
     padding-left: 10px;
     padding-bottom: 500px;
@@ -154,6 +164,7 @@ a:hover{
 }
 #inputDatiUtente{
     border: 2px solid #003366;
+    border-radius: 10px 10px 10px 10px;
     position: relative;
     bottom: 50px;
     width: 400px;
@@ -194,6 +205,7 @@ a:hover{
     border-bottom: 1px solid #003366;
     border-left: 2px solid #003366; 
     border-right: 2px solid #003366;
+    border-radius: 0px 0px 10px 10px;
     padding-top: 10px;
     padding-left: 10px;
     padding-bottom: 10px;
@@ -236,7 +248,7 @@ a:hover{
     border-bottom: 2px solid #003366;
     border-left: 2px solid #003366; 
     border-right: 2px solid #003366;
-    height: 350px;
+    height: 420px;
     width: auto;
 }
 #contenutoProfilo img {
@@ -353,20 +365,25 @@ a:hover{
     height: auto;
     width: auto;
 }
-#formNewPost #testoPost{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 127px;
+#formNewPost #contenutoPost{
+    height: 120px;
+    width: 450px;
 }
-#formNewPost #urlPost{
+#formNewPost #contenutoPost #testoPost{
     margin-top: 10px;
     margin-bottom: 10px;
-    margin-left: 127px;
+    margin-left: 70px;
+    width: 338px;
+}
+#formNewPost #contenutoPost #urlPost{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 70px;
     width: 338px;
 }
 #formNewPost #tipoPost{
     margin-top: 10px;
-    margin-left: 127px;
+    margin-left: 70px;
     padding-bottom: 10px;
 }
 #formNewPost #creaPost{
@@ -376,11 +393,15 @@ a:hover{
     width: 344px;
 }
 /*Bacheca*/
+#contenutoBacheca{
+    border-radius: 10px 10px 10px 10px;
+}
 #bacheca{
     border-top: 1px solid #003366;
-    border-bottom: 1px solid #003366;
+    border-bottom: 2px solid #003366;
     border-left: 2px solid #003366; 
     border-right: 2px solid #003366;
+    border-radius: 0px 0px 10px 10px;
     padding-top: 10px;
     padding-left: 10px;
     padding-bottom: 10px;
@@ -392,13 +413,14 @@ a:hover{
     border-bottom: 2px solid #003366;
     border-left: 2px solid #003366; 
     border-right: 2px solid #003366;
+    border-radius: 10px 10px 10px 10px;
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-    height: 150px;
+    height: auto;
     width: auto;
 }
 #bacheca #post2{
@@ -406,13 +428,14 @@ a:hover{
     border-bottom: 2px solid #003366;
     border-left: 2px solid #003366; 
     border-right: 2px solid #003366;
+    border-radius: 10px 10px 10px 10px;
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 10px;
     margin-right: 10px;
     margin-bottom: 10px;
-    height: 450px;
+    height: auto;
     width: auto;
 }   
 #bacheca #post3{
@@ -420,6 +443,7 @@ a:hover{
     border-bottom: 2px solid #003366;
     border-left: 2px solid #003366; 
     border-right: 2px solid #003366;
+    border-radius: 10px 10px 10px 10px;
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
@@ -433,94 +457,147 @@ a:hover{
     width: 50px;
     height: 50px;
 }
-#bacheca #post2 #immagineAllegata{
-    width: 446px;
-    height: 350px;
-}
-#bacheca #post1 img, #bacheca #post1 #UserName1, #bacheca #post2 img, #bacheca #post2 #UserName1, #bacheca #post3 img, #bacheca #post3 #UserName1{
-    float: left;    
-}
-#bacheca #post1 #clear1, #bacheca #post2 #clear2, #bacheca #post3 #clear3{
-    clear: both;
-}
-#bacheca #post1 #userName1{
+#bacheca #post1 #userName1, #bacheca #post2 #userName2, #bacheca #post3 #userName3{
     position: relative;
-    left: 10px;
+    left: 60px;
+    bottom: 60px;
 }
-#bacheca #post1 #testoPost1{
+#bacheca #post1 #testoPost1, #bacheca #post2 #testoPost2, #bacheca #post3 #testoPost3{
     position: relative;
-    top: 10px;
-}
-#bacheca #post2 #userName2{
-    position: relative;
-    left: 10px;
-}
-#bacheca #post2 #testoPost2{
-    position: relative;
-    top: 10px;
-}
-#bacheca #post3 #userName3{
-    position: relative;
-    left: 10px;
-}
-#bacheca #post3 #testoPost3{
-    position: relative;
-    top: 10px;
+    bottom: 40px;
 }
 /*----------------gestione delle visualizzazioni sui vari dispositivi--------------------*/
 @media only screen and (min-width: 1024px) {
+    #pageBacheca, #pageDescrizione, #pageProfilo, #pageLogin{
+    width: 1250px;
+    height: 1000px;;
+    margin-left: auto;
+    margin-right: auto;    
+    background-color: white;
+    }
+    /*--Testata--*/
     #header{
-        width: auto;
+        float: left;
+        width: 1236px;
         height: 80px;
         padding-bottom: 0px;
     }
     #logo{
         float:left;
         padding-top: 15px;
-        margin-left: 60px;
-        width: 200px;
+        padding-right: 40px;
+        margin-left: 10px;
+        width: 151px;
         height: auto;
         border-right: 2px solid white;
-        
     }
     #linkPagine{
         float:left;
+        padding-left: 30px;
         padding-top: 20px;
-        width: 1300px;
+        width: 750px;
         height: auto;
+    }
+    #logout{
+        float:left;
+        width:100px;
+        height: 100px;
+        padding-top: 5px;
+        padding-left: 100px;
     }
     #linkPagine ul li a{
         padding-left: 50px;
         padding-right: 50px;
     }
-    #logout{
+    /*--Pagina Descrizione--*/
+    #sommario{
         float:left;
-        width:200px;
-        height: 100px;
-        padding-top: 5px;
+        width: 1236px;
+    }
+    #contenutoDescrizione{
+        float: left;
+        width: 1236px;
+    }
+     /*--Pagina Login--*/
+    #contenutoLogin{
+        float: left;
+        width: 846px;
+        height: 313px;
+        padding-top: 100px;
+        padding-left: 400px;
+    }
+    /*--Pagina Profilo--*/
+    #pageProfilo #sidebar{
+        float: left;
+        width: 16%;
+        height: 893px;
+        border-bottom: 2px solid#003366;
+        border-radius: 0px 0px 0px 10px;
+    }
+    #contenutoProfilo{
+        float: left;
+        width: 571px;;
+        height: 913px;
+        border-radius: 0px 0px 10px 0px;
+        padding-left: 100px;
+        padding-right: 361px;
+    }
+    #inputUtente{
         padding-left: 100px;
     }
-}
-    /*
-    #sidebar {
+    /*--Pagina Bacheca--*/
+    #pageBacheca #sidebar{
         float: left;
-        width: 25%;
-        padding-left: 5px;
-        padding-top:10px;
+        width: 16%;
+        height: 1410px;
+        border-bottom: 2px solid#003366;
+        border-radius: 0px 0px 0px 10px;
     }
-    #contenutoProfilo, #contenutoBacheca{
-        margin-left: 25%;
-        margin-top: 20px;
-        padding-bottom: 20px;
-        padding-left: 20px;
+    #contenutoBacheca{
+        float: left;
+        width:1036px;
+        height: auto;
     }
-    #sidebar ul li #starTrek:before{
-        content: url(../Asset/StarTrek.png);
+    #bacheca{
+        width:auto;
+        height: auto;
+        border-radius: 0px 0px 10px 0px;
     }
-    #sidebar ul li #starWars:before{
-        content: url(../Asset/StarWars.jpg);
+    #infoUtente{
+        width:auto;
+        height: 80px;
     }
+    #formNewPost{
+        width:auto;
+        height: 201px;
+        padding-left: 280px;
+    }
+    #post1{
+        width:auto;
+        height: 158px;
+    }
+    #post2{
+        width:auto;
+        height: 653px;
+    }
+    #bacheca #post2 #immagineAllegata{
+        padding-left: 100px;
+        width: 800px;
+        height: 489px;
+    }
+    #post3{
+        width:auto;
+        height: 180px;
+    }
+}
+/*
 @media only screen and (min-width: 480px) and (max-width: 1024px){
+    #pageBacheca, #pageDescrizione, #pageProfilo, #pageLogin{
+        width: 950px;
+        margin-left: auto;
+        margin-right: auto;    
+        background-color: white;
+    }
     #header{
         width: auto;
         height: 80px;
@@ -554,6 +631,20 @@ a:hover{
     }
 }
 @media only screen and (max-width: 480px) {
-
+    #pageBacheca, #pageDescrizione, #pageProfilo, #pageLogin{
+        width: 450px;
+        margin-left: auto;
+        margin-right: auto;    
+        background-color: white;
+    }
+    #header{
+        width: auto;
+        height: 80px;
+        padding-bottom: 0px;
+    }
+    #bacheca #post2 #immagineAllegata{
+        width: 400px;
+        height: 340px;
+    }
 }
 */
