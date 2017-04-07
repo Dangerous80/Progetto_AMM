@@ -58,9 +58,9 @@
                     <li id="persone">
                         <h2>Persone</h2>
                         <ul>
-                            <li><img id="fotoPersona1" src="../Asset/images.jpg" alt="foto"><a href="bacheca.html">Pinco Pallino</a></li>
-                            <li><img id="fotoPersona2" src="../Asset/images.jpg" alt="foto"><a href="bacheca.html">Riccardo Rossi</a></li>
-                            <li><img id="fotoPersona3" src="../Asset/images.jpg" alt="foto"><a href="bacheca.html">Mario Bianchi</a></li>
+                            <li><a href="bacheca.html"><img id="fotoPersona1" src="../Asset/images.jpg" alt="foto">Pinco Pallino</a></li>
+                            <li><a href="bacheca.html"><img id="fotoPersona2" src="../Asset/images.jpg" alt="foto">Riccardo Rossi</a></li>
+                            <li><a href="bacheca.html"><img id="fotoPersona3" src="../Asset/images.jpg" alt="foto">Mario Bianchi</a></li>
                         </ul>           
                     </li>
                     <li id="gruppi">
@@ -73,8 +73,8 @@
                             </div>
                         </form>
                         <ul>
-                            <li><img id="immagineGruppo1" src="../Asset/StarTrek.png" alt="foto"><a id="starTrek" href="bacheca.html">Star Trek</a></li>
-                            <li><img id="immagineGruppo2" src="../Asset/StarWars.jpg" alt="foto"><a id="starWars" href="bacheca.html">Star Wars</a></li>
+                            <li><a id="starTrek" href="bacheca.html"><img id="immagineGruppo1" src="../Asset/StarTrek.png" alt="foto">Star Trek</a></li>
+                            <li><a id="starWars" href="bacheca.html"><img id="immagineGruppo2" src="../Asset/StarWars.jpg" alt="foto">Star Wars</a></li>
                         </ul>           
                     </li>
                 </ul>
@@ -92,8 +92,12 @@
                 <div id="formNewPost">
                     <form action="servlet.java" method="post">
                         <div id="contenutoPost">
-                            <textarea name="testoPost" id="testoPost" rows="2" cols="40"></textarea><br>
-                            <input type="url" name="urlPost" value="" id="urlPost">
+                            <div id="areaTesto">
+                                <textarea name="testoPost" id="testoPost" rows="2" cols="40"></textarea><br>
+                            </div>
+                            <div id="areaUrl">
+                                <input type="url" name="urlPost" value="" id="urlPost">
+                            </div>    
                         </div>
                         <div id="tipoPost">
                             <input type="radio" name="tipoPost" value="imgType" id="tipoImmagine">
@@ -112,7 +116,7 @@
                     <div id="post1">
                         <img title="fotoProfilo1" alt="Foto Profilo" src="../Asset/Foto_Profilo.jpg">
                         <p id="userName1">User 1</p>
-                        <p id="testoPost1">Testo post 1</p>
+                        <p id="testoPost1">Testo Post 1</p>
                     </div>
                     <!--post2 testo e immagine-->
                     <div id="post2">
