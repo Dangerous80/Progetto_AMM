@@ -16,7 +16,6 @@ body {
 #pageBacheca, #pageDescrizione, #pageProfilo, #pageLogin{
     background-color:white;
     width: 100%;    
-    margin-top: 20px;
     margin-bottom:20px;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
     border-radius: 10px 10px 10px 10px;
@@ -80,9 +79,10 @@ body {
     left: 50px;
     bottom: 43px;
 }
-#logout form button{
+#logout #pulsanteLogout #linkLogout{
+    color: white;
     position: relative;
-    left: 40px;
+    left: 55px;
     bottom: 60px;
 }
 h1{
@@ -489,6 +489,7 @@ a:hover{
         background-color: white;
     }
     /*--Testata--*/
+    
     #header{
         float: left;
         width: 986px;
@@ -533,10 +534,13 @@ a:hover{
         width: 986px;
     }
      /*--Pagina Login--*/
+     #pageLogin{
+        height: 800px; 
+     } 
     #contenutoLogin{
         float: left;
         width: 680px;
-        height: 313px;
+        height: 114px;
         padding-top: 100px;
         padding-left: 316px;
     }
@@ -643,16 +647,15 @@ a:hover{
     #logo{
         float:left;
         padding-top: 15px;
-        padding-right: 0px;
-        padding-left: 0px;
-        margin-left: 10px;
+        padding-right: 11px;
         width: 185px;
         height: auto;
+        text-align: center;
         border-right: 2px solid white;
     }
     #linkPagine{
         float:left;
-        padding-left: 5px;
+        padding-left: 2px;
         padding-top: 20px;
         width: 240px;
         height: auto;
@@ -665,8 +668,8 @@ a:hover{
         padding-left: 0px;
     }
     #linkPagine ul li a{
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 4px;
+        padding-right: 4px;
     }
     /*--Pagina Descrizione--*/
     #sommario{
@@ -683,8 +686,8 @@ a:hover{
         width: 280px;
         height: 313px;
         padding-top: 100px;
-        padding-left: 108px;
-        padding-right: 208px;
+        padding-left: 100px;
+        padding-right: 216px;
         padding-bottom: 0px;
     }
     /*--Pagina Profilo--*/
@@ -702,6 +705,9 @@ a:hover{
         border-bottom: 2px solid#003366;
         border-radius: 0px 0px 0px 10px;
     }
+    #pageProfilo #sidebar button{
+        width: 42px;
+    }
     #contenutoProfilo{
         float: left;
         width: 255px;;
@@ -714,7 +720,7 @@ a:hover{
         padding-top: 40px;
     }    
     #inputUtente{
-        padding-top: 100px;
+        padding-top: 80px;
         padding-left: 20px;
     }
     /*--Pagina Bacheca--*/
@@ -727,6 +733,9 @@ a:hover{
         height: 1076px;
         border-bottom: 2px solid#003366;
         border-radius: 0px 0px 0px 10px;
+    }
+    #pageBacheca #sidebar button{
+        width: 42px;
     }
     #contenutoBacheca{
         float: left;
@@ -812,18 +821,33 @@ a:hover{
         height: 150px;
         padding-bottom: 0px;
     }
-    #linkPagine{
+    #pageDescrizione #logo, #pageProfilo #logo, #pageBacheca #logo{
+        position: relative;
+        left: 50px;
+    }
+    #pageProfilo #linkPagine, #pageBacheca #linkPagine{
         position: relative;
         bottom: 44px;
-        left: 150px;
+        left: 220px;
     } 
-    #logout{
+    #pageDescrizione #linkPagine{
         position: relative;
+        bottom: 44px;
+        left: 300px;
+    } 
+    #pageDescrizione #logout{
+        position: relative;
+        left: 140px;
+        bottom: 44px;
+    }
+    #pageBacheca #logout, #pageProfilo #logout{
+        position: relative;
+        left: 140px;
         bottom: 44px;
     }
     /*--Pagina Login--*/
     #pageLogin #header{
-        height: 80px;
+        height: 100px;
     }    
     #contenutoLogin{
         width: auto;
