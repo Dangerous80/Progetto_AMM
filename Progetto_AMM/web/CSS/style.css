@@ -17,15 +17,13 @@ body {
     background-color:white;
     width: 100%;    
     margin-bottom:20px;
-    box-shadow: 0 0 10px rgba(0,0,0,.2);
-    border-radius: 10px 10px 10px 10px;
 }
 #header{
     background-color: #003366;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
     color: white;
     border: 2px solid #111111;
     border-radius: 10px 10px 0px 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
     height: auto;
     width: auto;
     padding-left: 10px;
@@ -366,8 +364,8 @@ a:hover{
     width: auto;
 }
 #formNewPost #contenutoPost{
-    height: auto;/*120px*/
-    width: auto;/*450px*/
+    height: auto;
+    width: auto;
 }
 #formNewPost #contenutoPost #testoPost{
     margin-top: 10px;
@@ -379,14 +377,12 @@ a:hover{
 #formNewPost #contenutoPost #areaTesto{
     background-image: url(../Asset/Stilo.png);
     background-repeat: no-repeat;
-    background-position-y: 10px;
-    background-position-x: -5px;
+    background-position: center left;
 }
 #formNewPost #contenutoPost #areaUrl{
     background-image: url(../Asset/allegato.png);
     background-repeat: no-repeat;
-    background-position-y: 0px;
-    background-position-x: 0px;
+    background-position: center left;
 }
 #formNewPost #contenutoPost #urlPost{
     margin-top: 10px;
@@ -489,7 +485,6 @@ a:hover{
         background-color: white;
     }
     /*--Testata--*/
-    
     #header{
         float: left;
         width: 986px;
@@ -628,6 +623,26 @@ a:hover{
         height: 100px;
         overflow: scroll;
     }
+    #pageBacheca #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 10px;
+    }
+    #pageProfilo #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 10px;
+    }
+    #pageDescrizione #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 910px;
+    }
+    #pageLogin #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 10px;
+    }
 }
 @media only screen and (min-width: 480px) and (max-width: 1024px){
    #pageBacheca, #pageDescrizione, #pageProfilo, #pageLogin{
@@ -754,14 +769,17 @@ a:hover{
         padding-left: 0px;
         padding-bottom: 15px;
     }
+    #formNewPost #contenutoPost{
+        margin-left: 2px;
+    }
     #formNewPost #contenutoPost #areaTesto{
-        background-position-x: 0px;
+        background-position: center left;
     }
     #formNewPost #contenutoPost #areaTesto #testoPost{
         width: 320px;
     }
     #formNewPost #contenutoPost #areaUrl{
-        background-position-x: 5px;
+        background-position: center left;
     }
     #formNewPost #contenutoPost #areaUrl #urlPost{
         width: 320px;
@@ -807,6 +825,26 @@ a:hover{
         width:auto;
         height: 50px;
         overflow: scroll;
+    }
+    #pageBacheca #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 10px;
+    }
+    #pageProfilo #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 10px;
+    }
+    #pageDescrizione #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 508px;
+    }
+    #pageLogin #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 10px;
     }
 } 
 @media only screen and (max-width: 480px) {
@@ -919,5 +957,25 @@ a:hover{
     #bacheca #post2 #immagineAllegata{
         width: 200px;
         height: 180px;
+    }
+    #pageDescrizione #icoCss img{
+        position: relative;
+        bottom: 2450px;
+        left: 355px;
+    }
+    #pageBacheca #icoCss img{
+        position: relative;
+        bottom: 1826px;
+        left: 355px;
+    }
+    #pageLogin #icoCss img{
+        position: relative;
+        bottom: 352px;
+        left: 355px;
+    }
+    #pageProfilo #icoCss img{
+        position: relative;
+        bottom: 1047px;
+        left: 355px;
     }
 }
