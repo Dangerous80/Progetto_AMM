@@ -529,7 +529,7 @@ a:hover{
         width: 986px;
     }
      /*--Pagina Login--*/
-     #pageLogin{
+    #pageLogin{
         height: 800px; 
      } 
     #contenutoLogin{
@@ -546,6 +546,9 @@ a:hover{
         height: 893px;
         border-bottom: 2px solid#003366;
         border-radius: 0px 0px 0px 10px;
+    }
+    #pageProfilo #sidebar button{
+        width: 42px;
     }
     #contenutoProfilo{
         float: left;
@@ -568,6 +571,9 @@ a:hover{
         height: 1532px;
         border-bottom: 2px solid#003366;
         border-radius: 0px 0px 0px 10px;
+    }
+    #pageBacheca #sidebar button{
+        width: 42px;
     }
     #contenutoBacheca{
         float: left;
