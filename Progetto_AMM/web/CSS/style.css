@@ -964,24 +964,16 @@ a:hover{
         width: 200px;
         height: 180px;
     }
-    #pageDescrizione #icoCss img{
-        position: relative;
-        bottom: 2450px;
-        left: 355px;
+    #pageDescrizione #icoCss {
+        display: none;
     }
-    #pageBacheca #icoCss img{
-        position: relative;
-        bottom: 1826px;
-        left: 355px;
+    #pageBacheca #icoCss {
+        display: none;
+    }    
+    #pageLogin #icoCss {
+        display: none;;
     }
-    #pageLogin #icoCss img{
-        position: relative;
-        bottom: 352px;
-        left: 355px;
-    }
-    #pageProfilo #icoCss img{
-        position: relative;
-        bottom: 1047px;
-        left: 355px;
+    #pageProfilo #icoCss {
+        display: none;
     }
 }
