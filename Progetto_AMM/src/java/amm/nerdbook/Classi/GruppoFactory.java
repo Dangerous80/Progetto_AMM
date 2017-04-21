@@ -36,7 +36,7 @@ public class GruppoFactory {
         gruppo1.setId(0);
         gruppo1.setNomeGruppo("Star Trek");
         gruppo1.setUrlImmagineGruppo("../Asset/StarTrek.png");
-        gruppo1.setCreatoreGruppo(nerdFactory.getNerdById(0));
+        gruppo1.setCreatoreGruppo(nerdFactory.getNerdById(3));
         
         //Star Wars
         Gruppo gruppo2 = new Gruppo();
@@ -50,7 +50,7 @@ public class GruppoFactory {
         gruppo3.setId(2);
         gruppo3.setNomeGruppo("Dungeons & Dragons");
         gruppo3.setUrlImmagineGruppo("../Asset/dungeons&dragons.jpg");
-        gruppo3.setCreatoreGruppo(nerdFactory.getNerdById(0));
+        gruppo3.setCreatoreGruppo(nerdFactory.getNerdById(5));
         
         listaGruppi.add(gruppo1);
         listaGruppi.add(gruppo2);

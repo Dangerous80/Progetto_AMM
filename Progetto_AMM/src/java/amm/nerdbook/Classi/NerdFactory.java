@@ -79,11 +79,22 @@ public class NerdFactory {
         nerd5.setUrlFotoProfilo("../Asset/Leila.jpg");
         nerd5.setPassword("12345");
         
+        //Marco Zuddas Artorias D&G
+        Nerd nerd6 = new Nerd();
+        nerd5.setId(5);
+        nerd5.setNome("Marco");
+        nerd5.setCognome("Zuddas");
+        nerd5.setDataNascita("11/07/1981");
+        nerd5.setFrasePresentazione("Viva i draghi");
+        nerd5.setUrlFotoProfilo("../Asset/artorias.jpg");
+        nerd5.setPassword("12345");
+        
         listaNerd.add(nerd1);
         listaNerd.add(nerd2);
         listaNerd.add(nerd3);
         listaNerd.add(nerd4);
         listaNerd.add(nerd5);
+        listaNerd.add(nerd6);
     }
     //inseriamo un metodo che ci consenta di reperire le info sull'utente mediante il suo id
     public Nerd getNerdById(int id) {

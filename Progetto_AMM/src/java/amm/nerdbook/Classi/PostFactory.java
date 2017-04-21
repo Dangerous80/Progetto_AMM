@@ -73,7 +73,7 @@ public class PostFactory {
         post5.setId(4);
         post5.setAutore(nerdFactory.getNerdById(4));
         post5.setGruppo(gruppoFactory.getGruppoById(2));
-        post5.setTesto("Sapete solo giocare");
+        post5.setTesto("Uscite un pochino di casa");
         post5.setPostSend(Post.Send.GROUP);
         
         listaPost.add(post1);
