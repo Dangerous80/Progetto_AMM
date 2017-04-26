@@ -76,11 +76,31 @@ public class PostFactory {
         post5.setTesto("Uscite un pochino di casa");
         post5.setPostSend(Post.Send.GROUP);
         
+        //Post 6 con Url da Spock a Kirk 
+        Post post6 = new Post();
+        post6.setId(5);
+        post6.setAutore(nerdFactory.getNerdById(3));
+        post6.setUser(nerdFactory.getNerdById(2));
+        post6.setTesto("Ti mando l'url di cui tiparlavo");
+        post6.setContenuto("www.stic.it/");
+        post6.setPostType(Post.Type.URL);
+        
+        //Post 7 con immagine da Spock a Kirk 
+        Post post7 = new Post();
+        post7.setId(7);
+        post7.setAutore(nerdFactory.getNerdById(3));
+        post7.setUser(nerdFactory.getNerdById(2));
+        post7.setTesto("guarda che bella locandina");
+        post7.setContenuto("../Asset/StarTrekOriginal.jpg");
+        post7.setPostType(Post.Type.IMAGE);
+        
         listaPost.add(post1);
         listaPost.add(post2);
         listaPost.add(post3);
         listaPost.add(post4);
         listaPost.add(post5);
+        listaPost.add(post6);
+        listaPost.add(post7);
     }
     
     //definiamo un metodo che ci consenta di accedere ai vari post tramite il loro id
@@ -106,7 +126,7 @@ public class PostFactory {
         return listaPost;
     }
     
-    //definiamo un metodo che ci consenta di accedere ai vari post tramite l'id ddi un determinato gruppo
+    //definiamo un metodo che ci consenta di accedere ai vari post tramite l'id di un determinato gruppo
     public List getPostList(Gruppo grp) {
 
         List<Post> listaPost = new ArrayList<Post>();
