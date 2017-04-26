@@ -111,6 +111,10 @@ a:hover{
     font-weight: bold;
 }
 /*----------definiamo le caratteristiche generali della pagina descrizione--------------*/
+/*header*/
+#pageDescrizione #header #logout{
+    display: none;
+}
 /*sommario*/
 #sommario {
     border-top: 1px solid #003366;
@@ -417,7 +421,7 @@ a:hover{
     height: auto;
     width: auto;
 }
-#bacheca #post1{
+#bacheca .post{
     border-top: 2px solid #003366;
     border-bottom: 2px solid #003366;
     border-left: 2px solid #003366; 
@@ -432,46 +436,16 @@ a:hover{
     height: auto;
     width: auto;
 }
-#bacheca #post2{
-    border-top: 2px solid #003366;
-    border-bottom: 2px solid #003366;
-    border-left: 2px solid #003366; 
-    border-right: 2px solid #003366;
-    border-radius: 10px 10px 10px 10px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    height: auto;
-    width: auto;
-}   
-#bacheca #post3{
-    border-top: 2px solid #003366;
-    border-bottom: 2px solid #003366;
-    border-left: 2px solid #003366; 
-    border-right: 2px solid #003366;
-    border-radius: 10px 10px 10px 10px;
-    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
-    margin-right: 10px;
-    margin-bottom: 0px;
-    height: auto;
-    width: auto;
-}   
-#bacheca #post1 img, #bacheca #post2 img, #bacheca #post3 img {
+#bacheca .post img{
     width: 50px;
     height: 50px;
 }
-#bacheca #post1 #userName1, #bacheca #post2 #userName2, #bacheca #post3 #userName3{
+#bacheca .post .userName{
     position: relative;
     left: 60px;
     bottom: 60px;
 }
-#bacheca #post1 #testoPost1, #bacheca #post2 #testoPost2, #bacheca #post3 #testoPost3{
+#bacheca .post .testoPost{
     position: relative;
     bottom: 40px;
 }
@@ -591,44 +565,22 @@ a:hover{
         padding-left: 160px;
     }
     /*--dimensione dei post--*/
-    #post1{
+    .post{
         width: auto;
         height: auto;
     }
-    #post1 #testoPost1{
+    .post .testoPost{
         border-radius: 5px 5px 5px 5px;
         border: 1px solid #003366;
         width:auto;
         height: 100px;
         overflow: scroll;
     }
-    #post2{
-        width:auto;
-        height: auto;
-    }
-    #post2 #testoPost2{
-        border-radius: 5px 5px 5px 5px;
-        border: 1px solid #003366;
-        width:auto;
-        height: 100px;
-        overflow: scroll;
-    }
-    #bacheca #post2 #immagineAllegata{
+    #bacheca .post .immagineAllegata{
         padding-left: 100px;
         width: 550px;
-        height: 380px;
-    }
-    #post3{
-        width: auto;
-        height: auto;
-    }
-    #post3 #testoPost3{
-        border-radius: 5px 5px 5px 5px;
-        border: 1px solid #003366;
-        width:auto;
-        height: 100px;
-        overflow: scroll;
-    }
+        height: 370px;
+    }    
     #pageBacheca #icoCss img{
         position: relative;
         bottom: 40px;
@@ -794,44 +746,22 @@ a:hover{
         width: 328px;
     }
     /*--dimensione dei post--*/
-    #post1{
+    .post{
         width: auto;
         height: auto;
     }
-    #post1 #testoPost1{
+    .post .testoPost{
         border-radius: 5px 5px 5px 5px;
         border: 1px solid #003366;
         width:auto;
         height: 50px;
         overflow: scroll;
     }
-    #post2{
-        width:auto;
-        height: auto;
-    }
-    #post2 #testoPost2{
-        border-radius: 5px 5px 5px 5px;
-        border: 1px solid #003366;
-        width:auto;
-        height: 50px;
-        overflow: scroll;
-    }
-    #bacheca #post2 #immagineAllegata{
+    #bacheca .post .immagineAllegata{
         padding-left: 100px;
         width: 150px;
-        height: 100px;
-    }
-    #post3{
-        width: auto;
-        height: auto;
-    }
-    #post3 #testoPost3{
-        border-radius: 5px 5px 5px 5px;
-        border: 1px solid #003366;
-        width:auto;
-        height: 50px;
-        overflow: scroll;
-    }
+        height: 90px;
+    }    
     #pageBacheca #icoCss img{
         position: relative;
         bottom: 40px;
@@ -922,45 +852,19 @@ a:hover{
         border-radius: 0px 0px 0px 0px;
     }
     /*--dimensione dei post--*/
-    #post1{
+    .post{
         width: auto;
         height: auto;
     }
-    #post1 #testoPost1{
+    .post .testoPost{
         border-radius: 5px 5px 5px 5px;
         border: 1px solid #003366;
         width:auto;
         height: 50px;
         overflow: scroll;
-    }
-    #post2{
-        width:auto;
-        height: auto;
-    }
-    #post2 #testoPost2{
-        border-radius: 5px 5px 5px 5px;
-        border: 1px solid #003366;
-        width:auto;
-        height: 50px;
-        overflow: scroll;
-    }
-    #bacheca #post2 #immagineAllegata{
+    }    
+    #bacheca .post .immagineAllegata{
         padding-left: 100px;
-        width: 150px;
-        height: 100px;
-    }
-    #post3{
-        width: auto;
-        height: auto;
-    }
-    #post3 #testoPost3{
-        border-radius: 5px 5px 5px 5px;
-        border: 1px solid #003366;
-        width:auto;
-        height: 50px;
-        overflow: scroll;
-    }
-    #bacheca #post2 #immagineAllegata{
         width: 200px;
         height: 180px;
     }
