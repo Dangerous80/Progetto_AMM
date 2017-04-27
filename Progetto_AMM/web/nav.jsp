@@ -11,7 +11,7 @@
 <nav id="linkPagine">
     <c:if test="${page=='bacheca'}">
         <ul>
-            <li><a href="profilo.html">Profilo</a></li>
+            <li><a href="Profilo">Profilo</a></li>
             <li><a class="active" href="Bacheca">Bacheca</a></li>
         </ul>
     </c:if> 
@@ -22,14 +22,12 @@
     </c:if> 
     <c:if test="${page=='login'}">
         <ul>
-            <li><a href="descrizione.html">Descrizione</a></li>
-            <li><a href="profilo.html">Profilo</a></li>
-            <li><a href="Bacheca">Bacheca</a></li>
+            <li><a href="descrizione.jsp">Descrizione</a></li>
         </ul> 
     </c:if>
     <c:if test="${page=='profilo'}">
         <ul>
-            <li><a class="active" href="profilo.html">Profilo</a></li>
+            <li><a class="active" href="Profilo">Profilo</a></li>
             <li><a href="Bacheca">Bacheca</a></li>
         </ul>
     </c:if>

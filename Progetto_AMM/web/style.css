@@ -456,7 +456,7 @@ a:hover{
 @media only screen and (min-width: 1024px) {
     #pageBacheca, #pageDescrizione, #pageProfilo, #pageLogin{
         width: 1000px;
-        height: 1550px;;
+        height: 1000px;;
         margin-left: auto;
         margin-right: auto;    
         background-color: white;
@@ -652,10 +652,12 @@ a:hover{
     /*--Pagina Descrizione--*/
     #sommario{
         float:left;
+        margin-left: -12px;
         width: 586px;
     }
     #contenutoDescrizione{
         float: left;
+        margin-left: -12px;
         width: 586px;
     }
      /*--Pagina Login--*/
@@ -799,6 +801,15 @@ a:hover{
         width: auto;
         height: 150px;
         padding-bottom: 0px;
+    }
+    #sommario{
+        margin-top: 58px;
+        margin-left: -12px;
+        margin-right: -2px;
+    }
+    #contenutoDescrizione{
+        margin-left: -12px;
+        margin-right: -2px;
     }
     #pageDescrizione #logo, #pageProfilo #logo, #pageBacheca #logo{
         position: relative;
