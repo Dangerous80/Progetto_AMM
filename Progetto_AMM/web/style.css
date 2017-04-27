@@ -1,0 +1,888 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 27-mar-2017, 8.46.47
+    Author     : Pisano Daniele
+*/
+/*definiamo le caratteristiche generali del layout */
+body {
+    background-color: #dedede;
+    font: 17px/25px "PT Sans" , Calibri, sans-serif;
+}
+#pageBacheca, #pageDescrizione, #pageProfilo, #pageLogin{
+    background-color:white;
+    width: 100%;    
+    margin-bottom:20px;
+    border-radius: 10px 10px 10px 10px;
+}
+#header{
+    background-color: #003366;
+    color: white;
+    border: 2px solid #111111;
+    border-radius: 10px 10px 0px 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    height: auto;
+    width: auto;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    width: auto;
+}
+#sidebar, #contenutoBacheca, #infoUtente, #formNewPost, #Bacheca, #sommario, #contenutoDescrizione, #contenutoLogin, #contenutoProfilo{
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    height: auto;
+    width: auto;
+}
+#sommario li, #sidebar li, #linkPagine li {
+    list-style: none;
+}
+#sidebar ul li a {
+    text-decoration: none;
+}    
+#linkPagine ul li a{
+    color: white;
+    text-decoration: none;
+    font: 25px/25px "PT Sans" , Calibri, sans-serif;
+}
+#linkPagine ul li a.active{
+    color: #003366;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    border: 2px solid #003366;
+    text-decoration: none;
+    font: 25px/25px "PT Sans" , Calibri, sans-serif;
+}
+#linkPagine ul li a:hover{
+    font-weight: bold;
+}
+#linkPagine ul {
+    padding-left: 0px;
+}
+#linkPagine ul li{
+    display: inline-block;
+}
+#logout{
+    height: 85px;
+}
+#logout img{
+    width: 40px;
+    height: 40px;
+}
+#logout p{
+    position: relative;
+    left: 50px;
+    bottom: 43px;
+}
+#logout #pulsanteLogout #linkLogout{
+    color: white;
+    position: relative;
+    left: 55px;
+    bottom: 60px;
+}
+h1{
+    color: #003366;
+    font: 25px/25px "PT Sans" , Calibri, sans-serif;
+    font-weight: bold;
+}
+h2{
+    color: #003366;
+    font: 20px/25px "PT Sans" , Calibri, sans-serif;
+    font-weight: bold;
+}
+h3{
+    color: #003366;
+    font: 17px/25px "PT Sans" , Calibri, sans-serif;
+    font-weight: bold;
+}
+h1#titolo{
+    color: white;
+    font: 30px/25px "PT Sans" , Calibri, sans-serif;
+    font-weight: bold;
+}
+a:link, a:visited{
+    text-decoration: underline;
+    color: #003366;
+}
+a:hover{
+    font-weight: bold;
+}
+/*----------definiamo le caratteristiche generali della pagina descrizione--------------*/
+/*header*/
+#pageDescrizione #header #logout{
+    display: none;
+}
+/*sommario*/
+#sommario {
+    border-top: 1px solid #003366;
+    border-bottom: 1px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366; 
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+#contenutoDescrizione {
+    border-top: 1px solid #003366;
+    border-bottom: 2px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    border-radius: 0px 0px 10px 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+#contenutoDescrizione p{
+        color: black;
+    }
+#sommario ul{
+    padding-left: 0px;
+}
+#sommario ul li ul{
+    padding-left: 20px;
+}
+#sommario h1, #socialNetwork h1{
+    margin-top: 0px;
+    padding-top: 10px;
+}
+/*----------definiamo le caratteristiche generali della pagina login------------------*/
+/*header*/
+#pageLogin #header #linkPagine{
+    display: none;
+}
+/*login*/
+#contenutoLogin {
+    border-top: 1px solid #003366;
+    border-bottom: 2px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 500px;
+}
+#contenutoLogin h1{
+    position: relative;
+    bottom: 70px;
+    left: 80px;
+}
+#inputDatiUtente{
+    border: 2px solid #003366;
+    border-radius: 10px 10px 10px 10px;
+    position: relative;
+    bottom: 50px;
+    width: 400px;
+}
+#inputDatiUtente label{
+    font-weight: bold;
+    padding-left: 45px;
+}
+#inputDatiUtente label:after{
+    content: '\A';
+    white-space: pre;
+} 
+#userid {
+    margin-left: 45px;
+    width: 300px;
+}
+#pswd {
+    margin-left: 45px;
+    width: 300px;
+}
+#pulsanteValidazione{
+    padding-top: 10px;
+    padding-left: 45px;
+    padding-bottom: 10px;
+}
+#pulsanteValidazione button{
+    width: 300px;
+}
+/*--------definiamo le caratteristiche generali delle pagine Profilo e Bacheca-----------*/
+#inputDatiUtente input:focus, #inputUtente input:focus, #inputUtente textArea:focus, #sidebar input:focus, #formNewPost textArea:focus, #formNewPost input:focus{
+    outline:none;
+    border-color: #0af;
+    box-shadow: 0 0 10px #0af;
+}
+/*sidebar*/
+#sidebar {
+    border-top: 1px solid #003366;
+    border-bottom: 1px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    width: auto;
+}
+#sidebar ul{
+    padding-left: 0px;    
+}
+
+#sidebar ul li a{
+    padding-left: 10px;
+}
+#ricerca #cerca{
+    height: 25px;
+}
+#sidebar button img{
+    width: 25px;
+    height: 25px;
+}
+#ricerca #pulsanteRicerca{
+    height: 33px;
+    position: relative;
+    top: 7px;
+    right:6px; 
+}
+#gruppi #pulsanteAggiungiGruppi{
+    height: 33px;
+    position: relative;
+    bottom: 48px;
+    left:140px; 
+}
+#gruppi ul li{
+    position: relative;
+    bottom: 30px;
+}
+/*--------definiamo le caratteristiche generali della pagina Profilo-----------*/
+#contenutoProfilo{
+    border-top: 1px solid #003366;
+    border-bottom: 2px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    height: 420px;
+    width: auto;
+}
+#contenutoProfilo img {
+    padding-top: 20px;
+    padding-left: 10px;
+    width: 100px;
+    height: 100px;
+    float: left;
+}
+#inputUtente {
+    padding-left: 10px;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    height: 300px;;
+    width: 360px;
+    float: left;
+}
+#inputUtente label {
+    font-size: 20px;
+    font-weight: bold;
+}
+#inputUtente input, #inputUtente textarea {
+    width: 150px;
+}
+#inputUtente #nome{
+    padding-left: 0px;
+    padding-right: 140px; 
+} 
+#inputUtente #cognome{
+    padding-left: 0px;
+    padding-right: 112px;
+}
+#inputUtente #data{
+    padding-left: 0px;
+    padding-right: 135px;
+}
+#inputUtente #frase{
+    position: relative;
+    bottom: 8px;
+    padding-left: 0px;
+    padding-right: 4px;
+}
+#inputUtente #fraseProfilo{
+    position: relative;
+    top: 1px;
+}
+#inputUtente #foto{
+    position: relative;
+    top: 1px;
+    padding-left: 0px;
+    padding-right: 93px;
+}
+#inputUtente #fotoProfilo{
+    position: relative;
+    bottom: 1px;
+}
+#inputUtente #password{
+    padding-left: 0px;
+    padding-right: 111px;
+}
+#inputUtente #pswdUtente{
+    position: relative;
+    bottom: 1px;
+}
+#inputUtente #conferma{
+    padding-left: 0px;
+    padding-right: 25px;
+}
+#inputUtente #pswdConferma{
+    position: relative;
+    bottom: 1px;
+}
+#inputUtente #pulsanteInvio button{
+    position: relative;
+    top: 20px;
+    width: 352px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/*--------definiamo le caratteristiche generali della pagina Bacheca-----------*/
+/*informazioni utente*/
+#infoUtente{
+    border-top: 1px solid #003366;
+    border-bottom: 1px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: 80px;
+    width: auto;
+}
+#infoUtente img{
+    float: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 50px;
+    height: 50px;
+}
+#infoUtente p{
+    float: left;
+    padding-top: 6px;
+    padding-left: 10px;
+}
+/*tipo post*/
+#formNewPost{
+    border-top: 1px solid #003366;
+    border-bottom: 1px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    width: auto;
+}
+#formNewPost #contenutoPost{
+    height: auto;
+    width: auto;
+}
+#formNewPost #contenutoPost #testoPost{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 55px;
+    width: 338px;
+}
+/*--Inseriamo le immagini di background--*/
+#formNewPost #contenutoPost #areaTesto{
+    background-image: url(../Asset/Stilo.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+#formNewPost #contenutoPost #areaUrl{
+    background-image: url(../Asset/allegato.png);
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+#formNewPost #contenutoPost #urlPost{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 55px;
+    width: 338px;
+}
+#formNewPost #tipoPost{
+    margin-top: 10px;
+    margin-left: 55px;
+    padding-bottom: 10px;
+}
+#formNewPost #creaPost{
+    margin-top: 10px;
+}
+#formNewPost #creaPost button{
+    width: 344px;
+}
+/*Bacheca*/
+#contenutoBacheca{
+    border-radius: 10px 10px 10px 10px;
+}
+#bacheca{
+    border-top: 1px solid #003366;
+    border-bottom: 2px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    border-radius: 0px 0px 10px 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    height: auto;
+    width: auto;
+}
+#bacheca .post{
+    border-top: 2px solid #003366;
+    border-bottom: 2px solid #003366;
+    border-left: 2px solid #003366; 
+    border-right: 2px solid #003366;
+    border-radius: 10px 10px 10px 10px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: auto;
+    width: auto;
+}
+#bacheca .post img{
+    width: 50px;
+    height: 50px;
+}
+#bacheca .post .userName{
+    position: relative;
+    left: 60px;
+    bottom: 60px;
+}
+#bacheca .post .testoPost{
+    position: relative;
+    bottom: 40px;
+}
+/*----------------gestione delle visualizzazioni sui vari dispositivi--------------------*/
+@media only screen and (min-width: 1024px) {
+    #pageBacheca, #pageDescrizione, #pageProfilo, #pageLogin{
+        width: 1000px;
+        height: 1550px;;
+        margin-left: auto;
+        margin-right: auto;    
+        background-color: white;
+    }
+    /*--Testata--*/
+    #header{
+        float: left;
+        width: 986px;
+        height: 80px;
+        padding-bottom: 0px;
+    }
+    #logo{
+        float:left;
+        padding-top: 15px;
+        padding-right: 20px;
+        padding-left: 21px;
+        margin-left: 10px;
+        width: 150px;
+        height: auto;
+        border-right: 2px solid white;
+    }
+    #linkPagine{
+        float:left;
+        padding-left: 30px;
+        padding-top: 20px;
+        width: 550px;
+        height: auto;
+    }
+    #logout{
+        float:left;
+        width:100px;
+        height: 100px;
+        padding-top: 5px;
+        padding-left: 50px;
+    }
+    #linkPagine ul li a{
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    /*--Pagina Descrizione--*/
+    #sommario{
+        float:left;
+        margin-left:-12px;
+        width: 986px;
+    }
+    #contenutoDescrizione{
+        float: left;
+        margin-left:-12px;
+        width: 986px;
+    }    
+     /*--Pagina Login--*/
+    #pageLogin{
+        height: 800px; 
+     } 
+    #contenutoLogin{
+        float: left;
+        width: 680px;
+        height: 114px;
+        padding-top: 100px;
+        padding-left: 316px;
+    }
+    /*--Pagina Profilo--*/
+    #pageProfilo #sidebar{
+        float: left;
+        width: 20%;
+        height: 893px;
+        border-bottom: 2px solid#003366;
+        border-radius: 0px 0px 0px 10px;
+    }
+    #pageProfilo #sidebar button{
+        width: 42px;
+    }
+    #contenutoProfilo{
+        float: left;
+        width: 650px;;
+        height: 913px;
+        border-radius: 0px 0px 10px 0px;
+        padding-left: 100px;
+        padding-right: 32px;
+    }
+    #inputUtente{
+        padding-left: 100px;
+    }
+    /*--Pagina Bacheca--*/
+    #pageBacheca{
+        height: 1639px;
+    }
+    #pageBacheca #sidebar{
+        float: left;
+        width: 20%;
+        height: 1532px;
+        border-bottom: 2px solid#003366;
+        border-radius: 0px 0px 0px 10px;
+    }
+    #pageBacheca #sidebar button{
+        width: 42px;
+    }
+    #contenutoBacheca{
+        float: left;
+        width:786px;
+        height: auto;
+    }
+    #bacheca{
+        border-radius: 0px 0px 10px 0px;
+    }
+    #infoUtente{
+        height: 80px;
+    }
+    #formNewPost{
+        height: 201px;
+        padding-left: 160px;
+    }
+    /*--dimensione dei post--*/
+    .post{
+        width: auto;
+        height: auto;
+    }
+    .post .testoPost{
+        border-radius: 5px 5px 5px 5px;
+        border: 1px solid #003366;
+        width:auto;
+        height: 100px;
+        overflow: scroll;
+    }
+    #bacheca .post .immagineAllegata{
+        padding-left: 100px;
+        width: 550px;
+        height: 370px;
+    }    
+    #pageBacheca #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 10px;
+    }
+    #pageProfilo #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 10px;
+    }
+    #pageDescrizione #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 910px;
+    }
+    #pageLogin #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 10px;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 1024px){
+   #pageBacheca, #pageDescrizione, #pageProfilo, #pageLogin{
+        width: 600px;
+        height: 500px;;
+        margin-left: auto;
+        margin-right: auto;    
+        background-color: white;
+    }
+    /*--Testata--*/
+    #header{
+        float: left;
+        width: 586px;
+        height: 80px;
+        padding-bottom: 0px;
+    }
+    #logo{
+        float:left;
+        padding-top: 15px;
+        padding-right: 11px;
+        width: 185px;
+        height: auto;
+        text-align: center;
+        border-right: 2px solid white;
+    }
+    #linkPagine{
+        float:left;
+        padding-left: 2px;
+        padding-top: 20px;
+        width: 240px;
+        height: auto;
+    }
+    #logout{
+        float:left;
+        width:100px;
+        height: 80px;
+        padding-top: 5px;
+        padding-left: 0px;
+    }
+    #linkPagine ul li a{
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    /*--Pagina Descrizione--*/
+    #sommario{
+        float:left;
+        width: 586px;
+    }
+    #contenutoDescrizione{
+        float: left;
+        width: 586px;
+    }
+     /*--Pagina Login--*/
+    #contenutoLogin{
+        float: left;
+        width: 280px;
+        height: 313px;
+        padding-top: 100px;
+        padding-left: 100px;
+        padding-right: 216px;
+        padding-bottom: 0px;
+    }
+    /*--Pagina Profilo--*/
+    #pageProfilo{
+        width: 600px;
+        height: 686px;;
+        margin-left: auto;
+        margin-right: auto;    
+        background-color: white;
+    }
+    #pageProfilo #sidebar{
+        float: left;
+        width: 32.5%;
+        height: 580px;
+        border-bottom: 2px solid#003366;
+        border-radius: 0px 0px 0px 10px;
+    }
+    #pageProfilo #sidebar button{
+        width: 42px;
+    }
+    #contenutoProfilo{
+        float: left;
+        width: 255px;;
+        height: 600px;
+        border-radius: 0px 0px 10px 0px;
+        padding-left: 0px;
+        padding-right: 132px;
+    }
+    #contenutoProfilo img{
+        padding-top: 40px;
+    }    
+    #inputUtente{
+        padding-top: 80px;
+        padding-left: 20px;
+    }
+    /*--Pagina Bacheca--*/
+    #pageBacheca{
+        height: 1182px;
+    }
+    #pageBacheca #sidebar{
+        float: left;
+        width: 32.5%;
+        height: 1076px;
+        border-bottom: 2px solid#003366;
+        border-radius: 0px 0px 0px 10px;
+    }
+    #pageBacheca #sidebar button{
+        width: 42px;
+    }
+    #contenutoBacheca{
+        float: left;
+        width:391px;
+        height: auto;
+    }
+    #bacheca{
+        border-radius: 0px 0px 10px 0px;
+    }
+    #infoUtente{
+        height: 80px;
+    }
+    #formNewPost{
+        height: 180px;
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-bottom: 15px;
+    }
+    #formNewPost #contenutoPost{
+        margin-left: 2px;
+    }
+    #formNewPost #contenutoPost #areaTesto{
+        background-position: center left;
+    }
+    #formNewPost #contenutoPost #areaTesto #testoPost{
+        width: 320px;
+    }
+    #formNewPost #contenutoPost #areaUrl{
+        background-position: center left;
+    }
+    #formNewPost #contenutoPost #areaUrl #urlPost{
+        width: 320px;
+    }
+    #formNewPost #creaPost #pulsanteCreaPost{
+        width: 328px;
+    }
+    /*--dimensione dei post--*/
+    .post{
+        width: auto;
+        height: auto;
+    }
+    .post .testoPost{
+        border-radius: 5px 5px 5px 5px;
+        border: 1px solid #003366;
+        width:auto;
+        height: 50px;
+        overflow: scroll;
+    }
+    #bacheca .post .immagineAllegata{
+        padding-left: 100px;
+        width: 150px;
+        height: 90px;
+    }    
+    #pageBacheca #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 10px;
+    }
+    #pageProfilo #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 10px;
+    }
+    #pageDescrizione #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 508px;
+    }
+    #pageLogin #icoCss img{
+        position: relative;
+        bottom: 40px;
+        left: 10px;
+    }
+} 
+@media only screen and (max-width: 480px) {
+    #pageBacheca, #pageDescrizione, #pageProfilo, #pageLogin{
+        width: 450px;
+        margin-left: auto;
+        margin-right: auto;    
+        background-color: white;
+    }
+    #header{
+        width: auto;
+        height: 150px;
+        padding-bottom: 0px;
+    }
+    #pageDescrizione #logo, #pageProfilo #logo, #pageBacheca #logo{
+        position: relative;
+        left: 50px;
+    }
+    #pageProfilo #linkPagine, #pageBacheca #linkPagine{
+        position: relative;
+        bottom: 44px;
+        left: 220px;
+    } 
+    #pageDescrizione #linkPagine{
+        position: relative;
+        bottom: 44px;
+        left: 300px;
+    } 
+    #pageDescrizione #logout{
+        position: relative;
+        left: 140px;
+        bottom: 44px;
+    }
+    #pageBacheca #logout, #pageProfilo #logout{
+        position: relative;
+        left: 140px;
+        bottom: 44px;
+    }
+    /*--Pagina Login--*/
+    #pageLogin #header{
+        height: 100px;
+    }    
+    #contenutoLogin{
+        width: auto;
+        height: 260px;
+        padding-top: 30px;
+        padding-left:20px;
+        padding-right: 108px;
+        padding-bottom: 0px;
+    }
+    /*--Pagina Profilo--*/
+    #pageProfilo #sidebar{
+        border-radius: 0px 0px 0px 0px;
+        
+    }
+    #pageProfilo #contenutoProfilo{
+        border-radius: 0px 0px 10px 10px;
+    }
+    #pageProfilo #contenutoProfilo #inputUtente{
+        padding-top: 2px;
+        padding-bottom: 0px;
+        padding-left: 50px;
+    }
+    #pageProfilo #contenutoProfilo img{
+        padding-left: 50px;
+    }
+    /*--Pagina Bacheca--*/
+    #pageBacheca #sidebar{
+        border-radius: 0px 0px 0px 0px;
+    }
+    /*--dimensione dei post--*/
+    .post{
+        width: auto;
+        height: auto;
+    }
+    .post .testoPost{
+        border-radius: 5px 5px 5px 5px;
+        border: 1px solid #003366;
+        width:auto;
+        height: 50px;
+        overflow: scroll;
+    }    
+    #bacheca .post .immagineAllegata{
+        padding-left: 100px;
+        width: 200px;
+        height: 180px;
+    }
+    #pageDescrizione #icoCss {
+        display: none;
+    }
+    #pageBacheca #icoCss {
+        display: none;
+    }    
+    #pageLogin #icoCss {
+        display: none;;
+    }
+    #pageProfilo #icoCss {
+        display: none;
+    }
+}
