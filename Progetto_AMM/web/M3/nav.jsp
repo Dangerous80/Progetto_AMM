@@ -5,26 +5,26 @@
 <nav id="linkPagine">
     <c:if test="${page=='bacheca'}">
         <ul>
-            <li><a href="profilo.jsp">Profilo</a></li>
-            <li><a class="active" href="bacheca.jsp">Bacheca</a></li>
+            <li><a href="profilo.html">Profilo</a></li>
+            <li><a class="active" href="Bacheca">Bacheca</a></li>
         </ul>
     </c:if> 
     <c:if test="${page=='descrizione'}">
         <ul>
-            <li><a href="login.jsp">Login</a></li>
+            <li><a href="login.html">Login</a></li>
         </ul>
     </c:if> 
     <c:if test="${page=='login'}">
         <ul>
-            <li><a href="descrizione.jsp">Descrizione</a></li>
-            <li><a href="profilo.jsp">Profilo</a></li>
-            <li><a href="bacheca.jsp">Bacheca</a></li>
+            <li><a href="descrizione.html">Descrizione</a></li>
+            <li><a href="profilo.html">Profilo</a></li>
+            <li><a href="Bacheca">Bacheca</a></li>
         </ul> 
     </c:if>
     <c:if test="${page=='login'}">
         <ul>
-            <li><a class="active" href="profilo.jsp">Profilo</a></li>
-            <li><a href="bacheca.jsp">Bacheca</a></li>
+            <li><a class="active" href="profilo.html">Profilo</a></li>
+            <li><a href="Bacheca">Bacheca</a></li>
         </ul>
     </c:if>
 </nav>
