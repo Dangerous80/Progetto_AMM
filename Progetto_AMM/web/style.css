@@ -147,10 +147,11 @@ a:hover{
     padding-top: 10px;
 }
 /*----------definiamo le caratteristiche generali della pagina login------------------*/
-/*header*/
+/*header
 #pageLogin #header #linkPagine{
     display: none;
 }
+*/
 /*login*/
 #contenutoLogin {
     border-top: 1px solid #003366;

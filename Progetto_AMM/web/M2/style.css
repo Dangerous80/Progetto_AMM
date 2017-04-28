@@ -512,7 +512,7 @@ a:hover{
         height: 114px;
         padding-top: 100px;
         padding-left: 316px;
-    }
+    } 
     /*--Pagina Profilo--*/
     #pageProfilo #sidebar{
         float: left;
@@ -542,7 +542,7 @@ a:hover{
     #pageBacheca #sidebar{
         float: left;
         width: 20%;
-        height: 1532px;
+        height: 99%;
         border-bottom: 2px solid#003366;
         border-radius: 0px 0px 0px 10px;
     }
@@ -552,10 +552,11 @@ a:hover{
     #contenutoBacheca{
         float: left;
         width:786px;
-        height: auto;
+        height: 100.4%;
     }
     #bacheca{
         border-radius: 0px 0px 10px 0px;
+        height: 78.9%;
     }
     #infoUtente{
         height: 80px;
@@ -589,7 +590,7 @@ a:hover{
     #pageProfilo #icoCss img{
         position: relative;
         bottom: 40px;
-        left: 10px;
+       right: 400px;
     }
     #pageDescrizione #icoCss img{
         position: relative;

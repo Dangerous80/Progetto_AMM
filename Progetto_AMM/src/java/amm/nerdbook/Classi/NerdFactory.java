@@ -105,4 +105,13 @@ public class NerdFactory {
         }
         return null;
     }
+      
+    public int getIdByUserAndPassword(String user, String password){
+        for(Nerd nerd : this.listaNerd){
+            if(nerd.getNome().equals(user) && nerd.getPassword().equals(password)){
+                return nerd.getId();
+            }
+        }
+        return -1;
+    }
 }
