@@ -9,7 +9,7 @@ and open the template in the editor.
 */
 /*definiamo le caratteristiche generali del layout */
 body {
-    background-color: #dedede;
+    background-color: #bcddfc;
     font: 17px/25px "PT Sans" , Calibri, sans-serif;
 }
 #pageBacheca, #pageDescrizione, #pageProfilo, #pageLogin{
@@ -183,11 +183,11 @@ a:hover{
     content: '\A';
     white-space: pre;
 } 
-#userid {
+#username {
     margin-left: 45px;
     width: 300px;
 }
-#pswd {
+#password {
     margin-left: 45px;
     width: 300px;
 }

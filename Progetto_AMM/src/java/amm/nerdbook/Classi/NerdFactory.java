@@ -35,7 +35,7 @@ public class NerdFactory {
         nerd1.setCognome("Rossi");
         nerd1.setDataNascita("10/11/1992");
         nerd1.setFrasePresentazione("Che la forza sia con te");
-        nerd1.setUrlFotoProfilo("../Asset/Yoda.jpg");
+        nerd1.setUrlFotoProfilo("/Asset/Yoda.jpg");
         nerd1.setPassword("12345");
         nerd1.setTipoUtente(Nerd.Type.ADMIN);
         
@@ -46,7 +46,7 @@ public class NerdFactory {
         nerd2.setCognome("Viale");
         nerd2.setDataNascita("15/12/1996");
         nerd2.setFrasePresentazione("Welcome to my jungle");
-        nerd2.setUrlFotoProfilo("../Asset/Luke.jpg");
+        nerd2.setUrlFotoProfilo("/Asset/Luke.jpg");
         nerd2.setPassword("12345");
 
         //Francesco Marras Kirk
@@ -56,7 +56,7 @@ public class NerdFactory {
         nerd3.setCognome("Marras");
         nerd3.setDataNascita("15/08/1991");
         nerd3.setFrasePresentazione("Mantenete la curvatura");
-        nerd3.setUrlFotoProfilo("../Asset/Kirk.jpg");
+        nerd3.setUrlFotoProfilo("/Asset/Kirk.jpg");
         nerd3.setPassword("12345");
 
         //Gianluca Ghidoli Spoke
@@ -66,28 +66,28 @@ public class NerdFactory {
         nerd4.setCognome("Ghidoli");
         nerd4.setDataNascita("15/12/1989");
         nerd4.setFrasePresentazione("Lunga vita e prosperità");
-        nerd4.setUrlFotoProfilo("../Asset/spock.jpg");
+        nerd4.setUrlFotoProfilo("/Asset/spock.jpg");
         nerd4.setPassword("12345");
 
-        //Elenia Loche Leila utente con mancanza di dato
+        //Elenia Loche Leila utente con mancanza di dato frase presentazione
         Nerd nerd5 = new Nerd();
         nerd5.setId(4);
         nerd5.setNome("Elenia");
-        nerd5.setCognome("");
-        nerd5.setDataNascita("11/07/1993");
-        nerd5.setFrasePresentazione("Ciao a tutti");
-        nerd5.setUrlFotoProfilo("../Asset/Leila.jpg");
+        nerd5.setCognome("Loche");
+        nerd5.setDataNascita("15/10/1996");
+        nerd5.setFrasePresentazione("");
+        nerd5.setUrlFotoProfilo("/Asset/Leila.jpg");
         nerd5.setPassword("12345");
         
         //Marco Zuddas Artorias D&G
         Nerd nerd6 = new Nerd();
-        nerd5.setId(5);
-        nerd5.setNome("Marco");
-        nerd5.setCognome("Zuddas");
-        nerd5.setDataNascita("11/07/1981");
-        nerd5.setFrasePresentazione("Viva i draghi");
-        nerd5.setUrlFotoProfilo("../Asset/artorias.jpg");
-        nerd5.setPassword("12345");
+        nerd6.setId(5);
+        nerd6.setNome("Marco");
+        nerd6.setCognome("Zuddas");
+        nerd6.setDataNascita("11/07/1981");
+        nerd6.setFrasePresentazione("Viva i draghi");
+        nerd6.setUrlFotoProfilo("/Asset/artorias.jpg");
+        nerd6.setPassword("12345");
         
         listaNerd.add(nerd1);
         listaNerd.add(nerd2);
@@ -106,12 +106,13 @@ public class NerdFactory {
         return null;
     }
       
-    public int getIdByUserAndPassword(String user, String password){
+    public int getIdByUserAndPassword(String username, String password){
         for(Nerd nerd : this.listaNerd){
-            if(nerd.getNome().equals(user) && nerd.getPassword().equals(password)){
+            if(nerd.getNome().equals(username) && nerd.getPassword().equals(password)){
                 return nerd.getId();
             }
         }
         return -1;
     }
+    
 }

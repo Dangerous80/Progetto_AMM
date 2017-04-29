@@ -17,6 +17,45 @@
     </head>
 
     <body>
-        <h1>Hello World!</h1>
-    </body>
+        <div id="pageLogin">
+            <!--testata, la testata conterrà header e navbar-->
+            <div id="header">
+                <!--inseriamo il titolo della pagina nell'header-->
+                <jsp:include page="header.jsp"/>                
+                <!--inseriamo una barra di navigazione che contenga i link alle altre pagine html che devono essere raggiunte-->
+                <c:set var="page" value="login" scope="request"/>
+                <jsp:include page="nav.jsp"/>
+            </div>
+            <!--contenuto, inseriamo la form per richiedere userid e password all'utente che vuole effettuare l'accesso-->
+            <div id="contenutoLogin">
+                <img src='Asset/nerd.jpg' alt='Logo NerdBook'>
+                <h1>NerdBook</h1>
+                <form action="Login" method="post">
+                    <div id=inputDatiUtente>
+                        <label for="username">Nome Utente</label>
+                        <input type="text" name="username" id="username" value="">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" value="">
+                        <div id="pulsanteValidazione">
+                            <button type="submit">Accedi</button>
+                        </div>    
+                    </div>
+                </form>
+                <!--inseriamo il test di verifica dei dati inseriti dall'utente e se non sono validi si inserisce il messaggio di errore-->
+                <c:if test="${invalidData == true}">
+                    <div id="invalidDataWarning">Dati inseriti non validi - ripetere logon</div>
+                </c:if>
+            </div>
+            <!--Validator CSS-->
+            <div> 
+                <p>
+                    <a id="icoCss" href="http://jigsaw.w3.org/css-validator/check/referer">
+                       <img style="border:0;width:88px;height:31px"
+                           src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+                           alt="CSS Valido!" />
+                    </a>
+                </p>
+            </div>
+        </div>
+   </body>
 </html>
