@@ -7,40 +7,31 @@ package amm.nerdbook;
 
 import amm.nerdbook.Classi.NerdFactory;
 import amm.nerdbook.Classi.Nerd;
+import amm.nerdbook.Classi.GruppoFactory;
+import amm.nerdbook.Classi.Gruppo;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
- 
-public class Profilo extends HttpServlet {
+public class Sidebar extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         
-        //Verifico se è già inizializzato un oggetto sessione in modo da capire se esiste già un utente loggato
-        HttpSession session = request.getSession(false);
+        //recuperiamo la lista degli utenti esistenti
+        List<Nerd> nerds = NerdFactory.getInstance().getNerdList();
+        request.setAttribute("nerds", nerds);
+               
+        //recuperiamo la lista dei gruppi esistenti
+        List<Gruppo> groups = GruppoFactory.getInstance().getGroupList();
+        request.setAttribute("groups", groups);
         
-        /*se la sessione esiste ed esiste anche l'attributo loggedIn impostato a true recupero lo userid dell'utente loggato 
-        per visualizzare i suoi dati*/
-        if(session!=null && session.getAttribute("loggedIn")!=null && session.getAttribute("loggedIn").equals(true)){
-            Integer userID = (Integer)session.getAttribute("loggedUserID");
-            Nerd nerd = NerdFactory.getInstance().getNerdById(userID);
-            if(nerd != null){
-                request.setAttribute("nerd", nerd);
-                request.getRequestDispatcher("profilo.jsp").forward(request, response);
-            } else {
-                response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-            }
-        }
-        else{
-            request.setAttribute("accessoNonAutorizzato", true);
-            request.getRequestDispatcher("profilo.jsp").forward(request, response);
-        }
+        request.getRequestDispatcher("sidebar.jsp").forward(request, response);
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

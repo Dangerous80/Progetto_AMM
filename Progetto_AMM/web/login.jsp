@@ -43,7 +43,10 @@
                 </form>
                 <!--inseriamo il test di verifica dei dati inseriti dall'utente e se non sono validi si inserisce il messaggio di errore-->
                 <c:if test="${invalidData == true}">
-                    <div id="invalidDataWarning">Dati inseriti non validi - ripetere logon</div>
+                    <div id="invalidDataWarning">
+                        <p id="frase1">Dati inseriti non validi</p>
+                        <p id="frase2">Ripetere Login</p>
+                    </div>
                 </c:if>
             </div>
             <!--Validator CSS-->

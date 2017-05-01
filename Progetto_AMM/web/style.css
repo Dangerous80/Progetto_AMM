@@ -235,7 +235,7 @@ a:hover{
 #ricerca #pulsanteRicerca{
     height: 33px;
     position: relative;
-    top: 7px;
+    top: 6px;
     right:6px; 
 }
 #gruppi #pulsanteAggiungiGruppi{
@@ -312,6 +312,7 @@ a:hover{
     bottom: 1px;
 }
 #inputUtente #password{
+    margin-left: 0px;
     padding-left: 0px;
     padding-right: 111px;
 }
@@ -383,12 +384,12 @@ a:hover{
 }
 /*--Inseriamo le immagini di background--*/
 #formNewPost #contenutoPost #areaTesto{
-    background-image: url(../Asset/Stilo.png);
+    background-image: url(Asset/Stilo.png);
     background-repeat: no-repeat;
     background-position: center left;
 }
 #formNewPost #contenutoPost #areaUrl{
-    background-image: url(../Asset/allegato.png);
+    background-image: url(Asset/allegato.png);
     background-repeat: no-repeat;
     background-position: center left;
 }
@@ -511,13 +512,27 @@ a:hover{
      /*--Pagina Login--*/
     #pageLogin{
         height: 800px; 
-     } 
+    } 
     #contenutoLogin{
         float: left;
         width: 680px;
         height: 114px;
         padding-top: 100px;
         padding-left: 316px;
+    }
+    #invalidDataWarning p{
+        font-size: 26px;
+        font-weight: bold;
+    }
+    #invalidDataWarning #frase1{
+        position: relative;
+        bottom: 50px;
+        left:80px;
+    }
+    #invalidDataWarning #frase2{
+        position: relative;
+        bottom: 50px;
+        left:120px;
     }
     /*--Pagina Profilo--*/
     #pageProfilo #sidebar{
@@ -538,8 +553,32 @@ a:hover{
         padding-left: 100px;
         padding-right: 32px;
     }
+    #accessoNegato{
+        position: relative;
+        top:84px;
+        width: 996px;
+        height: 916px;
+        border-radius: 0px 0px 10px 10px;
+        border-bottom: 2px solid #003366;
+        border-left: 2px solid #003366; 
+        border-right: 2px solid #003366;
+    }
+    #utenteNonAutorizzato{
+        margin-left: 350px;
+    }   
+    #utenteNonAutorizzato  p{
+        font-size: 30px;
+        font-weight: bold;
+    } 
+    #utenteNonAutorizzato  a{
+        font-size: 20px;
+        margin-left: 55px;
+    } 
     #inputUtente{
         padding-left: 100px;
+    }
+    #linkLogout{
+        margin-left: -5px;
     }
     /*--Pagina Bacheca--*/
     #pageBacheca{
@@ -599,13 +638,16 @@ a:hover{
     }
     #pageDescrizione #icoCss img{
         position: relative;
-        bottom: 40px;
-        left: 910px;
+        top: 1490px;
+        left: 110px;
     }
     #pageLogin #icoCss img{
         position: relative;
         bottom: 40px;
         left: 10px;
+    }
+    #linkLogout{
+        margin-left: -5px;
     }
 }
 @media only screen and (min-width: 480px) and (max-width: 1024px){
@@ -634,7 +676,7 @@ a:hover{
     }
     #linkPagine{
         float:left;
-        padding-left: 2px;
+        padding-left: 20px;
         padding-top: 20px;
         width: 240px;
         height: auto;
@@ -665,11 +707,25 @@ a:hover{
     #contenutoLogin{
         float: left;
         width: 280px;
-        height: 313px;
+        height: 413px;
         padding-top: 100px;
         padding-left: 100px;
         padding-right: 216px;
         padding-bottom: 0px;
+    }
+    #invalidDataWarning p{
+        font-size: 26px;
+        font-weight: bold;
+    }
+    #invalidDataWarning #frase1{
+        position: relative;
+        bottom: 50px;
+        left:80px;
+    }
+    #invalidDataWarning #frase2{
+        position: relative;
+        bottom: 50px;
+        left:120px;
     }
     /*--Pagina Profilo--*/
     #pageProfilo{
@@ -703,6 +759,29 @@ a:hover{
     #inputUtente{
         padding-top: 80px;
         padding-left: 20px;
+    }
+    #accessoNegato{
+        position: relative;
+        top:84px;
+        width: 596px;
+        height: 602px;
+        border-radius: 0px 0px 10px 10px;
+        border-bottom: 2px solid #003366;
+        border-left: 2px solid #003366; 
+        border-right: 2px solid #003366;
+    }
+    #utenteNonAutorizzato{
+        margin-left: 125px;
+    }   
+    #utenteNonAutorizzato  p{
+        font-size: 30px;
+    } 
+    #utenteNonAutorizzato  a{
+        font-size: 20px;
+        margin-left: 55px;
+    }
+    #linkLogout{
+        margin-left: -5px;
     }
     /*--Pagina Bacheca--*/
     #pageBacheca{
@@ -782,13 +861,16 @@ a:hover{
     }
     #pageDescrizione #icoCss img{
         position: relative;
-        bottom: 40px;
-        left: 508px;
+        top: 2015px;
+        left:35px;
     }
     #pageLogin #icoCss img{
         position: relative;
         bottom: 40px;
         left: 10px;
+    }
+    #linkLogout{
+        margin-left: -5px;
     }
 } 
 @media only screen and (max-width: 480px) {
@@ -798,13 +880,30 @@ a:hover{
         margin-right: auto;    
         background-color: white;
     }
-    #header{
-        width: auto;
-        height: 150px;
-        padding-bottom: 0px;
+    /*--Pagina descrizione--*/
+    #pageDescrizione #header{
+        height: 80px;
     }
-    #sommario{
-        margin-top: 58px;
+    #pageDescrizione #logo{
+        float:left;
+        padding-top: 10px;
+        padding-right: 11px;
+        width: 185px;
+        height: auto;
+        text-align: center;
+        border-right: 2px solid white;
+    }
+    #pageDescrizione #linkPagine{
+        float:left;
+        padding-left: 15px;
+        padding-top: 15px;
+        width: auto;
+        height: auto;
+    }
+    #pageDescrizione #sommario{
+        clear: left;
+        border-top: 2px solid black;
+        margin-top: 0px;
         margin-left: -12px;
         margin-right: -2px;
     }
@@ -812,46 +911,63 @@ a:hover{
         margin-left: -12px;
         margin-right: -2px;
     }
-    #pageDescrizione #logo, #pageProfilo #logo, #pageBacheca #logo{
-        position: relative;
-        left: 50px;
-    }
-    #pageProfilo #linkPagine, #pageBacheca #linkPagine{
-        position: relative;
-        bottom: 44px;
-        left: 220px;
-    } 
-    #pageDescrizione #linkPagine{
-        position: relative;
-        bottom: 44px;
-        left: 300px;
-    } 
-    #pageDescrizione #logout{
-        position: relative;
-        left: 140px;
-        bottom: 44px;
-    }
-    #pageBacheca #logout, #pageProfilo #logout{
-        position: relative;
-        left: 140px;
-        bottom: 44px;
-    }
     /*--Pagina Login--*/
     #pageLogin #header{
-        height: 100px;
-    }    
+        height: 65px;
+    }  
+    #pageLogin #logo{
+        float:left;
+        padding-top: 10px;
+        padding-right: 11px;
+        width: 185px;
+        height: auto;
+        text-align: center;
+        border-right: 2px solid white;
+    }
+    #pageLogin #linkPagine{
+        float:left;
+        padding-left: 15px;
+        padding-top: 15px;
+        width: auto;
+        height: auto;
+    }
     #contenutoLogin{
         width: auto;
-        height: 260px;
+        height: 360px;
         padding-top: 30px;
         padding-left:20px;
         padding-right: 108px;
         padding-bottom: 0px;
     }
+    #invalidDataWarning p{
+        font-size: 26px;
+        font-weight: bold;
+    }
+    #invalidDataWarning #frase1{
+        position: relative;
+        bottom: 50px;
+        left:80px;
+    }
+    #invalidDataWarning #frase2{
+        position: relative;
+        bottom: 50px;
+        left:120px;
+    }
     /*--Pagina Profilo--*/
+    #pageProfilo #header{
+        height: 150px;
+    } 
+    #pageProfilo #logo {
+        position: relative;
+        left: 50px;
+    }
+    #pageProfilo #linkPagine{
+        position: relative;
+        bottom: 44px;
+        left: 220px;
+    } 
     #pageProfilo #sidebar{
         border-radius: 0px 0px 0px 0px;
-        
     }
     #pageProfilo #contenutoProfilo{
         border-radius: 0px 0px 10px 10px;
@@ -864,7 +980,48 @@ a:hover{
     #pageProfilo #contenutoProfilo img{
         padding-left: 50px;
     }
+     #accessoNegato{
+        width: 446px;
+        height: auto;
+        margin-top: -30px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border-radius: 0px 0px 10px 10px;
+        border-bottom: 2px solid #003366;
+        border-left: 2px solid #003366; 
+        border-right: 2px solid #003366;
+    }
+    #utenteNonAutorizzato{
+        margin-left: 50px;
+    }   
+    #utenteNonAutorizzato  p{
+        font-size: 30px;
+    } 
+    #utenteNonAutorizzato  a{
+        font-size: 20px;
+        margin-left: 55px;
+    }
+    #pageProfilo #logout{
+        position: relative;
+        left: 140px;
+        bottom: 44px;
+    }
+    #linkLogout{
+        margin-left: -5px;
+    }
     /*--Pagina Bacheca--*/
+    #pageBacheca #header{
+        height: 150px;
+    }
+    #pageBacheca #logo{
+        position: relative;
+        left: 50px;
+    }
+    #pageBacheca #linkPagine{
+        position: relative;
+        bottom: 44px;
+        left: 220px;
+    } 
     #pageBacheca #sidebar{
         border-radius: 0px 0px 0px 0px;
     }
@@ -896,5 +1053,13 @@ a:hover{
     }
     #pageProfilo #icoCss {
         display: none;
+    }
+    #pageBacheca #logout{
+        position: relative;
+        left: 140px;
+        bottom: 44px;
+    }
+    #linkLogout{
+        margin-left: -5px;
     }
 }

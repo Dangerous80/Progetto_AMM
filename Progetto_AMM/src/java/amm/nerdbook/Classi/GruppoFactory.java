@@ -5,7 +5,7 @@
  */
 package amm.nerdbook.Classi;
 
-import java.util.List;
+
 import java.util.ArrayList;
 /**
  *
@@ -35,21 +35,21 @@ public class GruppoFactory {
         Gruppo gruppo1 = new Gruppo();
         gruppo1.setId(0);
         gruppo1.setNomeGruppo("Star Trek");
-        gruppo1.setUrlImmagineGruppo("../Asset/StarTrek.png");
+        gruppo1.setUrlImmagineGruppo("Asset/StarTrek.png");
         gruppo1.setCreatoreGruppo(nerdFactory.getNerdById(3));
         
         //Star Wars
         Gruppo gruppo2 = new Gruppo();
         gruppo2.setId(1);
         gruppo2.setNomeGruppo("Star Wars");
-        gruppo2.setUrlImmagineGruppo("../Asset/StarWars.png");
+        gruppo2.setUrlImmagineGruppo("Asset/StarWars.png");
         gruppo2.setCreatoreGruppo(nerdFactory.getNerdById(0));
         
         //dungeons & dragons
         Gruppo gruppo3 = new Gruppo();
         gruppo3.setId(2);
         gruppo3.setNomeGruppo("Dungeons & Dragons");
-        gruppo3.setUrlImmagineGruppo("../Asset/dungeons&dragons.jpg");
+        gruppo3.setUrlImmagineGruppo("Asset/dungeons&dragons.jpg");
         gruppo3.setCreatoreGruppo(nerdFactory.getNerdById(5));
         
         listaGruppi.add(gruppo1);
@@ -65,4 +65,8 @@ public class GruppoFactory {
         }
         return null;
     }    
+    public ArrayList<Gruppo> getGroupList()
+    {
+        return listaGruppi;
+    }
 }

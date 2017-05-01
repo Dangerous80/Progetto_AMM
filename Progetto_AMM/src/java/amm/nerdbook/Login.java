@@ -6,9 +6,8 @@
 package amm.nerdbook;
 
 import amm.nerdbook.Classi.NerdFactory;
-//import amm.nerdbook.Classi.Nerd;
+import amm.nerdbook.Classi.Nerd;
 import java.io.IOException;
-//import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -36,10 +35,22 @@ public class Login extends HttpServlet {
         //Se esiste un attributo di sessione loggedIn e questo vale true allora esiste già un utente loggato e si richiama la servlet Bacheca
         if (session.getAttribute("loggedIn") != null &&
             session.getAttribute("loggedIn").equals(true)) {
-
-            request.getRequestDispatcher("Bacheca").forward(request, response);
-            return;
-        }
+            //verifica se l'utente ha tutti i dati correttamente inseriti
+            Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
+            Nerd nerd = NerdFactory.getInstance().getNerdById(loggedUserID);
+            if (nerd != null){
+                //se l'utente non ha indicato uno dei dati va al profilo
+                if (nerd.getNome().isEmpty() || nerd.getCognome().isEmpty() || nerd.getUrlFotoProfilo().isEmpty() || nerd.getFrasePresentazione().isEmpty()){
+                    request.getRequestDispatcher("Profilo").forward(request, response);
+                    return;
+                }
+                //se l'utente ha indicato tutti i dati va alla bacheca
+                else{
+                    request.getRequestDispatcher("Bacheca").forward(request, response);
+                    return;
+                }
+            }
+        }        
         //Se l'utente non è loggato preleva userid e pswd dalla richiesta inserita dall'utente nella login.jsp
         else {        
             String username = request.getParameter("username");   
@@ -59,16 +70,20 @@ public class Login extends HttpServlet {
                     session.setAttribute("loggedUserID", loggedUserID);
                     
                     //verifica se l'utente ha tutti i dati correttamente inseriti
-                    //Nerd utenteLoggato = NerdFactory.getInstance().getNerdById(loggedUserID);
-                    //if (utenteLoggato!=null && utenteLoggato.getNome()!= null && utenteLoggato.getCognome() != null && utenteLoggato.getUrlFotoProfilo() != null && utenteLoggato.getFrasePresentazione() != null){
-                       request.getRequestDispatcher("Bacheca").forward(request, response);
-                       return;
-                    //}
-                    //else {
-                    //   request.getRequestDispatcher("Profilo").forward(request, response);
-                    //   return;
-                    //}
-                }
+                    Nerd nerd = NerdFactory.getInstance().getNerdById(loggedUserID);
+                    if (nerd != null){
+                        //se l'utente non ha indicato uno dei dati va al profilo
+                        if (nerd.getNome().isEmpty() || nerd.getCognome().isEmpty() || nerd.getUrlFotoProfilo().isEmpty() || nerd.getFrasePresentazione().isEmpty()){
+                            request.getRequestDispatcher("Profilo").forward(request, response);
+                            return;
+                        }
+                        //se l'utente ha indicato tutti i dati va alla bacheca
+                        else{
+                            request.getRequestDispatcher("Bacheca").forward(request, response);
+                            return;
+                        }
+                    }
+                }    
                 /*se invece username e password non corrispondono a nessun utente esistente si imposta la variabile invalidData a true
                 si torna alla login.jsp e si informa l'utente che i dati inseriti non sono validi*/
                 else { 
