@@ -115,7 +115,7 @@ public class NerdFactory {
         }
         return -1;
     }
-    
+    //inseriamo un metodo che ci consenta di recuperare la lista degli utenti
     public ArrayList<Nerd> getNerdList()
     {
         return listaNerd;

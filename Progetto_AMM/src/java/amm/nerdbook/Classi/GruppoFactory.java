@@ -64,9 +64,9 @@ public class GruppoFactory {
             }
         }
         return null;
-    }    
-    public ArrayList<Gruppo> getGroupList()
-    {
-        return listaGruppi;
+    }  
+    //inseriamo un metodo che ci consenta di recuperare la lista dei gruppi
+    public ArrayList<Gruppo> getGroupList() {
+            return listaGruppi;
     }
 }
