@@ -545,6 +545,11 @@ a:hover{
     #pageProfilo #sidebar button{
         width: 42px;
     }
+    
+    #pageProfilo #sidebar .fotoPersona, #pageProfilo #sidebar .fotoGruppo{
+        width: 40px;
+        height: 40px;
+    }
     #contenutoProfilo{
         float: left;
         width: 650px;;
@@ -745,6 +750,10 @@ a:hover{
     #pageProfilo #sidebar button{
         width: 42px;
     }
+    #pageProfilo #sidebar .fotoPersona, #pageProfilo #sidebar .fotoGruppo{
+        width: 40px;
+        height: 40px;
+    }
     #contenutoProfilo{
         float: left;
         width: 255px;;
@@ -857,7 +866,7 @@ a:hover{
     #pageProfilo #icoCss img{
         position: relative;
         bottom: 40px;
-        left: 10px;
+        left: 510px;
     }
     #pageDescrizione #icoCss img{
         position: relative;
@@ -979,6 +988,10 @@ a:hover{
     }
     #pageProfilo #contenutoProfilo img{
         padding-left: 50px;
+    }
+    #pageProfilo #sidebar .fotoPersona, #pageProfilo #sidebar .fotoGruppo{
+        width: 40px;
+        height: 40px;
     }
      #accessoNegato{
         width: 446px;

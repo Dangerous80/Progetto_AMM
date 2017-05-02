@@ -7,7 +7,10 @@ package amm.nerdbook;
 
 import amm.nerdbook.Classi.NerdFactory;
 import amm.nerdbook.Classi.Nerd;
+import amm.nerdbook.Classi.GruppoFactory;
+import amm.nerdbook.Classi.Gruppo;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +26,7 @@ public class Profilo extends HttpServlet {
         //Verifico se è già inizializzato un oggetto sessione in modo da capire se esiste già un utente loggato
         HttpSession session = request.getSession(false);
         
+        
         /*se la sessione esiste ed esiste anche l'attributo loggedIn impostato a true recupero lo userid dell'utente loggato 
         per visualizzare i suoi dati*/
         if(session!=null && session.getAttribute("loggedIn")!=null && session.getAttribute("loggedIn").equals(true)){
@@ -30,6 +34,15 @@ public class Profilo extends HttpServlet {
             Nerd nerd = NerdFactory.getInstance().getNerdById(userID);
             if(nerd != null){
                 request.setAttribute("nerd", nerd);
+                
+                //recuperiamo la lista degli utenti esistenti da passare alla sidebar
+                List<Nerd> listaUtenti = NerdFactory.getInstance().getNerdList();
+                request.setAttribute("listaUtenti", listaUtenti);
+                
+                //recuperiamo la lista dei gruppi esistenti da passare alla sidebar
+                List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
+                request.setAttribute("listaGruppi", listaGruppi);
+                
                 request.getRequestDispatcher("profilo.jsp").forward(request, response);
             } else {
                 response.setStatus(HttpServletResponse.SC_NOT_FOUND);

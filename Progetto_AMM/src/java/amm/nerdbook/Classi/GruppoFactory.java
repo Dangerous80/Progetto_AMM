@@ -7,6 +7,7 @@ package amm.nerdbook.Classi;
 
 
 import java.util.ArrayList;
+import java.util.List;
 /**
  *
  * @author Pisano Daniele
@@ -42,13 +43,13 @@ public class GruppoFactory {
         Gruppo gruppo2 = new Gruppo();
         gruppo2.setId(1);
         gruppo2.setNomeGruppo("Star Wars");
-        gruppo2.setUrlImmagineGruppo("Asset/StarWars.png");
+        gruppo2.setUrlImmagineGruppo("Asset/StarWars.jpg");
         gruppo2.setCreatoreGruppo(nerdFactory.getNerdById(0));
         
         //dungeons & dragons
         Gruppo gruppo3 = new Gruppo();
         gruppo3.setId(2);
-        gruppo3.setNomeGruppo("Dungeons & Dragons");
+        gruppo3.setNomeGruppo("D&D");
         gruppo3.setUrlImmagineGruppo("Asset/dungeons&dragons.jpg");
         gruppo3.setCreatoreGruppo(nerdFactory.getNerdById(5));
         
@@ -66,7 +67,8 @@ public class GruppoFactory {
         return null;
     }  
     //inseriamo un metodo che ci consenta di recuperare la lista dei gruppi
-    public ArrayList<Gruppo> getGroupList() {
+    public List getGroupList() 
+    {
             return listaGruppi;
     }
 }

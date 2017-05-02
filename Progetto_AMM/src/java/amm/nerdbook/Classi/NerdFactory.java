@@ -57,7 +57,7 @@ public class NerdFactory {
         nerd3.setCognome("Marras");
         nerd3.setDataNascita("15/08/1991");
         nerd3.setFrasePresentazione("Mantenete la curvatura");
-        nerd3.setUrlFotoProfilo("Asset/Kirk.jpg");
+        nerd3.setUrlFotoProfilo("Asset/kirk.jpg");
         nerd3.setPassword("12345");
 
         //Gianluca Ghidoli Spoke
@@ -116,7 +116,7 @@ public class NerdFactory {
         return -1;
     }
     //inseriamo un metodo che ci consenta di recuperare la lista degli utenti
-    public ArrayList<Nerd> getNerdList()
+    public List getNerdList()
     {
         return listaNerd;
     }
