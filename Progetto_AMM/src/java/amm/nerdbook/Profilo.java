@@ -35,6 +35,7 @@ public class Profilo extends HttpServlet {
             if(nerd != null){
                 request.setAttribute("nerd", nerd);
                 
+                               
                 //recuperiamo la lista degli utenti esistenti da passare alla sidebar
                 List<Nerd> listaUtenti = NerdFactory.getInstance().getNerdList();
                 request.setAttribute("listaUtenti", listaUtenti);
@@ -44,7 +45,8 @@ public class Profilo extends HttpServlet {
                 request.setAttribute("listaGruppi", listaGruppi);
                 
                 request.getRequestDispatcher("profilo.jsp").forward(request, response);
-            } else {
+            } 
+            else {
                 response.setStatus(HttpServletResponse.SC_NOT_FOUND);
             }
         }
@@ -53,7 +55,7 @@ public class Profilo extends HttpServlet {
             request.getRequestDispatcher("profilo.jsp").forward(request, response);
         }
     }
-
+    
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.

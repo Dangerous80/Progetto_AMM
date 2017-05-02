@@ -558,6 +558,9 @@ a:hover{
         padding-left: 100px;
         padding-right: 32px;
     }
+    #datiVariati{
+        clear: left;
+    }
     #accessoNegato{
         position: relative;
         top:84px;

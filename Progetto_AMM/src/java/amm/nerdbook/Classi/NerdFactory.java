@@ -36,7 +36,7 @@ public class NerdFactory {
         nerd1.setCognome("Rossi");
         nerd1.setDataNascita("10/11/1992");
         nerd1.setFrasePresentazione("Che la forza sia con te");
-        nerd1.setUrlFotoProfilo("Asset/Yoda.jpg");
+        nerd1.setUrlFotoProfilo("http://localhost:8080/Progetto_AMM/Asset/Yoda.jpg");
         nerd1.setPassword("12345");
         nerd1.setTipoUtente(Nerd.Type.ADMIN);
         
@@ -47,7 +47,7 @@ public class NerdFactory {
         nerd2.setCognome("Viale");
         nerd2.setDataNascita("15/12/1996");
         nerd2.setFrasePresentazione("Welcome to my jungle");
-        nerd2.setUrlFotoProfilo("Asset/Luke.jpg");
+        nerd2.setUrlFotoProfilo("http://localhost:8080/Progetto_AMM/Asset/Luke.jpg");
         nerd2.setPassword("12345");
 
         //Francesco Marras Kirk
@@ -57,7 +57,7 @@ public class NerdFactory {
         nerd3.setCognome("Marras");
         nerd3.setDataNascita("15/08/1991");
         nerd3.setFrasePresentazione("Mantenete la curvatura");
-        nerd3.setUrlFotoProfilo("Asset/kirk.jpg");
+        nerd3.setUrlFotoProfilo("http://localhost:8080/Progetto_AMM/Asset/kirk.jpg");
         nerd3.setPassword("12345");
 
         //Gianluca Ghidoli Spoke
@@ -67,7 +67,7 @@ public class NerdFactory {
         nerd4.setCognome("Ghidoli");
         nerd4.setDataNascita("15/12/1989");
         nerd4.setFrasePresentazione("Lunga vita e prosperità");
-        nerd4.setUrlFotoProfilo("Asset/spock.jpg");
+        nerd4.setUrlFotoProfilo("http://localhost:8080/Progetto_AMM/Asset/spock.jpg");
         nerd4.setPassword("12345");
 
         //Elenia Loche Leila utente con mancanza di dato frase presentazione
@@ -77,7 +77,7 @@ public class NerdFactory {
         nerd5.setCognome("Loche");
         nerd5.setDataNascita("15/10/1996");
         nerd5.setFrasePresentazione("");
-        nerd5.setUrlFotoProfilo("Asset/Leila.jpg");
+        nerd5.setUrlFotoProfilo("http://localhost:8080/Progetto_AMM/Asset/Leila.jpg");
         nerd5.setPassword("12345");
         
         //Marco Zuddas Artorias D&G
@@ -87,7 +87,7 @@ public class NerdFactory {
         nerd6.setCognome("Zuddas");
         nerd6.setDataNascita("11/07/1981");
         nerd6.setFrasePresentazione("Viva i draghi");
-        nerd6.setUrlFotoProfilo("Asset/artorias.jpg");
+        nerd6.setUrlFotoProfilo("http://localhost:8080/Progetto_AMM/Asset/artorias.jpg");
         nerd6.setPassword("12345");
         
         listaNerd.add(nerd1);

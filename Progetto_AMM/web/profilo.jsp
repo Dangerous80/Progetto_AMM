@@ -69,7 +69,7 @@
                                 <li id="persone">
                                     <h2>Persone</h2>
                                     <ul>
-                                        <c:forEach var="nerd" items="${listaUtenti}">
+                                        <c:forEach begin="0" end="5" var="nerd" items="${listaUtenti}">
                                             <li><a href="Bacheca?user=${nerd.id}"><img class="fotoPersona" src="${nerd.urlFotoProfilo}" alt="Foto Persona">${nerd.nome} ${nerd.cognome}</a></li>
                                         </c:forEach>
                                     </ul>           
@@ -84,7 +84,7 @@
                                         </div>
                                     </form>
                                     <ul>
-                                        <c:forEach var="gruppo" items="${listaGruppi}">
+                                        <c:forEach begin="0" end="5" var="gruppo" items="${listaGruppi}">
                                             <li><a href="Bacheca?user=${gruppo.id}"><img class="fotoGruppo" src="${gruppo.urlImmagineGruppo}" alt="Immagine Gruppo">${gruppo.nomeGruppo}</a></li>
                                         </c:forEach>
                                     </ul>           
@@ -102,8 +102,8 @@
                                     <input type="text" name="cognomeUtente" id="cognomeUtente" value="${nerd.cognome}">
                                     <label id="data" for="dataNascita">Nato il</label>
                                     <input type="date" name="dataNascita" id="dataNascita" value="${nerd.dataNascita}"> 
-                                    <label id="frase" for="fraseProfilo">Frase di presentazione</label>
-                                    <textarea rows="1" cols="35" name="fraseProfilo" id="fraseProfilo" >${nerd.frasePresentazione}</textarea>                        
+                                    <label id="frase" for="frasePresentazione">Frase di presentazione</label>
+                                    <textarea rows="1" cols="35" name="frasePresentazione" id="frasePresentazione" >${nerd.frasePresentazione}</textarea>                        
                                     <label id="foto" for="fotoProfilo">Foto Profilo</label>
                                     <input type="url" name="fotoProfilo" id="fotoProfilo" value="${nerd.urlFotoProfilo}">                        
                                     <label id="password" for="pswdUtente">Password</label>
@@ -111,10 +111,10 @@
                                     <label id="conferma" for="pswdConferma">Conferma Password</label>
                                     <input type="password" name="pswdConferma" id="pswdConferma" value="${nerd.password}">
                                     <div id="pulsanteInvio">
-                                        <button type="submit" name="invioDati" value="ok" onclick="alert('Dati inseriti correttamente')">Aggiorna</button>
+                                        <button type="submit">Aggiorna</button>
                                     </div>
                                 </form>
-                            </div>                           
+                            </div>
                         </div>
                     </c:otherwise>
                 </c:choose>
