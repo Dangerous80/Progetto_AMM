@@ -7,22 +7,128 @@ package amm.nerdbook;
 
 import amm.nerdbook.Classi.NerdFactory;
 import amm.nerdbook.Classi.Nerd;
+import amm.nerdbook.Classi.GruppoFactory;
+import amm.nerdbook.Classi.Gruppo;
+import amm.nerdbook.Classi.PostFactory;
+import amm.nerdbook.Classi.Post;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.HttpSession;
 
- 
+
 public class Bacheca extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        request.getRequestDispatcher("bacheca.jsp").forward(request, response);
+        
+        //verifico se è già stato inizializzato un oggetto sessione, inserendo l'attirbuto false se l'oggetto esiste viene recuperato se non esiste non viene creato
+        HttpSession session = request.getSession(false);
+        
+        //se l'oggetto sessione esiste e allora esistono anche i suoi attributi LoggedIn e LoggedUserID che mi consnetono di visualizzare i dati di un utente loggato
+        if(session!=null && session.getAttribute("loggedIn")!= null && session.getAttribute("loggedIn").equals(true)){
+            
+            //se la richiesta ha passato un parametro user si utilizzerà per visualizzare i post di quell'utente
+            //se la richiesta ha passato un parametro group si utilizzerà per visualizzare i post di quel gruppo
+            String user = request.getParameter("user");
+            String group = request.getParameter("group");
+            
+            int userID;
+            int bachecaID;
+                                   
+            //if(user != null){
+            //    bachecaID = Integer.parseInt(user);
+            //    Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
+            //    userID = loggedUserID;
+            //    Nerd nerd = NerdFactory.getInstance().getNerdById(userID);
+            //    if( nerd != null){
+            //        request.setAttribute("nerd", nerd);
+            //    }
+            //    else {
+            //        response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            //    }
+            //    Nerd userBacheca = NerdFactory.getInstance().getNerdById(bachecaID);
+            //    if( userBacheca != null){
+            //        List<Post> posts = PostFactory.getInstance().getPostList(userBacheca);
+            //        request.setAttribute("posts", posts);
+            //    }
+            //    else {
+            //       response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+            //    }
+                
+            //    //recuperiamo la lista degli utenti esistenti da passare alla sidebar
+            //    List<Nerd> listaUtenti = NerdFactory.getInstance().getNerdList();
+            //    request.setAttribute("listaUtenti", listaUtenti);
+                
+            //    //recuperiamo la lista dei gruppi esistenti da passare alla sidebar
+            //    List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
+            //    request.setAttribute("listaGruppi", listaGruppi);
+                
+            //    request.getRequestDispatcher("bacheca.jsp").forward(request, response);
+            //}    
+            //else{
+                //if(group != null){
+                //    bachecaID = Integer.parseInt(group);
+                //    Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
+                //    userID = loggedUserID;
+                //    Nerd nerd = NerdFactory.getInstance().getNerdById(userID);
+                //    if( nerd != null){
+                //       request.setAttribute("nerd", nerd);
+                //    }
+                //    else {
+                //    response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                //    }
+                //    Gruppo gruppoBacheca = GruppoFactory.getInstance().getGruppoById(bachecaID);
+                //    if( gruppoBacheca != null){
+                //        List<Post> posts = PostFactory.getInstance().getPostList(gruppoBacheca);
+                //        request.setAttribute("posts", posts);
+                //    }
+                //    else {
+                //        response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                //    }
+                //    //recuperiamo la lista degli utenti esistenti da passare alla sidebar
+                //    List<Nerd> listaUtenti = NerdFactory.getInstance().getNerdList();
+                //    request.setAttribute("listaUtenti", listaUtenti);
+                //
+                //   //recuperiamo la lista dei gruppi esistenti da passare alla sidebar
+                //   List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
+                //   request.setAttribute("listaGruppi", listaGruppi);
+                //
+                //   request.getRequestDispatcher("bacheca.jsp").forward(request, response);
+                //}
+               //else{
+                    Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
+                    userID = loggedUserID;
+                    Nerd nerd = NerdFactory.getInstance().getNerdById(userID);
+                    if( nerd != null){
+                        request.setAttribute("nerd", nerd);
+                        
+                        //List<Post> posts = PostFactory.getInstance().getPostList(nerd);
+                        //request.setAttribute("posts", posts);
+                    }
+                    else {
+                        response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                    }
+                    //recuperiamo la lista degli utenti esistenti da passare alla sidebar
+                    List<Nerd> listaUtenti = NerdFactory.getInstance().getNerdList();
+                    request.setAttribute("listaUtenti", listaUtenti);
+                
+                    //recuperiamo la lista dei gruppi esistenti da passare alla sidebar
+                    List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
+                    request.setAttribute("listaGruppi", listaGruppi);
+                
+                    request.getRequestDispatcher("bacheca.jsp").forward(request, response);
+                }
+         //   }
+       // }
+        else{
+            request.setAttribute("accessoNonAutorizzato", true);
+            request.getRequestDispatcher("bacheca.jsp").forward(request, response);
+        }
+      
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

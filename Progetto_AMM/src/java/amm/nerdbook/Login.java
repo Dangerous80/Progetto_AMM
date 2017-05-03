@@ -35,7 +35,6 @@ public class Login extends HttpServlet {
         //Se esiste un attributo di sessione loggedIn e questo vale true allora esiste già un utente loggato e si richiama la servlet Bacheca
         if (session.getAttribute("loggedIn") != null &&
             session.getAttribute("loggedIn").equals(true)) {
-            //verifica se l'utente ha tutti i dati correttamente inseriti
             Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
             Nerd nerd = NerdFactory.getInstance().getNerdById(loggedUserID);
             if (nerd != null){

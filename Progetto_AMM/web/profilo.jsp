@@ -32,7 +32,7 @@
                         <div id="accessoNegato">
                             <div id='utenteNonAutorizzato'>
                                 <p><strong>UTENTE NON AUTORIZZATO</strong></p>
-                                <a id='goToLogin' href="Login">Effettua l'accesso dalla Login</a>
+                                <a id='goToLogin' href="login.jsp">Effettua l'accesso dalla Login</a>
                             </div>
                         </div>    
                     </c:when>
@@ -76,7 +76,7 @@
                                 </li>
                                 <li id="gruppi">
                                     <h2>Gruppi</h2>
-                                    <form action="servlet.java" method="post">
+                                    <form action="Profilo" method="post">
                                         <div id="aggiungiGruppi">
                                             <button type="submit" id="pulsanteAggiungiGruppi">
                                                 <img src="Asset/add.jpg" alt="aggiungi gruppi">
@@ -85,7 +85,7 @@
                                     </form>
                                     <ul>
                                         <c:forEach begin="0" end="5" var="gruppo" items="${listaGruppi}">
-                                            <li><a href="Bacheca?user=${gruppo.id}"><img class="fotoGruppo" src="${gruppo.urlImmagineGruppo}" alt="Immagine Gruppo">${gruppo.nomeGruppo}</a></li>
+                                            <li><a href="Bacheca?group=${gruppo.id}"><img class="fotoGruppo" src="${gruppo.urlImmagineGruppo}" alt="Immagine Gruppo">${gruppo.nomeGruppo}</a></li>
                                         </c:forEach>
                                     </ul>           
                                 </li>
@@ -111,7 +111,7 @@
                                     <label id="conferma" for="pswdConferma">Conferma Password</label>
                                     <input type="password" name="pswdConferma" id="pswdConferma" value="${nerd.password}">
                                     <div id="pulsanteInvio">
-                                        <button type="submit">Aggiorna</button>
+                                        <button type="submit" name="buttonAggiornaDati" value="1">Aggiorna</button>
                                     </div>
                                 </form>
                             </div>

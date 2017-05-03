@@ -558,9 +558,6 @@ a:hover{
         padding-left: 100px;
         padding-right: 32px;
     }
-    #datiVariati{
-        clear: left;
-    }
     #accessoNegato{
         position: relative;
         top:84px;
@@ -602,12 +599,38 @@ a:hover{
     #pageBacheca #sidebar button{
         width: 42px;
     }
+    #pageBacheca #sidebar .fotoPersona, #pageBacheca #sidebar .fotoGruppo{
+        width: 40px;
+        height: 40px;
+    }
     #contenutoBacheca{
         float: left;
         width:786px;
         height: auto;
     }
+    #accessoNegato{
+        position: relative;
+        top:84px;
+        width: 996px;
+        height: 916px;
+        border-radius: 0px 0px 10px 10px;
+        border-bottom: 2px solid #003366;
+        border-left: 2px solid #003366; 
+        border-right: 2px solid #003366;
+    }
+    #utenteNonAutorizzato{
+        margin-left: 350px;
+    }   
+    #utenteNonAutorizzato  p{
+        font-size: 30px;
+        font-weight: bold;
+    } 
+    #utenteNonAutorizzato  a{
+        font-size: 20px;
+        margin-left: 55px;
+    }
     #bacheca{
+        height:1207px;
         border-radius: 0px 0px 10px 0px;
     }
     #infoUtente{

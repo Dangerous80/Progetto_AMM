@@ -15,25 +15,21 @@ public class Post {
         TEXT, IMAGE, URL
     };
     
-    public enum Send {
-        USER, GROUP
-    };
-    
     private int id;
-    private Nerd autore;
     private Nerd user;
+    private Nerd autore;
     private Gruppo gruppo;
     private String testo;
     private String contenuto;
-    private Send postSend;
     private Type postType;
         
     public Post() {
         id = 0;
         autore = null;
+        user = null;
+        gruppo = null;
         testo = "";
         contenuto = "";
-        postSend = Send.USER;
         postType = Type.TEXT;
     }
     
@@ -133,19 +129,5 @@ public class Post {
      */
     public void setPostType(Type postType) {
         this.postType = postType;
-    }
-    
-    /**
-     * @return the postSend
-     */
-    public Send getPostSend() {
-        return postSend;
-    }
-
-    /**
-     * @param postSend the postSend to set
-     */
-    public void setPostSend(Send postSend) {
-        this.postSend = postSend;
     }
 }

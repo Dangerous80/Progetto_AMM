@@ -38,7 +38,7 @@ public class PostFactory {
         post1.setAutore(nerdFactory.getNerdById(1));
         post1.setUser(nerdFactory.getNerdById(0));
         post1.setTesto("Ti mando l'immagine promessa di Star Wars");
-        post1.setContenuto("../Asset/StarWarsImg.jpg");
+        post1.setContenuto("http://localhost:8080/Progetto_AMM/Asset/StarWarsImg.jpg");
         post1.setPostType(Post.Type.IMAGE);
         
         //Post 2 testo da Yoda al gruppo Star Wars
@@ -47,7 +47,7 @@ public class PostFactory {
         post2.setAutore(nerdFactory.getNerdById(0));
         post2.setGruppo(gruppoFactory.getGruppoById(1));
         post2.setTesto("Che la forza sia con voi");
-        post2.setPostSend(Post.Send.GROUP);
+        
         
         //Post 3 con immagine da Spock a Kirk 
         Post post3 = new Post();
@@ -55,7 +55,7 @@ public class PostFactory {
         post3.setAutore(nerdFactory.getNerdById(3));
         post3.setUser(nerdFactory.getNerdById(2));
         post3.setTesto("Ti mando l'immagine promessa di Star Trek");
-        post3.setContenuto("../Asset/StarTrekImg.jpg");
+        post3.setContenuto("http://localhost:8080/Progetto_AMM/Asset/StarTrekImg.jpg");
         post3.setPostType(Post.Type.IMAGE);
         
         //Post 4 con URL da Kirk al gruppo Star Trek
@@ -65,7 +65,6 @@ public class PostFactory {
         post4.setGruppo(gruppoFactory.getGruppoById(0));
         post4.setTesto("Mantenete sempre la barra di curvatura");
         post4.setContenuto("https://gaetaniumberto.files.wordpress.com/2014/05/star-trek-warp_h_partb.jpg");
-        post4.setPostSend(Post.Send.GROUP);
         post4.setPostType(Post.Type.URL);
         
         //Post 5 testuale da Leila a gruppo D&G 
@@ -74,7 +73,7 @@ public class PostFactory {
         post5.setAutore(nerdFactory.getNerdById(4));
         post5.setGruppo(gruppoFactory.getGruppoById(2));
         post5.setTesto("Uscite un pochino di casa");
-        post5.setPostSend(Post.Send.GROUP);
+        
         
         //Post 6 con Url da Spock a Kirk 
         Post post6 = new Post();
@@ -91,7 +90,7 @@ public class PostFactory {
         post7.setAutore(nerdFactory.getNerdById(3));
         post7.setUser(nerdFactory.getNerdById(2));
         post7.setTesto("guarda che bella locandina");
-        post7.setContenuto("../Asset/StarTrekOriginal.jpg");
+        post7.setContenuto("http://localhost:8080/Progetto_AMM/Asset/StarTrekOriginal.jpg");
         post7.setPostType(Post.Type.IMAGE);
         
         listaPost.add(post1);
@@ -125,7 +124,7 @@ public class PostFactory {
         }
         return listaPost;
     }
-    
+        
     //definiamo un metodo che ci consenta di accedere ai vari post tramite l'id di un determinato gruppo
     public List getPostList(Gruppo grp) {
 
