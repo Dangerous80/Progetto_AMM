@@ -25,8 +25,7 @@ public class Profilo extends HttpServlet {
         
         //Verifico se è già inizializzato un oggetto sessione in modo da capire se esiste già un utente loggato
         HttpSession session = request.getSession(false);
-        
-        
+                
         /*se la sessione esiste ed esiste anche l'attributo loggedIn impostato a true recupero lo userid dell'utente loggato 
         per visualizzare i suoi dati*/
         if(session!=null && session.getAttribute("loggedIn")!=null && session.getAttribute("loggedIn").equals(true)){
@@ -42,6 +41,44 @@ public class Profilo extends HttpServlet {
                 //recuperiamo la lista dei gruppi esistenti da passare alla sidebar
                 List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
                 request.setAttribute("listaGruppi", listaGruppi);
+                
+                //codice di verifica modifica dati
+                String pulsanteAggiornaDati=request.getParameter("pulsanteAggiornaDati");
+                boolean aggiornamento;
+                if(pulsanteAggiornaDati != null){
+                    String nomeUtente = request.getParameter("nomeUtente");
+                    String cognomeUtente = request.getParameter("cognomeUtente");
+                    String dataNascita = request.getParameter("dataNascita");
+                    String frasePresentazione = request.getParameter("frasePresentazione");
+                    String fotoProfilo = request.getParameter("fotoProfilo");
+                    String pswdUtente = request.getParameter("pswdUtente");
+                    if(nomeUtente != nerd.getNome()){
+                        request.setAttribute("nome",nomeUtente);
+                    }
+                    if(cognomeUtente != nerd.getCognome()){
+                        request.setAttribute("cognome",cognomeUtente);
+                    }
+                    if(dataNascita != nerd.getDataNascita()){
+                        request.setAttribute("data",dataNascita);
+                    }
+                    if(fotoProfilo != nerd.getUrlFotoProfilo()){
+                        request.setAttribute("foto",fotoProfilo);
+                    }
+                    if(frasePresentazione != nerd.getFrasePresentazione()){
+                        request.setAttribute("frase",frasePresentazione);
+                    }
+                    if(pswdUtente != nerd.getPassword()){
+                        request.setAttribute("password",pswdUtente);
+                    }
+                    if(nomeUtente == nerd.getNome() && cognomeUtente == nerd.getCognome() && dataNascita == nerd.getDataNascita() && fotoProfilo == nerd.getUrlFotoProfilo() && frasePresentazione == nerd.getFrasePresentazione() && pswdUtente == nerd.getPassword()){
+                       aggiornamento=false;
+                       request.setAttribute("aggiornamento", aggiornamento);
+                    }
+                    else{
+                       aggiornamento=true;
+                       request.setAttribute("aggiornamento", aggiornamento);  
+                    }
+                }
                 
                 request.getRequestDispatcher("profilo.jsp").forward(request, response);
             } 

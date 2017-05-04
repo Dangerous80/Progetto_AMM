@@ -559,6 +559,9 @@ a:hover{
         padding-left: 100px;
         padding-right: 32px;
     }
+    #contenutoProfilo #riepilogoAggiornamento{
+        clear: both;
+    }
     #pageProfilo #accessoNegato{
         position: relative;
         top:84px;
@@ -762,7 +765,7 @@ a:hover{
     /*--Pagina Profilo--*/
     #pageProfilo{
         width: 600px;
-        height: 686px;;
+        height: 986px;;
         margin-left: auto;
         margin-right: auto;    
         background-color: white;
@@ -770,9 +773,16 @@ a:hover{
     #pageProfilo #sidebar{
         float: left;
         width: 32.5%;
-        height: 580px;
+        height: 89.3%;
         border-bottom: 2px solid#003366;
         border-radius: 0px 0px 0px 10px;
+    }
+    #pageProfilo #riepilogoAggiornamento{
+        clear:both;
+        width: 350px;
+        position:relative;
+        bottom: 20px;
+        left: 20px;
     }
     #pageProfilo #sidebar button{
         width: 42px;
@@ -788,6 +798,7 @@ a:hover{
         border-radius: 0px 0px 10px 0px;
         padding-left: 0px;
         padding-right: 132px;
+        padding-bottom: 300px;
     }
     #contenutoProfilo img{
         padding-top: 40px;
@@ -920,7 +931,7 @@ a:hover{
     #pageProfilo #icoCss img{
         position: relative;
         bottom: 40px;
-        left: 510px;
+        left: 300px;
     }
     #pageDescrizione #icoCss img{
         position: relative;
@@ -1034,7 +1045,15 @@ a:hover{
         border-radius: 0px 0px 0px 0px;
     }
     #pageProfilo #contenutoProfilo{
+        height: 780px;;
         border-radius: 0px 0px 10px 10px;
+    }
+    #pageProfilo #riepilogoAggiornamento{
+        clear:both;
+        width: 350px;
+        position:relative;
+        bottom: 20px;
+        left: 50px;
     }
     #pageProfilo #contenutoProfilo #inputUtente{
         padding-top: 2px;

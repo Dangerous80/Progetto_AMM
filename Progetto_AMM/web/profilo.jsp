@@ -114,10 +114,21 @@
                                     <label id="conferma" for="pswdConferma">Conferma Password</label>
                                     <input type="password" name="pswdConferma" id="pswdConferma" value="${nerd.password}">
                                     <div id="pulsanteInvio">
-                                        <button type="submit" name="buttonAggiornaDati" value="1">Aggiorna</button>
+                                        <button type="submit" name="pulsanteAggiornaDati" value="ok">Aggiorna</button>
                                     </div>
                                 </form>
                             </div>
+                            <c:if test="${aggiornamento == true}">
+                                <div id="riepilogoAggiornamento"> 
+                                    <p id="riepilogo"><strong>Riepilogo Aggiornamento</strong></p>
+                                    <p><strong>Nome: </strong>${nome}</p>
+                                    <p><strong>Cognome: </strong>${cognome}</p>
+                                    <p><strong>Data di nascita: </strong>${data}</p>
+                                    <p><strong>Frase di Presentazione: </strong>${frase}</p>
+                                    <p><strong>Foto del profilo: </strong>${foto}</p>
+                                    <p><strong>Password di accesso: </strong>${password}</p>
+                                </div>
+                            </c:if>    
                         </div>
                     </c:otherwise>
                 </c:choose>
