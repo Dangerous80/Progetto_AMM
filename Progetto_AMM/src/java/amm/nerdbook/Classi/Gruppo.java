@@ -11,21 +11,23 @@ package amm.nerdbook.Classi;
  */
 public class Gruppo {
 
+    
     /*definiamo gli attributi di Gruppo*/
     private int id;
+    private Nerd creatore;
     private String nomeGruppo;
     private String urlImmagineGruppo;
-    private Nerd creatoreGruppo;
-    
+        
     /*definiamo ora il costruttore di Nerd*/
      public Gruppo() {
         id = 0;
+        creatore = null;
         nomeGruppo = "";
         urlImmagineGruppo= "";
-        creatoreGruppo = null;
+        
     }
     
-    /*verifichiamo tramite l'id che non ci siano due Nerd uguali*/
+    /*verifichiamo tramite l'id che non ci siano due Gruppi uguali*/
     @Override
     public boolean equals(Object altroGruppo) {
         if (altroGruppo instanceof Gruppo)
@@ -45,6 +47,20 @@ public class Gruppo {
      */
     public void setId(int id) {
         this.id = id;
+    }
+    
+    /**
+     * @return the creatore
+     */
+    public Nerd getCreatore() {
+        return creatore;
+    }
+
+    /**
+     * @param creatore the creatore to set
+     */
+    public void setCreatore(Nerd creatore) {
+        this.creatore = creatore;
     }
 
     /**
@@ -75,17 +91,4 @@ public class Gruppo {
         this.urlImmagineGruppo = urlImmagineGruppo;
     }
 
-    /**
-     * @return the creatoreGruppo
-     */
-    public Nerd getCreatoreGruppo() {
-        return creatoreGruppo;
-    }
-
-    /**
-     * @param creatoreGruppo the creatoreGruppo to set
-     */
-    public void setCreatoreGruppo(Nerd creatoreGruppo) {
-        this.creatoreGruppo = creatoreGruppo;
-    }
 }

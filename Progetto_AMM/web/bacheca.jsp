@@ -83,8 +83,10 @@
                                         </div>
                                     </form>
                                     <ul>
-                                        <c:forEach var="gruppo" items="${listaGruppi}">
-                                            <li><a href="Bacheca?group=${gruppo.id}"><img class="fotoGruppo" src="${gruppo.urlImmagineGruppo}" alt="Immagine Gruppo">${gruppo.nomeGruppo}</a></li>
+                                        <c:forEach var="gruppo" items="${listaGruppi}" varStatus="status">
+                                            <c:if test="${not status.last}">
+                                                <li><a href="Bacheca?group=${gruppo.id}"><img class="fotoGruppo" src="${gruppo.urlImmagineGruppo}" alt="Immagine Gruppo">${gruppo.nomeGruppo}</a></li>
+                                            </c:if>
                                         </c:forEach>
                                     </ul>           
                                 </li>

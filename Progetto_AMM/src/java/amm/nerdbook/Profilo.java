@@ -35,7 +35,6 @@ public class Profilo extends HttpServlet {
             if(nerd != null){
                 request.setAttribute("nerd", nerd);
                 
-                               
                 //recuperiamo la lista degli utenti esistenti da passare alla sidebar
                 List<Nerd> listaUtenti = NerdFactory.getInstance().getNerdList();
                 request.setAttribute("listaUtenti", listaUtenti);

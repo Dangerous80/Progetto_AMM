@@ -69,7 +69,7 @@ public class PostFactory {
         post4.setGruppo(gruppoFactory.getGruppoById(0));
         post4.setTesto("Mantenete sempre la barra di curvatura");
         post4.setContenuto("https://gaetaniumberto.files.wordpress.com/2014/05/star-trek-warp_h_partb.jpg");
-        post4.setPostType(Post.Type.URL);
+        post4.setPostType(Post.Type.IMAGE);
         
         //Post 5 testuale da Leila a gruppo D&G , autore e user uguali
         Post post5 = new Post();
@@ -85,7 +85,7 @@ public class PostFactory {
         post6.setId(5);
         post6.setAutore(nerdFactory.getNerdById(3));
         post6.setUser(nerdFactory.getNerdById(2));
-        post3.setGruppo(gruppoFactory.getGruppoById(999));
+        post6.setGruppo(gruppoFactory.getGruppoById(999));
         post6.setTesto("Ti mando l'url di cui tiparlavo");
         post6.setContenuto("http://www.stic.it/");
         post6.setPostType(Post.Type.URL);
@@ -95,7 +95,7 @@ public class PostFactory {
         post7.setId(6);
         post7.setAutore(nerdFactory.getNerdById(3));
         post7.setUser(nerdFactory.getNerdById(2));
-        post3.setGruppo(gruppoFactory.getGruppoById(999));
+        post7.setGruppo(gruppoFactory.getGruppoById(999));
         post7.setTesto("guarda che bella locandina");
         post7.setContenuto("http://localhost:8080/Progetto_AMM/Asset/StarTrekOriginal.jpg");
         post7.setPostType(Post.Type.IMAGE);
@@ -149,18 +149,7 @@ public class PostFactory {
         }
         return listaPost;
     }
-    
-    //definiamo un metodo che ci consenta di accedere ai vari post tramite l'id di un determinato autore
-    public List getAutorPostList(Nerd aut) {
-        List<Post> listaPost = new ArrayList<Post>();
-        for (Post post : this.listaPost) {
-            if(post.getAutore().equals(aut)) {
-                listaPost.add(post);
-            }
-        }
-        return listaPost;
-    }
-        
+           
     //definiamo un metodo che ci consenta di accedere ai vari post tramite l'id di un determinato gruppo
     public List getGroupPostList(Gruppo grp) {
         List<Post> listaPost = new ArrayList<Post>();

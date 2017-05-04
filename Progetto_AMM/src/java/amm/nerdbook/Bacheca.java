@@ -69,37 +69,38 @@ public class Bacheca extends HttpServlet {
                 
                 request.getRequestDispatcher("bacheca.jsp").forward(request, response);
             }    
-            //else{
-              //   if(group != null){
-              //      bachecaID = Integer.parseInt(group);
-              //      Gruppo gruppoBacheca = GruppoFactory.getInstance().getGruppoById(bachecaID);
-              //      if(gruppoBacheca != null){
-              //          List<Post> posts = PostFactory.getInstance().getGroupPostList(gruppoBacheca);
-              //          request.setAttribute("posts", posts);
-              //      }
-              //      else {
-              //      response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-              //      }
-              //      Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
-              //      userID = loggedUserID;
-              //      Nerd nerd = NerdFactory.getInstance().getNerdById(userID);
-              //      if( nerd != null){
-              //         request.setAttribute("nerd", nerd);
-              //      }
-              //      else {
-              //          response.setStatus(HttpServletResponse.SC_NOT_FOUND);
-              //      }
-              //      
-              //      //recuperiamo la lista degli utenti esistenti da passare alla sidebar
-              //      List<Nerd> listaUtenti = NerdFactory.getInstance().getNerdList();
-              //      request.setAttribute("listaUtenti", listaUtenti);
-              //  
-              //      //recuperiamo la lista dei gruppi esistenti da passare alla sidebar
-              //      List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
-              //      request.setAttribute("listaGruppi", listaGruppi);
-              //  
-              //      request.getRequestDispatcher("bacheca.jsp").forward(request, response);
-              //  }
+            else{
+                 if(group != null){
+                    bachecaID = Integer.parseInt(group);
+                    Gruppo gruppoBacheca = GruppoFactory.getInstance().getGruppoById(bachecaID);
+                    if(gruppoBacheca != null){
+                      List<Post> posts = PostFactory.getInstance().getGroupPostList(gruppoBacheca);
+                      request.setAttribute("posts", posts);
+                    }
+                    else {
+                      response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                    }
+                    Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
+                    userID = loggedUserID;
+                    Nerd nerd = NerdFactory.getInstance().getNerdById(userID);
+                    if(nerd != null){
+                       request.setAttribute("nerd", nerd);
+                    }
+                    else {
+                        response.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                    }
+                    
+                    //recuperiamo la lista degli utenti esistenti da passare alla sidebar
+                    List<Nerd> listaUtenti = NerdFactory.getInstance().getNerdList();
+                    request.setAttribute("listaUtenti", listaUtenti);
+                
+                    //recuperiamo la lista dei gruppi esistenti da passare alla sidebar
+                    List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
+                    request.setAttribute("listaGruppi", listaGruppi);
+                
+                    request.getRequestDispatcher("bacheca.jsp").forward(request, response);
+                    
+                 }    
                 else{
                     Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
                     userID = loggedUserID;
@@ -123,7 +124,7 @@ public class Bacheca extends HttpServlet {
                 
                     request.getRequestDispatcher("bacheca.jsp").forward(request, response);
                 }
-           // }
+            }
         }
         else{
             request.setAttribute("accessoNonAutorizzato", true);
