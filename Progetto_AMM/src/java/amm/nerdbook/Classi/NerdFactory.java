@@ -38,7 +38,7 @@ public class NerdFactory {
         nerd1.setFrasePresentazione("Che la forza sia con te");
         nerd1.setUrlFotoProfilo("http://localhost:8080/Progetto_AMM/Asset/Yoda.jpg");
         nerd1.setPassword("12345");
-        nerd1.setTipoUtente(Nerd.Type.ADMIN);
+        
         
         //Luca Viale Luke
         Nerd nerd2 = new Nerd();
@@ -95,7 +95,7 @@ public class NerdFactory {
         listaNerd.add(nerd3);
         listaNerd.add(nerd4);
         listaNerd.add(nerd5);
-        listaNerd.add(nerd6);
+        listaNerd.add(nerd6); 
     }
     //inseriamo un metodo che ci consenta di reperire le info sull'utente mediante il suo id
     public Nerd getNerdById(int id) {

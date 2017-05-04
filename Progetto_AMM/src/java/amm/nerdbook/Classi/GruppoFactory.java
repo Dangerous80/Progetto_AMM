@@ -5,7 +5,6 @@
  */
 package amm.nerdbook.Classi;
 
-
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -53,9 +52,18 @@ public class GruppoFactory {
         gruppo3.setUrlImmagineGruppo("http://localhost:8080/Progetto_AMM/Asset/dungeons&dragons.jpg");
         gruppo3.setCreatoreGruppo(nerdFactory.getNerdById(5));
         
+        //default
+        Gruppo gruppo999 = new Gruppo();
+        gruppo999.setId(999);
+        gruppo999.setNomeGruppo("Default");
+        gruppo999.setUrlImmagineGruppo("http://localhost:8080/Progetto_AMM/Asset/nerdLogo.jpg");
+        gruppo999.setCreatoreGruppo(nerdFactory.getNerdById(0));
+        
         listaGruppi.add(gruppo1);
         listaGruppi.add(gruppo2);
         listaGruppi.add(gruppo3);
+        
+        
     }
     //inseriamo un metodo che ci consenta di reperire le info su di un gruppo mediante il suo id
     public Gruppo getGruppoById(int id) {

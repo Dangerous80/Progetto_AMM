@@ -425,6 +425,7 @@ a:hover{
     padding-bottom: 10px;
     height: auto;
     width: auto;
+    overflow: auto;
 }
 #bacheca .post{
     border-top: 2px solid #003366;
@@ -558,7 +559,7 @@ a:hover{
         padding-left: 100px;
         padding-right: 32px;
     }
-    #accessoNegato{
+    #pageProfilo #accessoNegato{
         position: relative;
         top:84px;
         width: 996px;
@@ -568,14 +569,14 @@ a:hover{
         border-left: 2px solid #003366; 
         border-right: 2px solid #003366;
     }
-    #utenteNonAutorizzato{
+    #pageProfilo #utenteNonAutorizzato{
         margin-left: 350px;
     }   
-    #utenteNonAutorizzato  p{
+    #pageProfilo #utenteNonAutorizzato  p{
         font-size: 30px;
         font-weight: bold;
     } 
-    #utenteNonAutorizzato  a{
+    #pageProfilo #utenteNonAutorizzato  a{
         font-size: 20px;
         margin-left: 55px;
     } 
@@ -608,24 +609,24 @@ a:hover{
         width:786px;
         height: auto;
     }
-    #accessoNegato{
+    #pageBacheca #accessoNegato{
         position: relative;
         top:84px;
         width: 996px;
-        height: 916px;
+        height: 1555px;
         border-radius: 0px 0px 10px 10px;
         border-bottom: 2px solid #003366;
         border-left: 2px solid #003366; 
         border-right: 2px solid #003366;
     }
-    #utenteNonAutorizzato{
+    #pageBacheca #utenteNonAutorizzato{
         margin-left: 350px;
     }   
-    #utenteNonAutorizzato  p{
+    #pageBacheca #utenteNonAutorizzato  p{
         font-size: 30px;
         font-weight: bold;
     } 
-    #utenteNonAutorizzato  a{
+    #pageBacheca #utenteNonAutorizzato  a{
         font-size: 20px;
         margin-left: 55px;
     }
@@ -795,7 +796,7 @@ a:hover{
         padding-top: 80px;
         padding-left: 20px;
     }
-    #accessoNegato{
+    #pageProfilo #accessoNegato{
         position: relative;
         top:84px;
         width: 596px;
@@ -805,13 +806,13 @@ a:hover{
         border-left: 2px solid #003366; 
         border-right: 2px solid #003366;
     }
-    #utenteNonAutorizzato{
+    #pageProfilo #utenteNonAutorizzato{
         margin-left: 125px;
     }   
-    #utenteNonAutorizzato  p{
+    #pageProfilo #utenteNonAutorizzato  p{
         font-size: 30px;
     } 
-    #utenteNonAutorizzato  a{
+    #pageProfilo #utenteNonAutorizzato  a{
         font-size: 20px;
         margin-left: 55px;
     }
@@ -825,20 +826,47 @@ a:hover{
     #pageBacheca #sidebar{
         float: left;
         width: 32.5%;
-        height: 1076px;
+        height: 100%;
         border-bottom: 2px solid#003366;
         border-radius: 0px 0px 0px 10px;
     }
     #pageBacheca #sidebar button{
         width: 42px;
     }
+    #pageBacheca #sidebar .fotoPersona, #pageBacheca #sidebar .fotoGruppo{
+        width: 40px;
+        height: 40px;
+    }
     #contenutoBacheca{
         float: left;
         width:391px;
         height: auto;
     }
+    #pageBacheca #accessoNegato{
+        position: relative;
+        top:84px;
+        width: 596px;
+        height: 1098px;
+        border-radius: 0px 0px 10px 10px;
+        border-bottom: 2px solid #003366;
+        border-left: 2px solid #003366; 
+        border-right: 2px solid #003366;
+    }
+    #pageBacheca #utenteNonAutorizzato{
+        margin-left: 130px;
+    }   
+    #pageBacheca #utenteNonAutorizzato  p{
+        font-size: 30px;
+        font-weight: bold;
+    } 
+    #pageBacheca #utenteNonAutorizzato  a{
+        font-size: 20px;
+        margin-left: 55px;
+    }
     #bacheca{
+        height: 883px;
         border-radius: 0px 0px 10px 0px;
+        overflow: auto;
     }
     #infoUtente{
         height: 80px;
@@ -907,6 +935,7 @@ a:hover{
     #linkLogout{
         margin-left: -5px;
     }
+    
 } 
 @media only screen and (max-width: 480px) {
     #pageBacheca, #pageDescrizione, #pageProfilo, #pageLogin{
@@ -1019,7 +1048,7 @@ a:hover{
         width: 40px;
         height: 40px;
     }
-     #accessoNegato{
+    #accessoNegato{
         width: 446px;
         height: auto;
         margin-top: -30px;
@@ -1056,6 +1085,10 @@ a:hover{
         position: relative;
         left: 50px;
     }
+    #pageBacheca #sidebar .fotoPersona, #pageBacheca #sidebar .fotoGruppo{
+        width: 40px;
+        height: 40px;
+    }
     #pageBacheca #linkPagine{
         position: relative;
         bottom: 44px;
@@ -1063,6 +1096,27 @@ a:hover{
     } 
     #pageBacheca #sidebar{
         border-radius: 0px 0px 0px 0px;
+    }
+    #accessoNegato{
+        width: 446px;
+        height: auto;
+        margin-top: -30px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        border-radius: 0px 0px 10px 10px;
+        border-bottom: 2px solid #003366;
+        border-left: 2px solid #003366; 
+        border-right: 2px solid #003366;
+    }
+    #utenteNonAutorizzato{
+        margin-left: 50px;
+    }   
+    #utenteNonAutorizzato  p{
+        font-size: 30px;
+    } 
+    #utenteNonAutorizzato  a{
+        font-size: 20px;
+        margin-left: 55px;
     }
     /*--dimensione dei post--*/
     .post{

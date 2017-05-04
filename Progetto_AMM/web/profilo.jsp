@@ -69,7 +69,7 @@
                                 <li id="persone">
                                     <h2>Persone</h2>
                                     <ul>
-                                        <c:forEach begin="0" end="5" var="nerd" items="${listaUtenti}">
+                                        <c:forEach var="nerd" items="${listaUtenti}">
                                             <li><a href="Bacheca?user=${nerd.id}"><img class="fotoPersona" src="${nerd.urlFotoProfilo}" alt="Foto Persona">${nerd.nome} ${nerd.cognome}</a></li>
                                         </c:forEach>
                                     </ul>           
@@ -84,7 +84,7 @@
                                         </div>
                                     </form>
                                     <ul>
-                                        <c:forEach begin="0" end="5" var="gruppo" items="${listaGruppi}">
+                                        <c:forEach var="gruppo" items="${listaGruppi}">
                                             <li><a href="Bacheca?group=${gruppo.id}"><img class="fotoGruppo" src="${gruppo.urlImmagineGruppo}" alt="Immagine Gruppo">${gruppo.nomeGruppo}</a></li>
                                         </c:forEach>
                                     </ul>           

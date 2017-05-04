@@ -15,6 +15,7 @@ public class Post {
         TEXT, IMAGE, URL
     };
     
+        
     private int id;
     private Nerd user;
     private Nerd autore;
