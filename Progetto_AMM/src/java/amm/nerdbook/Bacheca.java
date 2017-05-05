@@ -74,6 +74,8 @@ public class Bacheca extends HttpServlet {
                 List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
                 request.setAttribute("listaGruppi", listaGruppi);
                 
+                request.setAttribute("bachecaUtente", user);
+                
                 //verifichiamo ora se è stato inserito un nuovo post
                 if(pulsanteCreaPost != null){
                     if(testoPost != null){
@@ -82,15 +84,13 @@ public class Bacheca extends HttpServlet {
                     if(urlPost != null){
                         request.setAttribute("url",urlPost);
                     }
-                    if(testoPost== null){
+                    if(testoPost == null){
                         inserimento=false;
-                        request.setAttribute("user", user);
                         request.setAttribute("inserimento", inserimento);
                     }
                     else{
                         inserimento=true;
-                        request.setAttribute("user", user);
-                        request.setAttribute("inserimento", inserimento); 
+                        request.setAttribute("inserimento", inserimento);
                     }
                 }
                 //se l'inserimento viene confermato scriviamo sulla bacheca (nostra, dell'utente o del gruppo scelto)
@@ -98,7 +98,6 @@ public class Bacheca extends HttpServlet {
                     conferma=true;
                     request.setAttribute("conferma", conferma);
                     request.setAttribute("bacheca", userBacheca.getNome());
-                    request.setAttribute("user", user);
                     //page.setAttribute("autore",nerd.getNome());
                     //page.setAttribute("user",userBacheca.getNome());
                     //int gruppoDefault=999;
@@ -140,6 +139,8 @@ public class Bacheca extends HttpServlet {
                     List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
                     request.setAttribute("listaGruppi", listaGruppi);
                     
+                    request.setAttribute("bachecaGruppo", group);
+                    
                     //verifichiamo ora se è stato inserito un nuovo post
                     if(pulsanteCreaPost != null){
                         if(testoPost != null){
@@ -150,12 +151,11 @@ public class Bacheca extends HttpServlet {
                         }
                         if(testoPost.isEmpty()){
                             inserimento=false;
-                            request.setAttribute("group", group);
+                            
                             request.setAttribute("inserimento", inserimento);
                         }
                         else{
                             inserimento=true;
-                            request.setAttribute("group", group);
                             request.setAttribute("inserimento", inserimento); 
                         }
                     }
@@ -164,7 +164,6 @@ public class Bacheca extends HttpServlet {
                         conferma=true;
                         request.setAttribute("conferma", conferma);
                         request.setAttribute("bacheca", gruppoBacheca.getNomeGruppo());
-                        request.setAttribute("group", bachecaID);
                         //page.setAttribute("autore",nerd.getNome());
                         //page.setAttribute("user",nerd.getNome());
                         //page.setAttribute("gruppo", gruppoBAcheca);

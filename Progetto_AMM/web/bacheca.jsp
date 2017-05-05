@@ -118,6 +118,12 @@
                                         <input type="radio" name="tipoPost" value="linkType" id="tipoLink">
                                         <label for="tipoLink">Link</label>
                                         <div id='creaPost'>
+                                            <c:if test="${bachecaUtente != null}">
+                                               <c:set var="user" value="${bachecaUtente}" scope="request"/>
+                                            </c:if> 
+                                            <c:if test="${bachecaGruppo != null}">
+                                                <c:set var="group" value="${bachecaGruppo}" scope="request"/>
+                                            </c:if>
                                             <button type="submit" id="pulsanteCreaPost" name="pulsanteCreaPost" value="true">Crea Post</button>
                                         </div>
                                     </div>    
@@ -129,15 +135,21 @@
                                     <p><strong>Testo: </strong>${testo}</p>
                                     <p><strong>Url: </strong>${url}</p>
                                     <form action="Bacheca" method="post">
+                                        <c:if test="${bachecaUtente != null}">
+                                            <c:set var="user" value="${bachecaUtente}" scope="request"/>
+                                        </c:if> 
+                                        <c:if test="${bachecaGruppo != null}">
+                                            <c:set var="group" value="${bachecaGruppo}"scope="request"/>
+                                        </c:if>
                                         <button type="submit" id="pulsanteConferma" name="pulsanteConferma" value="true">Inserisci post</button>
-                                    </form>    
+                                    </form> 
                                 </div>
                                 </c:if>
                                 <!--conferma inserimento post-->
                                 <c:if test="${conferma == true}">
                                     <div id="confermaPost">
                                         <p><strong>Hai scritto nella bacheca di: </strong>${bacheca}</p>
-                                    </div>    
+                                    </div> 
                                 </c:if>    
                             </div>    
                             <!--Inseriamo i post da visualizzare sulla Bacheca-->
