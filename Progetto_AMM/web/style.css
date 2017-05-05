@@ -640,15 +640,41 @@ a:hover{
         margin-left: 55px;
     }
     #bacheca{
-        height:1207px;
+        height:1058px;
         border-radius: 0px 0px 10px 0px;
     }
     #infoUtente{
-        height: 80px;
+        height: 60px;
     }
     #formNewPost{
-        height: 201px;
+        height: 370px;
         padding-left: 160px;
+    }
+    #formNewPost #riepilogoPost{
+        clear: both;
+        width: 558px;
+        margin-left: -50px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #formNewPost #riepilogoPost p{
+        text-align: center;
+    }
+    #formNewPost #riepilogoPost #pulsanteConferma{
+        margin-left: 20px;
+        width: 520px
+    }
+    #formNewPost #confermaPost{
+        position: relative;
+        top: 40px;
+        width: 558px;
+        margin-left: -50px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #formNewPost #confermaPost p{
+        text-align: center;
+        font-size: 25px;
     }
     /*--dimensione dei post--*/
     .post{
@@ -886,7 +912,7 @@ a:hover{
         margin-left: 55px;
     }
     #bacheca{
-        height: 883px;
+        height: 698px;
         border-radius: 0px 0px 10px 0px;
         overflow: auto;
     }
@@ -894,7 +920,7 @@ a:hover{
         height: 80px;
     }
     #formNewPost{
-        height: 180px;
+        height: 365px;
         padding-top: 0px;
         padding-left: 0px;
         padding-bottom: 15px;
@@ -916,6 +942,32 @@ a:hover{
     }
     #formNewPost #creaPost #pulsanteCreaPost{
         width: 328px;
+    }
+    #formNewPost #riepilogoPost{
+        clear: both;
+        width: 373px;
+        margin-left: 5px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #formNewPost #riepilogoPost p{
+        text-align: center;
+    }
+    #formNewPost #riepilogoPost #pulsanteConferma{
+        margin-left: 5px;
+        width: 363px
+    }
+    #formNewPost #confermaPost{
+        position: relative;
+        top: 40px;
+        width: 373px;
+        margin-left: 5px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #formNewPost #confermaPost p{
+        text-align: center;
+        font-size: 25px;
     }
     /*--dimensione dei post--*/
     .post{
@@ -1164,7 +1216,29 @@ a:hover{
         width:auto;
         height: 50px;
         overflow: scroll;
-    }    
+    }  
+    #formNewPost #riepilogoPost{
+        width: 422px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #formNewPost #riepilogoPost p{
+        text-align: center;
+    }
+    #formNewPost #riepilogoPost #pulsanteConferma{
+        margin-left: 5px;
+        width: 412px
+    }
+    #formNewPost #confermaPost{
+        position: relative;
+        width: 423px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #formNewPost #confermaPost p{
+        text-align: center;
+        font-size: 25px;
+    }
     #bacheca .post .immagineAllegata{
         padding-left: 100px;
         width: 200px;

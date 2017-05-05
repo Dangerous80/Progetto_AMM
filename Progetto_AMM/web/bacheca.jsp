@@ -118,10 +118,27 @@
                                         <input type="radio" name="tipoPost" value="linkType" id="tipoLink">
                                         <label for="tipoLink">Link</label>
                                         <div id='creaPost'>
-                                            <button type="submit" id="pulsanteCreaPost" name="buttonCreaPost" value="1">Crea Post</button>
+                                            <button type="submit" id="pulsanteCreaPost" name="pulsanteCreaPost" value="true">Crea Post</button>
                                         </div>
                                     </div>    
                                 </form>
+                                <!--riepilogo post inserito-->
+                                <c:if test="${inserimento == true}">
+                                <div id="riepilogoPost"> 
+                                    <p id="riepilogo"><strong>Riepilogo Post</strong></p>
+                                    <p><strong>Testo: </strong>${testo}</p>
+                                    <p><strong>Url: </strong>${url}</p>
+                                    <form action="Bacheca" method="post">
+                                        <button type="submit" id="pulsanteConferma" name="pulsanteConferma" value="true">Inserisci post</button>
+                                    </form>    
+                                </div>
+                                </c:if>
+                                <!--conferma inserimento post-->
+                                <c:if test="${conferma == true}">
+                                    <div id="confermaPost">
+                                        <p><strong>Hai scritto nella bacheca di: </strong>${bacheca}</p>
+                                    </div>    
+                                </c:if>    
                             </div>    
                             <!--Inseriamo i post da visualizzare sulla Bacheca-->
                             <div id="bacheca">
