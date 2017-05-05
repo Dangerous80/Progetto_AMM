@@ -70,7 +70,8 @@ public class Profilo extends HttpServlet {
                     if(pswdUtente != nerd.getPassword()){
                         request.setAttribute("password",pswdUtente);
                     }
-                    if(nomeUtente == nerd.getNome() && cognomeUtente == nerd.getCognome() && dataNascita == nerd.getDataNascita() && fotoProfilo == nerd.getUrlFotoProfilo() && frasePresentazione == nerd.getFrasePresentazione() && pswdUtente == nerd.getPassword()){
+                    if(nomeUtente.equals(nerd.getNome()) && cognomeUtente.equals(nerd.getCognome()) && dataNascita.equals(nerd.getDataNascita()) 
+                       && fotoProfilo.equals(nerd.getUrlFotoProfilo()) && frasePresentazione.equals(nerd.getFrasePresentazione()) && pswdUtente.equals(nerd.getPassword())){
                        aggiornamento=false;
                        request.setAttribute("aggiornamento", aggiornamento);
                     }

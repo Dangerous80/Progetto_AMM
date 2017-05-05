@@ -561,6 +561,12 @@ a:hover{
     }
     #contenutoProfilo #riepilogoAggiornamento{
         clear: both;
+        width: 530px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #contenutoProfilo #riepilogoAggiornamento p{
+        margin-left: 20px;
     }
     #pageProfilo #accessoNegato{
         position: relative;
@@ -779,10 +785,15 @@ a:hover{
     }
     #pageProfilo #riepilogoAggiornamento{
         clear:both;
-        width: 350px;
+        width: 345px;
         position:relative;
-        bottom: 20px;
+        bottom: 63px;
         left: 20px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #pageProfilo #riepilogoAggiornamento p{
+        margin-left: 20px;
     }
     #pageProfilo #sidebar button{
         width: 42px;
@@ -1050,10 +1061,15 @@ a:hover{
     }
     #pageProfilo #riepilogoAggiornamento{
         clear:both;
-        width: 350px;
+        width: 347px;
         position:relative;
-        bottom: 20px;
+        bottom: 45px;
         left: 50px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #pageProfilo #riepilogoAggiornamento p{
+        margin-left: 20px;
     }
     #pageProfilo #contenutoProfilo #inputUtente{
         padding-top: 2px;
