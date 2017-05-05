@@ -98,14 +98,6 @@ public class Bacheca extends HttpServlet {
                     conferma=true;
                     request.setAttribute("conferma", conferma);
                     request.setAttribute("bacheca", userBacheca.getNome());
-                    //page.setAttribute("autore",nerd.getNome());
-                    //page.setAttribute("user",userBacheca.getNome());
-                    //int gruppoDefault=999;
-                    //Gruppo gruppoDefault = GruppoFactory.getInstance().getGruppoById(gruppoDefault);
-                    //page.setAttribute("gruppo", gruppoDefault);
-                    //page.setAttribute("testoPost", testoPost);
-                    //page.setAttribute("contenuto", urlPost);
-                    //page.setAttribute("tipoPost", tipoPost);
                 }
                                
                 request.getRequestDispatcher("bacheca.jsp").forward(request, response);
@@ -164,12 +156,6 @@ public class Bacheca extends HttpServlet {
                         conferma=true;
                         request.setAttribute("conferma", conferma);
                         request.setAttribute("bacheca", gruppoBacheca.getNomeGruppo());
-                        //page.setAttribute("autore",nerd.getNome());
-                        //page.setAttribute("user",nerd.getNome());
-                        //page.setAttribute("gruppo", gruppoBAcheca);
-                        //page.setAttribute("testoPost", testoPost);
-                        //page.setAttribute("contenuto", urlPost);
-                        //page.setAttribute("tipoPost", tipoPost);
                     }
                     
                     request.getRequestDispatcher("bacheca.jsp").forward(request, response);
@@ -218,15 +204,7 @@ public class Bacheca extends HttpServlet {
                         conferma=true;
                         request.setAttribute("conferma", conferma);
                         request.setAttribute("bacheca", nerd.getNome());
-                        //page.setAttribute("autore",nerd.getNome());
-                        //page.setAttribute("user",nerd.getNome());
-                        //int gruppoDefault=999;
-                        //Gruppo gruppoDefault = GruppoFactory.getInstance().getGruppoById(gruppoDefault);
-                        //page.setAttribute("gruppo", gruppoDefault);
-                        //page.setAttribute("testoPost", testoPost);
-                        //page.setAttribute("contenuto", urlPost);
-                        //page.setAttribute("tipoPost", tipoPost);
-                    }
+                        }
                     
                     request.getRequestDispatcher("bacheca.jsp").forward(request, response);
                 }

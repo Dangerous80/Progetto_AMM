@@ -119,10 +119,10 @@
                                         <label for="tipoLink">Link</label>
                                         <div id='creaPost'>
                                             <c:if test="${bachecaUtente != null}">
-                                               <c:set var="user" value="${bachecaUtente}" scope="request"/>
+                                                <input type="hidden" name="user" value="${bachecaUtente}"/>
                                             </c:if> 
                                             <c:if test="${bachecaGruppo != null}">
-                                                <c:set var="group" value="${bachecaGruppo}" scope="request"/>
+                                                <input type="hidden" name="group" value="${bachecaGruppo}"/>
                                             </c:if>
                                             <button type="submit" id="pulsanteCreaPost" name="pulsanteCreaPost" value="true">Crea Post</button>
                                         </div>
@@ -136,10 +136,10 @@
                                     <p><strong>Url: </strong>${url}</p>
                                     <form action="Bacheca" method="post">
                                         <c:if test="${bachecaUtente != null}">
-                                            <c:set var="user" value="${bachecaUtente}" scope="request"/>
+                                            <input type="hidden" name="user" value="${bachecaUtente}"/>
                                         </c:if> 
                                         <c:if test="${bachecaGruppo != null}">
-                                            <c:set var="group" value="${bachecaGruppo}"scope="request"/>
+                                            <input type="hidden" name="group" value="${bachecaGruppo}"/>
                                         </c:if>
                                         <button type="submit" id="pulsanteConferma" name="pulsanteConferma" value="true">Inserisci post</button>
                                     </form> 
