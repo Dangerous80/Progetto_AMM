@@ -1,0 +1,82 @@
+Descrizione Entità e relazioni
+
+1)Nerd
+Attributi:
+-id (chiave primaria)
+-nome
+-cognome
+-dataNascita
+-frasePresentazione
+-urlFotoProfilo
+-password
+-tipoUtente (chiave esterna)
+
+L’attributo tipoUtente è una chiave esterna che fa riferimento all’attributo abilitazione dell’ entità NerdType. 
+La cardinalità è 1 a molti (1: tipoUtente – molti: abilitazione)
+Un nerd può avere solo un tipo di abilitazione (user o admin) ma una stessa abilitazione può essere associata a tanti nerd diversi.
+
+2)NerdType
+Attributi:
+-id (chiave primaria)
+-abilitazione
+L’attributo abilitazione può essere solo di due tipi USER e ADMIN
+
+3)Amicizia
+Attributi:
+-follower (chiave esterna)
+-followed (chiave esterna)
+L’attributo follower è una chiave esterna che fa riferimento all’attributo id dell’entità Nerd. 
+La cardinalità è molti a molti (molti: follower – molti: id(dell’entità Nerd))
+L’attributo followed è una chiave esterna che fa riferimento all’attributo id dell’entità Nerd. 
+La cardinalità è molti a molti (molti: followed – molti: id(dell’entità Nerd))
+L’unione delle due chiavi esterne (follower, followed) rappresenta la chiave primaria.
+
+4)Gruppo
+Attributi:
+-id (chiave primaria)
+-creatoreGruppo (chiave esterna)
+-nomeGruppo
+-urlImmagineGruppo
+
+L’attributo creatoreGruppo è una chiave esterna che fa riferimento all’attributo id dell’entità Nerd. 
+La cardinalità è 1 a molti (1: creatoreGruppo – molti: id(dell’entità Nerd))
+Un nerd può creare tanti gruppi ma un gruppo può essere creato solo da un nerd.
+
+5)IscrizioneGruppi
+Attributi:
+-idIscritto (chiave esterna)
+-idGruppo (chiave esterna)
+L’attributo idIscritto è una chiave esterna che fa riferimento all’attributo id dell’entità Nerd. 
+La cardinalità è molti a molti (molti: idIscritto – molti: id(dell’entità Nerd))
+L’attributo idGruppo è una chiave esterna che fa riferimento all’attributo id dell’entità Gruppo. 
+La cardinalità è molti a molti (molti: idGruppo – molti: id(dell’entità Gruppo)).
+L’unione delle due chiavi esterne (idIscritto, idGruppo) rappresenta la chiave primaria.
+
+6)Post
+Attributi:
+-id (chiave primaria)
+-autore (chiave esterna)
+-testo
+-contenuto
+-tipoPost (chiave esterna)
+-userReciver(chiave esterna)
+-groupReciver (chiave esterna)
+
+L’attributo autore è una chiave esterna che fa riferimento all’attributo id dell’entità Nerd. 
+La cardinalità è 1 a molti (1: autore – molti: id(dell’entità nerd))
+Un nerd può creare tanti post ma un post può essere creato solo da un nerd.
+L’attributo tipoPost è una chiave esterna che fa riferimento all’attributo tipo dell’entità PostType. 
+La cardinalità è 1 a molti (1: tipoPost – molti: tipo)
+Un post può avere solo un tipo associato (text , image e url) ma uno stesso tipo può essere associato a tanti post diversi.
+L’attributo userReciver è una chiave esterna che fa riferimento all’attributo id dell’entità Nerd (indica il Nerd a cui appartiene la bacheca dove il post è stato inserito).
+La cardinalità è 1 a molti (1 userReciver – molti id(dell’entità Nerd))
+Un Nerd può ricevere tanti post ma un post può essere inviato ad un solo Nerd (questo attributo è vuoto se il post viene inviato alla bacheca di un gruppo).
+L’attributo groupReciver è una chiave esterna che fa riferimento all’attributo id dell’entità Gruppo (indica il gruppo a cui appartiene la bacheca dove il post è stato inserito).
+La cardinalità è 1 a molti (1 groupReciver – molti id(dell’entità Gruppo))
+Un gruppo può ricevere tanti post ma un post può essere inviato ad un solo gruppo (questo attributo è vuoto se il post viene inviato alla bacheca di un nerd).
+
+7)PostType
+Attributi:
+-id (chiave primaria)
+-tipo
+L’attributo tipo può essere solo di tre tipi TEXT ,IMAGE e URL 
