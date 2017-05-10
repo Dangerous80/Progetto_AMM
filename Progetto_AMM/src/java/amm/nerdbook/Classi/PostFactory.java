@@ -110,7 +110,7 @@ public class PostFactory {
         post8.setContenuto("http://localhost:8080/Progetto_AMM/Asset/StarWarsImg.jpg");
         post8.setPostType(Post.Type.IMAGE);
         
-        //Post 9 testuale da spoke lla sua bacheca, autore e user uguali
+        //Post 9 testuale da spoke alla sua bacheca, autore e user uguali
         Post post9 = new Post();
         post9.setId(8);
         post9.setAutore(nerdFactory.getNerdById(3));
