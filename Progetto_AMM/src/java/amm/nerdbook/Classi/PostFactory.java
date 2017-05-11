@@ -160,4 +160,14 @@ public class PostFactory {
         }
         return listaPost;
     }
+    
+    //inseriamo una variabile di istanza connectionString di tipo stringa
+    String connectionString;
+    //inseriamo ora due metodi pubblici
+    public void setConnectionString(String s){
+        this.connectionString = s;
+    }
+    public String getConnectionString(){
+        return this.connectionString;
+    }
 }
