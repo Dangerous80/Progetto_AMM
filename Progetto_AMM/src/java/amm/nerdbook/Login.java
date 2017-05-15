@@ -26,8 +26,8 @@ import javax.servlet.http.HttpSession;
 public class Login extends HttpServlet {
     
     private static final String JDBC_DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
-    private static final String DB_CLEAN_PATH = "../../web/WEB-INF/db/gato";
-    private static final String DB_BUILD_PATH = "WEB-INF/db/gato";
+    private static final String DB_CLEAN_PATH = "../../web/WEB-INF/db/ammdb";
+    private static final String DB_BUILD_PATH = "WEB-INF/db/ammdb";
 
     @Override
     public void init() {
