@@ -5,6 +5,11 @@
  */
 package amm.nerdbook.Classi;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 /**
@@ -23,65 +28,6 @@ public class GruppoFactory {
         return singleton;
     }
     
-    //Definiamo un array che conterrà la lista dei nostri Gruppi 
-    private ArrayList<Gruppo> listaGruppi = new ArrayList<Gruppo>();
-    
-    //Ora creiamo i gruppi
-    private GruppoFactory() {
-        
-        NerdFactory nerdFactory = NerdFactory.getInstance();
-        
-        //Star Trek
-        Gruppo gruppo1 = new Gruppo();
-        gruppo1.setId(0);
-        gruppo1.setCreatore(nerdFactory.getNerdById(0));
-        gruppo1.setNomeGruppo("Star Wars");
-        gruppo1.setUrlImmagineGruppo("http://localhost:8080/Progetto_AMM/Asset/StarWars.jpg");
-        
-        
-        //Star Wars
-        Gruppo gruppo2 = new Gruppo();
-        gruppo2.setId(1);
-        gruppo2.setCreatore(nerdFactory.getNerdById(2));
-        gruppo2.setNomeGruppo("Star Trek");
-        gruppo2.setUrlImmagineGruppo("http://localhost:8080/Progetto_AMM/Asset/StarTrek.png");
-        
-        
-        //dungeons & dragons
-        Gruppo gruppo3 = new Gruppo();
-        gruppo3.setId(2);
-        gruppo3.setCreatore(nerdFactory.getNerdById(5));
-        gruppo3.setNomeGruppo("D&D");
-        gruppo3.setUrlImmagineGruppo("http://localhost:8080/Progetto_AMM/Asset/dungeons&dragons.jpg");
-        
-        
-        //gruppo default da inserire nel caso il post sia scritto sulla bacheca di un utente o di se stessi
-        Gruppo gruppo4 = new Gruppo();
-        gruppo4.setId(999);
-        gruppo4.setCreatore(nerdFactory.getNerdById(5));
-        gruppo4.setNomeGruppo("Default");
-        gruppo4.setUrlImmagineGruppo("http://localhost:8080/Progetto_AMM/Asset/nerdLogo.jpg");
-                
-        listaGruppi.add(gruppo1);
-        listaGruppi.add(gruppo2);
-        listaGruppi.add(gruppo3);
-        listaGruppi.add(gruppo4);
-        
-    }
-    //inseriamo un metodo che ci consenta di reperire le info su di un gruppo mediante il suo id
-    public Gruppo getGruppoById(int id) {
-        for (Gruppo gruppo : this.listaGruppi) {
-            if (gruppo.getId() == id) {
-                return gruppo;
-            }
-        }
-        return null;
-    }  
-    //inseriamo un metodo che ci consenta di recuperare la lista dei gruppi
-    public List getGroupList() 
-    {
-            return listaGruppi;
-    }
     //Gestione DB
     private String connectionString;
     
@@ -92,5 +38,108 @@ public class GruppoFactory {
     public String getConnectionString(){
             return this.connectionString;
     }
-    //Fine gestione DB
+        
+    
+    private GruppoFactory() {
+    }
+    
+    //inseriamo un metodo che ci consenta di reperire le info su di un gruppo mediante il suo id
+    public Gruppo getGruppoById(int id) {
+        NerdFactory nerdFactory = NerdFactory.getInstance();
+        
+        try {
+            //accesso al DB indicando Username e Password
+            Connection conn = DriverManager.getConnection(connectionString, "Dangerous80", "DarkSchneider");
+            
+            //prepariamo il testo della query
+            String query = 
+                      "select * from gruppo "
+                    + "join nerd on gruppo.creatoregruppo = nerd.nerd_id "
+                    + "where gruppo_id = ?";
+            
+            //preparazione Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            //associamo i valori alla query
+            stmt.setInt(1, id);
+            
+            //eseguiamo la query
+            ResultSet res = stmt.executeQuery();
+
+            //ciclo sulle righe e creazione di un gruppo
+            if (res.next()) {
+                Gruppo currentGroup = new Gruppo();
+                //imposto id del gruppo
+                currentGroup.setId(res.getInt("gruppo_id"));
+                
+                //imposto il creatore del gruppo
+                Nerd creatore = nerdFactory.getNerdById(res.getInt("creatoregruppo"));
+                currentGroup.setCreatore(creatore);
+                
+                //imposto il nome del gruppo                
+                currentGroup.setNomeGruppo(res.getString("nomegruppo"));
+                
+                //imposto l'immagine del gruppo
+                currentGroup.setUrlImmagineGruppo(res.getString("urlImmagineGruppo"));
+                                
+                //quido lo statment, chiudo la connessione e restituisco un nerd
+                stmt.close();
+                conn.close();
+                return currentGroup;
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }  
+    //inseriamo un metodo che ci consenta di recuperare la lista dei gruppi
+    public List getGroupList() {
+        NerdFactory nerdFactory = NerdFactory.getInstance();
+        List<Gruppo> listaGruppi = new ArrayList<Gruppo>();
+        
+        try {
+            //accesso al DB indicando Username e Password
+            Connection conn = DriverManager.getConnection(connectionString, "Dangerous80", "DarkSchneider");
+            
+            //prepariamo il testo della query
+            String query = "select * from gruppo "
+                         + "join nerd on gruppo.creatoregruppo = nerd.nerd_id ";
+            
+            //preparazione Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            //eseguo la  query
+            ResultSet res = stmt.executeQuery();
+
+            //ciclo sulle righe, creo un gruppo e lo inserisco nella lista gruppi
+            while (res.next()) {
+                Gruppo currentGroup = new Gruppo();
+                
+                //imposto id del gruppo
+                currentGroup.setId(res.getInt("gruppo_id"));
+                
+                //imposto il creatore del gruppo
+                Nerd creatore = nerdFactory.getNerdById(res.getInt("creatoregruppo"));
+                currentGroup.setCreatore(creatore);
+                
+                //imposto il nome del gruppo                
+                currentGroup.setNomeGruppo(res.getString("nomegruppo"));
+                
+                //imposto l'immagine del gruppo
+                currentGroup.setUrlImmagineGruppo(res.getString("urlImmagineGruppo"));
+                
+                listaGruppi.add(currentGroup);
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaGruppi;
+    }
 }

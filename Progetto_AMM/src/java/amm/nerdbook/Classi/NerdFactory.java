@@ -5,8 +5,14 @@
  */
 package amm.nerdbook.Classi;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  *
  * @author Pisano Daniele
@@ -23,104 +29,6 @@ public class NerdFactory {
         return singleton;
     }
     
-    //Definiamo un array che conterrà la lista dei nostri Nerd 
-    private ArrayList<Nerd> listaNerd = new ArrayList<Nerd>();
-    
-    //Ora creiamo gli utenti
-    private NerdFactory() {
-        
-        //Mario Rossi Yoda
-        Nerd nerd1 = new Nerd();
-        nerd1.setId(0);
-        nerd1.setNome("Mario");
-        nerd1.setCognome("Rossi");
-        nerd1.setDataNascita("10/11/1992");
-        nerd1.setFrasePresentazione("Che la forza sia con te");
-        nerd1.setUrlFotoProfilo("http://localhost:8080/Progetto_AMM/Asset/Yoda.jpg");
-        nerd1.setPassword("12345");
-        
-        
-        //Luca Viale Luke
-        Nerd nerd2 = new Nerd();
-        nerd2.setId(1);
-        nerd2.setNome("Luca");
-        nerd2.setCognome("Viale");
-        nerd2.setDataNascita("15/12/1996");
-        nerd2.setFrasePresentazione("Welcome to my jungle");
-        nerd2.setUrlFotoProfilo("http://localhost:8080/Progetto_AMM/Asset/Luke.jpg");
-        nerd2.setPassword("12345");
-
-        //Francesco Marras Kirk
-        Nerd nerd3 = new Nerd();
-        nerd3.setId(2);
-        nerd3.setNome("Francesco");
-        nerd3.setCognome("Marras");
-        nerd3.setDataNascita("15/08/1991");
-        nerd3.setFrasePresentazione("Mantenete la curvatura");
-        nerd3.setUrlFotoProfilo("http://localhost:8080/Progetto_AMM/Asset/kirk.jpg");
-        nerd3.setPassword("12345");
-
-        //Gianluca Ghidoli Spoke
-        Nerd nerd4 = new Nerd();
-        nerd4.setId(3);
-        nerd4.setNome("Gianluca");
-        nerd4.setCognome("Ghidoli");
-        nerd4.setDataNascita("15/12/1989");
-        nerd4.setFrasePresentazione("Lunga vita e prosperità");
-        nerd4.setUrlFotoProfilo("http://localhost:8080/Progetto_AMM/Asset/spock.jpg");
-        nerd4.setPassword("12345");
-
-        //Elenia Loche Leila utente con mancanza di dato frase presentazione
-        Nerd nerd5 = new Nerd();
-        nerd5.setId(4);
-        nerd5.setNome("Elenia");
-        nerd5.setCognome("Loche");
-        nerd5.setDataNascita("15/10/1996");
-        nerd5.setFrasePresentazione("");
-        nerd5.setUrlFotoProfilo("http://localhost:8080/Progetto_AMM/Asset/Leila.jpg");
-        nerd5.setPassword("12345");
-        
-        //Marco Zuddas Artorias D&G
-        Nerd nerd6 = new Nerd();
-        nerd6.setId(5);
-        nerd6.setNome("Marco");
-        nerd6.setCognome("Zuddas");
-        nerd6.setDataNascita("11/07/1981");
-        nerd6.setFrasePresentazione("Viva i draghi");
-        nerd6.setUrlFotoProfilo("http://localhost:8080/Progetto_AMM/Asset/artorias.jpg");
-        nerd6.setPassword("12345");
-        
-        listaNerd.add(nerd1);
-        listaNerd.add(nerd2);
-        listaNerd.add(nerd3);
-        listaNerd.add(nerd4);
-        listaNerd.add(nerd5);
-        listaNerd.add(nerd6); 
-    }
-    //inseriamo un metodo che ci consenta di reperire le info sull'utente mediante il suo id
-    public Nerd getNerdById(int id) {
-        for (Nerd nerd : this.listaNerd) {
-            if (nerd.getId() == id) {
-                return nerd;
-            }
-        }
-        return null;
-    }
-      
-    public int getIdByUserAndPassword(String username, String password){
-        for(Nerd nerd : this.listaNerd){
-            if(nerd.getNome().equals(username) && nerd.getPassword().equals(password)){
-                return nerd.getId();
-            }
-        }
-        return -1;
-    }
-    //inseriamo un metodo che ci consenta di recuperare la lista degli utenti
-    public List getNerdList()
-    {
-        return listaNerd;
-    }
-    
     //Gestione DB
     private String connectionString;
     
@@ -131,5 +39,143 @@ public class NerdFactory {
     public String getConnectionString(){
             return this.connectionString;
     }
-    //Fine gestione DB
-}
+        
+    
+    private NerdFactory() {
+    }
+    
+    //inseriamo un metodo che ci consenta di reperire le info sull'utente mediante il suo id
+    public Nerd getNerdById(int id) {
+        try {
+            //accesso al DB indicando Username e Password
+            Connection conn = DriverManager.getConnection(connectionString, "Dangerous80", "DarkSchneider");
+            
+            //prepariamo il testo della query
+            String query = 
+                      "select * from nerd "
+                    + "join nerdtype on nerd.tipoutente = nerdtype.nerdtype_id "
+                    + "where nerd_id = ?";
+            
+            //preparazione Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            //associamo i valori alla query
+            stmt.setInt(1, id);
+            
+            //eseguiamo la query
+            ResultSet res = stmt.executeQuery();
+
+            //ciclo sulle righe e creazione di un nerd
+            if (res.next()) {
+                Nerd currentNerd = new Nerd();
+                currentNerd.setId(res.getInt("nerd_id"));
+                currentNerd.setNome(res.getString("nome"));
+                currentNerd.setCognome(res.getString("cognome"));
+                currentNerd.setDataNascita(res.getString("dataNascita"));
+                currentNerd.setFrasePresentazione(res.getString("frasePresentazione"));
+                currentNerd.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
+                currentNerd.setPassword(res.getString("password"));
+                currentNerd.setTipoUtente(this.tipoUtenteFromString(res.getString("nerdtype_abilitazione")));
+                
+                //quido lo statment, chiudo la connessione e restituisco un nerd
+                stmt.close();
+                conn.close();
+                return currentNerd;
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+      
+    public int getIdByUserAndPassword(String username, String password){
+        try {
+            //accesso al DB indicando Username e Password
+            Connection conn = DriverManager.getConnection(connectionString, "Dangerous80", "DarkSchneider");
+            
+            //prepariamo il testo della query
+            String query = 
+                      "select nerd_id from nerd "
+                    + "where nome = ? and password = ?";
+            
+            //preparazione Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            //associamo i valori alla query
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+            
+            //eseguiamo la query
+            ResultSet res = stmt.executeQuery();
+
+            //ciclo sulle righe e definizione dell id del nerd
+            if (res.next()) {
+                int id = res.getInt("nerd_id");
+
+                stmt.close();
+                conn.close();
+                return id;
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+        
+    }
+    
+    //inseriamo un metodo che ci consenta di recuperare la lista degli utenti
+    public List getNerdList(){
+        List<Nerd> listaNerd = new ArrayList<Nerd>();
+        
+        try {
+            //accesso al DB indicando Username e Password
+            Connection conn = DriverManager.getConnection(connectionString, "Dangerous80", "DarkSchneider");
+            
+            //prepariamo il testo della query
+            String query = "select * from nerd "
+                         + "join nerdtype on nerd.tipoutente = nerdtype.nerdtype_id ";
+            
+            //preparazione Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            //eseguo la  query
+            ResultSet res = stmt.executeQuery();
+
+            //ciclo sulle righe, creo un nerd e lo inserisco nella lista nerd
+            while (res.next()) {
+                Nerd currentNerd = new Nerd();
+                currentNerd.setId(res.getInt("nerd_id"));
+                currentNerd.setNome(res.getString("nome"));
+                currentNerd.setCognome(res.getString("cognome"));
+                currentNerd.setDataNascita(res.getString("dataNascita"));
+                currentNerd.setFrasePresentazione(res.getString("frasePresentazione"));
+                currentNerd.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
+                currentNerd.setPassword(res.getString("password"));
+                currentNerd.setTipoUtente(this.tipoUtenteFromString(res.getString("nerdtype_abilitazione")));
+                
+                listaNerd.add(currentNerd);
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaNerd;
+    }
+    //inseriamo un metodo che ci consenta di recuperare il tipo di utente
+    private Nerd.Type tipoUtenteFromString(String type){
+        
+        if(type.equals("ADMIN"))
+            return Nerd.Type.ADMIN;
+        
+        return Nerd.Type.STANDARD;
+    }
+}    

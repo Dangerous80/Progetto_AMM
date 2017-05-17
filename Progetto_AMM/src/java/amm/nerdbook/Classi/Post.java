@@ -17,8 +17,8 @@ public class Post {
     
         
     private int id;
-    private Nerd user;
     private Nerd autore;
+    private Nerd user;
     private Gruppo gruppo;
     private String testo;
     private String contenuto;

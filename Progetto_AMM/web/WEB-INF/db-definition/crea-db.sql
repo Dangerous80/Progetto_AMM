@@ -1,5 +1,5 @@
-/*Database Name: NERDBOOK
-User Name: Dangerous80	
+/*Database Name: ammdb
+Username: Dangerous80	
 Password DarkSchneider*/
 
 --Tabella NERDTYPE--
@@ -81,7 +81,7 @@ VALUES(default,
 
 INSERT INTO nerdType(nerdType_id, nerdType_abilitazione)
 VALUES(default,
-       'USER'
+       'STANDARD'
 );
 
 --Popoliamo la tabella nerd con i dati inseriti nella factory--
