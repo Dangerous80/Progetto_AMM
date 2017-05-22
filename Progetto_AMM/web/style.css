@@ -565,6 +565,12 @@ a:hover{
         border-radius: 10px 10px 10px 10px;
         border: 2px solid #003366;
     }
+    #contenutoProfilo #riepilogoAggiornamento #pulsanteOk{
+        position: relative;
+        bottom: 10px;
+        margin-left: 20px;
+        width: 490px
+    }
     #contenutoProfilo #riepilogoAggiornamento p{
         margin-left: 20px;
     }
@@ -658,9 +664,21 @@ a:hover{
         border: 2px solid #003366;
     }
     #formNewPost #riepilogoPost p{
+        height: 38px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+    #formNewPost #riepilogoPost #testo, #formNewPost #riepilogoPost #url{
+        height: 38px;
+        overflow-y: scroll;
+        margin-top: 0px;
+        margin-bottom: 0px;
         text-align: center;
     }
     #formNewPost #riepilogoPost #pulsanteConferma{
+        position: relative;
+        bottom: 10px;
         margin-left: 20px;
         width: 520px
     }
@@ -675,6 +693,12 @@ a:hover{
     #formNewPost #confermaPost p{
         text-align: center;
         font-size: 25px;
+    }
+    #formNewPost #confermaPost #pulsanteOk{
+        position: relative;
+        bottom: 10px;
+        margin-left: 20px;
+        width: 520px
     }
     /*--dimensione dei post--*/
     .post{
@@ -951,6 +975,16 @@ a:hover{
         border: 2px solid #003366;
     }
     #formNewPost #riepilogoPost p{
+        height: 38px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+    #formNewPost #riepilogoPost #testo, #formNewPost #riepilogoPost #url{
+        height: 38px;
+        overflow-y: scroll;
+        margin-top: 0px;
+        margin-bottom: 0px;
         text-align: center;
     }
     #formNewPost #riepilogoPost #pulsanteConferma{
@@ -968,6 +1002,12 @@ a:hover{
     #formNewPost #confermaPost p{
         text-align: center;
         font-size: 25px;
+    }
+    #formNewPost #confermaPost #pulsanteOk{
+        position: relative;
+        bottom: 10px;
+        margin-left: 20px;
+        width: 333px
     }
     /*--dimensione dei post--*/
     .post{
@@ -1238,6 +1278,12 @@ a:hover{
     #formNewPost #confermaPost p{
         text-align: center;
         font-size: 25px;
+    }
+    #formNewPost #confermaPost #pulsanteOk{
+        position: relative;
+        bottom: 10px;
+        margin-left: 30px;
+        width: 363px
     }
     #bacheca .post .immagineAllegata{
         padding-left: 100px;

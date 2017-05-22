@@ -178,4 +178,42 @@ public class NerdFactory {
         
         return Nerd.Type.STANDARD;
     }
+    //inseriamo un metodo che ci consenta di aggiornare i dati di un utente
+    public void updateUser(Nerd nerd, String nome, String cognome, String dataNascita, String frasePresentazione, String urlFotoProfilo, String password){
+        try {
+            //accesso al DB indicando Username e Password
+            Connection conn = DriverManager.getConnection(connectionString, "Dangerous80", "DarkSchneider");
+            
+            //prepariamo il testo della query
+            String query = 
+                      "update nerd set "
+                    + "nome= ?, cognome= ?, datanascita= ?, frasepresentazione= ?, urlfotoprofilo= ?, password= ? "
+                    + "where nerd_id= ?";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            //imposto il nuovo nome
+            stmt.setString(1, nome);
+            //imposto il nuovo cognome
+            stmt.setString(2, cognome);
+            //imposto la nuova data di nascita
+            stmt.setString(3, dataNascita);
+            //imposto la nuova frase di presentazione
+            stmt.setString(4, frasePresentazione);
+            //imposto il nuovo url della foto del profilo
+            stmt.setString(5, urlFotoProfilo);
+            //imposto la nuova password
+            stmt.setString(6, password);
+            //imposto l'id del nerd da modificare
+            stmt.setInt(7, nerd.getId());           
+            
+            // Esecuzione query
+            stmt.executeUpdate();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
 }    

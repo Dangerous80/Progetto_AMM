@@ -125,6 +125,9 @@
                                     <p><strong>Frase di Presentazione: </strong>${frase}</p>
                                     <p><strong>Foto del profilo: </strong>${foto}</p>
                                     <p><strong>Password di accesso: </strong>${password}</p>
+                                    <form action="Profilo" method="post">
+                                        <button type="submit" id="pulsanteOk" name="pulsanteOk">OK</button>
+                                    </form>
                                 </div>
                             </c:if>    
                         </div>

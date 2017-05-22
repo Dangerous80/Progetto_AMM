@@ -40,6 +40,7 @@ public class Bacheca extends HttpServlet {
             int bachecaID;
             String pulsanteCreaPost=request.getParameter("pulsanteCreaPost");
             String pulsanteConferma=request.getParameter("pulsanteConferma");
+            String pulsanteOk=request.getParameter("pulsanteOk");
             String testoPost = request.getParameter("testoPost");
             String urlPost = request.getParameter("urlPost");
             String tipoPost=request.getParameter("tipoPost");
@@ -81,25 +82,68 @@ public class Bacheca extends HttpServlet {
                     if(testoPost != null){
                         request.setAttribute("testo",testoPost);
                     }
-                    if(urlPost != null){
+                    if(urlPost != null && tipoPost != null){
                         request.setAttribute("url",urlPost);
+                        if (tipoPost.equals("url")){
+                            String link= "link"; 
+                            request.setAttribute("tipo",link);
+                        }
+                        else{
+                            request.setAttribute("tipo",tipoPost);
+                        }    
                     }
-                    if(testoPost == null){
+                    if(urlPost.isEmpty() && tipoPost != null){
+                        String testo= "testo"; 
+                        request.setAttribute("tipo",testo);
+                    }
+                    if(tipoPost == null){
+                        String testo= "testo";
+                        request.setAttribute("tipo",testo);
+                    }
+                    if(testoPost.isEmpty()){
                         inserimento=false;
                         request.setAttribute("inserimento", inserimento);
                     }
                     else{
                         inserimento=true;
-                        request.setAttribute("inserimento", inserimento);
+                        request.setAttribute("inserimento", inserimento); 
                     }
                 }
-                //se l'inserimento viene confermato scriviamo sulla bacheca (nostra, dell'utente o del gruppo scelto)
+                //se l'inserimento viene confermato scriviamo il post sulla bacheca dell'utente selezionato
                 if(pulsanteConferma != null){
                     conferma=true;
                     request.setAttribute("conferma", conferma);
+                    //definisco il nuovo post da inserire nel DB
+                    Post nuovoPost = new Post();
+                    //imposto l'autore
+                    nuovoPost.setAutore(nerd);
+                    //imposto lo userReciver
+                    nuovoPost.setUser(userBacheca);
+                    //imposto il testo
+                    String testo = request.getParameter("testo");
+                    nuovoPost.setTesto(testo);
+                    //imposto l'url
+                    String url = request.getParameter("url");
+                    nuovoPost.setContenuto(url);
+                    //imposto il tipo di post
+                    String tipo = request.getParameter("tipo");
+                    if(tipo==null || tipo == "testo"){
+                        nuovoPost.setPostType(Post.Type.TEXT);
+                    }
+                    else {
+                        if(tipo.equals("immagine")){
+                            nuovoPost.setPostType(Post.Type.IMAGE);
+                        }
+                        else{
+                            nuovoPost.setPostType(Post.Type.URL);
+                        }
+                    }
+                    PostFactory.getInstance().addNewPostUser(nuovoPost);
                     request.setAttribute("bacheca", userBacheca.getNome());
                 }
-                               
+                if(pulsanteOk != null){
+                    request.setAttribute("bacheca", userBacheca.getNome());
+                }               
                 request.getRequestDispatcher("bacheca.jsp").forward(request, response);
             }    
             else{
@@ -138,12 +182,26 @@ public class Bacheca extends HttpServlet {
                         if(testoPost != null){
                             request.setAttribute("testo",testoPost);
                         }
-                        if(urlPost != null){
+                        if(urlPost != null && tipoPost != null){
                             request.setAttribute("url",urlPost);
+                            if (tipoPost.equals("url")){
+                                String link= "link"; 
+                                request.setAttribute("tipo",link);
+                            }
+                            else{
+                                request.setAttribute("tipo",tipoPost);
+                            }    
+                        }
+                        if(urlPost.isEmpty() && tipoPost != null){
+                            String testo= "testo"; 
+                            request.setAttribute("tipo",testo);
+                        }
+                        if(tipoPost == null){
+                            String testo= "testo";
+                            request.setAttribute("tipo",testo);
                         }
                         if(testoPost.isEmpty()){
                             inserimento=false;
-                            
                             request.setAttribute("inserimento", inserimento);
                         }
                         else{
@@ -151,10 +209,39 @@ public class Bacheca extends HttpServlet {
                             request.setAttribute("inserimento", inserimento); 
                         }
                     }
-                    //se l'inserimento viene confermato scriviamo sulla bacheca (nostra, dell'utente o del gruppo scelto)
+                    //se l'inserimento viene confermato scriviamo il post sulla bacheca dell'utente selezionato
                     if(pulsanteConferma != null){
                         conferma=true;
                         request.setAttribute("conferma", conferma);
+                        //definisco il nuovo post da inserire nel DB
+                        Post nuovoPost = new Post();
+                        //imposto l'autore
+                        nuovoPost.setAutore(nerd);
+                        //imposto il groupReciver
+                        nuovoPost.setGruppo(gruppoBacheca);
+                        //imposto il testo
+                        String testo = request.getParameter("testo");
+                        nuovoPost.setTesto(testo);
+                        //imposto l'url
+                        String url = request.getParameter("url");
+                        nuovoPost.setContenuto(url);
+                        //imposto il tipo di post
+                        String tipo = request.getParameter("tipo");
+                        if(tipo==null || tipo == "testo"){
+                            nuovoPost.setPostType(Post.Type.TEXT);
+                        }
+                        else {
+                            if(tipo.equals("immagine")){
+                                nuovoPost.setPostType(Post.Type.IMAGE);
+                            }
+                            else{
+                                nuovoPost.setPostType(Post.Type.URL);
+                            }
+                        }
+                        PostFactory.getInstance().addNewPostGroup(nuovoPost);
+                        request.setAttribute("bacheca", gruppoBacheca.getNomeGruppo());
+                    }
+                    if(pulsanteOk != null){
                         request.setAttribute("bacheca", gruppoBacheca.getNomeGruppo());
                     }
                     
@@ -187,8 +274,23 @@ public class Bacheca extends HttpServlet {
                         if(testoPost != null){
                             request.setAttribute("testo",testoPost);
                         }
-                        if(urlPost != null){
+                        if(urlPost != null && tipoPost != null){
                             request.setAttribute("url",urlPost);
+                            if (tipoPost.equals("url")){
+                                String link= "link"; 
+                                request.setAttribute("tipo",link);
+                            }
+                            else{
+                                request.setAttribute("tipo",tipoPost);
+                            }    
+                        }
+                        if(tipoPost == null){
+                            String testo= "testo";
+                            request.setAttribute("tipo",testo);
+                        }
+                        if(urlPost.isEmpty() && tipoPost != null){
+                            String testo= "testo"; 
+                            request.setAttribute("tipo",testo);
                         }
                         if(testoPost.isEmpty()){
                             inserimento=false;
@@ -199,10 +301,36 @@ public class Bacheca extends HttpServlet {
                             request.setAttribute("inserimento", inserimento); 
                         }
                     }
-                    //se l'inserimento viene confermato scriviamo sulla bacheca (nostra, dell'utente o del gruppo scelto)
+                    //se l'inserimento viene confermato scriviamo il post sulla bacheca dell'utente loggato
                     if(pulsanteConferma != null){
                         conferma=true;
                         request.setAttribute("conferma", conferma);
+                        //definisco il nuovo post da inserire nel DB
+                        Post nuovoPost = new Post();
+                        //imposto l'autore
+                        nuovoPost.setAutore(nerd);
+                        //imposto lo userReciver
+                        nuovoPost.setUser(nerd);
+                        //imposto il testo
+                        String testo = request.getParameter("testo");
+                        nuovoPost.setTesto(testo);
+                        //imposto l'url
+                        String url = request.getParameter("url");
+                        nuovoPost.setContenuto(url);
+                        //imposto il tipo di post
+                        String tipo = request.getParameter("tipo");
+                        if(tipo==null || tipo == "testo"){
+                            nuovoPost.setPostType(Post.Type.TEXT);
+                        }
+                        else {
+                            if(tipo.equals("immagine")){
+                                nuovoPost.setPostType(Post.Type.IMAGE);
+                            }
+                            else{
+                                nuovoPost.setPostType(Post.Type.URL);
+                            }
+                        }
+                        PostFactory.getInstance().addNewPostUser(nuovoPost);
                         request.setAttribute("bacheca", nerd.getNome());
                         }
                     

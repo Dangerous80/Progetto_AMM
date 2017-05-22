@@ -259,5 +259,85 @@ public class PostFactory {
                  return Post.Type.TEXT;
             }
         }
-    }    
+    } 
+    //inseriamo un metodo che ci consenta di inserire un post verso uno user 
+    public void addNewPostUser(Post post){
+        try {
+            //accesso al DB indicando Username e Password
+            Connection conn = DriverManager.getConnection(connectionString, "Dangerous80", "DarkSchneider");
+            
+            //prepariamo il testo della query
+            String query = 
+                      "insert into post (post_id, autore, userreciver, testo, contenuto, tipopost) "
+                    + "values (default, ? , ? , ? , ? , ?)";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            //imposto l'autore
+            stmt.setInt(1, post.getAutore().getId());
+            //imposto lo userReciver
+            stmt.setInt(2, post.getUser().getId());
+            //imposto il testo
+            stmt.setString(3, post.getTesto());
+            //imposto il contenuto
+            stmt.setString(4, post.getContenuto());
+            //imposto il tipo post
+            stmt.setInt(5, this.postTypeFromEnum(post.getPostType()));
+                        
+            // Esecuzione query
+            stmt.executeUpdate();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+    //inseriamo un metodo che ci consenta di inserire un post verso un gruppo
+    public void addNewPostGroup(Post post){
+        try {
+            //accesso al DB indicando Username e Password
+            Connection conn = DriverManager.getConnection(connectionString, "Dangerous80", "DarkSchneider");
+            
+            //prepariamo il testo della query
+            String query = 
+                      "insert into post (post_id, autore, groupreciver, testo, contenuto, tipopost) "
+                    + "values (default, ? , ? , ? , ? , ?)";
+            
+            // Prepared Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            // Si associano i valori
+            //imposto l'autore
+            stmt.setInt(1, post.getAutore().getId());
+            //imposto lo userReciver
+            stmt.setInt(2, post.getGruppo().getId());
+            //imposto il testo
+            stmt.setString(3, post.getTesto());
+            //imposto il contenuto
+            stmt.setString(4, post.getContenuto());
+            //imposto il tipo post
+            stmt.setInt(5, this.postTypeFromEnum(post.getPostType()));
+                        
+            // Esecuzione query
+            stmt.executeUpdate();
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        }
+    }
+    //inseriamo un metodo che ci consenta di impostare il tipo di post
+    private int postTypeFromEnum(Post.Type type){
+        if(type == Post.Type.IMAGE){
+            return 2;
+        }
+        else {
+            if(type == Post.Type.URL){
+                return 3; 
+            } 
+            else {
+                return 1; 
+            }
+        }    
+    }
 }

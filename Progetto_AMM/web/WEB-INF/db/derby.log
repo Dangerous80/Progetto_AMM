@@ -1,7 +1,7 @@
-Wed May 17 19:17:46 CEST 2017 : Server di rete Apache Derby: 10.11.1.2 - (1629631) avviato e pronto ad accettare connessioni sulla porta 1527
+Mon May 22 12:40:15 CEST 2017 : Server di rete Apache Derby: 10.11.1.2 - (1629631) avviato e pronto ad accettare connessioni sulla porta 1527
 ----------------------------------------------------------------
-Wed May 17 19:19:16 CEST 2017:
-Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): istanza a816c00e-015c-176a-6001-ffffde06c3eb
+Mon May 22 12:40:16 CEST 2017:
+Avvio della versione di Derby The Apache Software Foundation - Apache Derby - 10.11.1.2 - (1629631): istanza a816c00e-015c-2fbe-3af2-ffffde06c3eb
 sulla directory di database C:\Users\en26062\Desktop\AMM\Progetto_AMM\Progetto_AMM\web\WEB-INF\db\ammdb con caricatore classi sun.misc.Launcher$AppClassLoader@6f94fa3e 
 Caricato da file:/C:/Program%20Files/Java/jdk1.8.0_121/db/lib/derby.jar
 java.vendor=Oracle Corporation
@@ -12,5 +12,3 @@ os.arch=amd64
 os.version=6.1
 derby.system.home=C:\Users\en26062\Desktop\AMM\Progetto_AMM\Progetto_AMM\web\WEB-INF\db
 Programma di caricamento classe database avviato - derby.database.classpath=''
-----------------------------------------------------------------
-Wed May 17 19:29:08 CEST 2017: arresto in corso del motore di Derby

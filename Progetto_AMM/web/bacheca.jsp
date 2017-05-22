@@ -111,9 +111,9 @@
                                         </div>    
                                     </div>
                                     <div id="tipoPost">
-                                        <input type="radio" name="tipoPost" value="imgType" id="tipoImmagine">
+                                        <input type="radio" name="tipoPost" value="immagine" id="tipoImmagine">
                                         <label for="tipoImmagine">Immagine</label>
-                                        <input type="radio" name="tipoPost" value="linkType" id="tipoLink">
+                                        <input type="radio" name="tipoPost" value="url" id="tipoLink">
                                         <label for="tipoLink">Link</label>
                                         <div id='creaPost'>
                                             <c:if test="${bachecaUtente != null}">
@@ -130,8 +130,9 @@
                                 <c:if test="${inserimento == true}">
                                 <div id="riepilogoPost"> 
                                     <p id="riepilogo"><strong>Riepilogo Post</strong></p>
-                                    <p><strong>Testo: </strong>${testo}</p>
-                                    <p><strong>Url: </strong>${url}</p>
+                                    <p id="testo"><strong>Testo: </strong>${testo}</p>
+                                    <p id="url"><strong>Url: </strong>${url}</p>
+                                    <p id="tipo"><strong>Tipo Post: </strong>${tipo}</p>
                                     <form action="Bacheca" method="post">
                                         <c:if test="${bachecaUtente != null}">
                                             <input type="hidden" name="user" value="${bachecaUtente}"/>
@@ -139,6 +140,9 @@
                                         <c:if test="${bachecaGruppo != null}">
                                             <input type="hidden" name="group" value="${bachecaGruppo}"/>
                                         </c:if>
+                                            <input type="hidden" name="testo" value="${testo}"/>
+                                            <input type="hidden" name="url" value="${url}"/>
+                                            <input type="hidden" name="tipo" value="${tipo}"/>
                                         <button type="submit" id="pulsanteConferma" name="pulsanteConferma" value="true">Inserisci post</button>
                                     </form> 
                                 </div>
@@ -147,6 +151,15 @@
                                 <c:if test="${conferma == true}">
                                     <div id="confermaPost">
                                         <p><strong>Hai scritto nella bacheca di: </strong>${bacheca}</p>
+                                        <form action="Bacheca" method="post">
+                                            <c:if test="${bachecaUtente != null}">
+                                                <input type="hidden" name="user" value="${bachecaUtente}"/>
+                                            </c:if> 
+                                            <c:if test="${bachecaGruppo != null}">
+                                                <input type="hidden" name="group" value="${bachecaGruppo}"/>
+                                            </c:if>
+                                            <button type="submit" id="pulsanteOk" name="pulsanteOk" value="true">OK</button>
+                                        </form>
                                     </div> 
                                 </c:if>    
                             </div>    

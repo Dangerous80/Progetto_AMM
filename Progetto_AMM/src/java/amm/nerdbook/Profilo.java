@@ -77,6 +77,7 @@ public class Profilo extends HttpServlet {
                     }
                     else{
                        aggiornamento=true;
+                       NerdFactory.getInstance().updateUser(nerd, nomeUtente, cognomeUtente, dataNascita, frasePresentazione, fotoProfilo, pswdUtente);
                        request.setAttribute("aggiornamento", aggiornamento);  
                     }
                 }
