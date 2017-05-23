@@ -312,3 +312,13 @@ VALUES(default,
        4,
        null
 );
+--Post 10 testuale da artorias al gruppo D&G--
+INSERT INTO post(post_id, autore, testo, contenuto, tipoPost, userReciver, groupReciver)
+VALUES(default,
+       6,
+       'Preferiamo giocare con i draghi',
+       null,
+       1,
+       null,
+       3
+);

@@ -13,7 +13,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="Asset/nerdLogo.jpg">
         <meta name="author" content="Daniele Pisano">
         <meta name="keywords" content="Nerd Star Wars world of warcraft scacchi dungeons and dragons software programmazione computer tecnologia giochi di ruolo film fantascienza serie tv fumetti videogiochi">
-        <meta http-equiv="refresh" content="30">
+        <meta http-equiv="refresh" content="240">
         <link rel="stylesheet" type="text/css" href="style.css" media="screen">
     </head>
 
@@ -130,7 +130,7 @@
                             <c:if test="${esitoCancellazione == true}">
                                 <div id="cancellazioneUtente"> 
                                     <p id="messaggioCancellazioneUtente"><strong>Utente Cancellato</strong></p>
-                                    <form action="login.jsp" method="post">
+                                    <form action="Login?logout=1" method="post">
                                         <button type="submit" id="pulsanteTornaAllaLogin" name="pulsanteTornaAllaLogin">OK</button>
                                     </form>
                                 </div>

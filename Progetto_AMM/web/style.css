@@ -147,11 +147,6 @@ a:hover{
     padding-top: 10px;
 }
 /*----------definiamo le caratteristiche generali della pagina login------------------*/
-/*header
-#pageLogin #header #linkPagine{
-    display: none;
-}
-*/
 /*login*/
 #contenutoLogin {
     border-top: 1px solid #003366;
@@ -615,6 +610,22 @@ a:hover{
         font-size: 20px;
         margin-left: 55px;
     } 
+    #contenutoProfilo #cancellazioneUtente{
+        clear: both;
+        width: 485px;
+        border-radius: 0px 0px 10px 0px;
+        padding-left: 60px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #contenutoProfilo #cancellazioneUtente p{
+        margin-left: -60px;
+        text-align: center;
+    }
+    #contenutoProfilo #cancellazioneUtente button{
+        width: 420px;
+        margin-bottom: 20px;
+    } 
     #inputUtente{
         padding-left: 20px;
     }
@@ -909,6 +920,24 @@ a:hover{
         margin-bottom: 20px;
         margin-left: 25px;
     }
+    #contenutoProfilo #cancellazioneUtente{
+        clear: both;
+        width: 300px;
+        border-radius: 0px 0px 10px 0px;
+        margin-left: 12px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #contenutoProfilo #cancellazioneUtente p{
+        text-align: center;
+    }
+    #contenutoProfilo #cancellazioneUtente button{
+        width: 250px;
+        margin-bottom: 20px;
+        margin-left: 25px;
+    } 
     #inputUtente{
         padding-top: 80px;
         padding-left: 20px;
@@ -1233,6 +1262,24 @@ a:hover{
         margin-bottom: 20px;
         margin-left: 25px;
     }
+     #contenutoProfilo #cancellazioneUtente{
+        clear: both;
+        width: 300px;
+        border-radius: 0px 0px 10px 0px;
+        margin-left: 42px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #contenutoProfilo #cancellazioneUtente p{
+        text-align: center;
+    }
+    #contenutoProfilo #cancellazioneUtente button{
+        width: 250px;
+        margin-bottom: 20px;
+        margin-left: 25px;
+    } 
     #pageProfilo #riepilogoAggiornamento p{
         margin-left: 20px;
     }
