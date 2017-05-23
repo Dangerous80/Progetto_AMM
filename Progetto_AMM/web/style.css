@@ -331,7 +331,15 @@ a:hover{
 #inputUtente #pulsanteInvio button{
     position: relative;
     top: 20px;
-    width: 352px;
+    width: 175px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#inputUtente #pulsanteCancellaUtente button{
+    position: relative;
+    top: -5px;
+    left: 175px;
+    width: 175px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -558,6 +566,18 @@ a:hover{
         border-radius: 0px 0px 10px 0px;
         padding-left: 100px;
         padding-right: 32px;
+    }
+    #contenutoProfilo #dataNonValida{
+        clear: both;
+        width: 485px;
+        border-radius: 0px 0px 10px 0px;
+        padding-left: 60px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #contenutoProfilo #dataNonValida button{
+        width: 420px;
+        margin-bottom: 20px;
     }
     #contenutoProfilo #riepilogoAggiornamento{
         clear: both;
@@ -842,7 +862,14 @@ a:hover{
         border-radius: 10px 10px 10px 10px;
         border: 2px solid #003366;
     }
+    #contenutoProfilo #riepilogoAggiornamento #pulsanteOk{
+        position: relative;
+        bottom: 10px;
+        margin-left: 20px;
+        width: 305px
+    }
     #pageProfilo #riepilogoAggiornamento p{
+        margin: 10px;
         margin-left: 20px;
     }
     #pageProfilo #sidebar button{
@@ -863,7 +890,25 @@ a:hover{
     }
     #contenutoProfilo img{
         padding-top: 40px;
-    }    
+    } 
+    #contenutoProfilo #dataNonValida{
+        clear: both;
+        width: 300px;
+        border-radius: 0px 0px 10px 0px;
+        margin-left: 11px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #contenutoProfilo #dataNonValida p{
+        text-align: center;
+    }
+    #contenutoProfilo #dataNonValida button{
+        width: 250px;
+        margin-bottom: 20px;
+        margin-left: 25px;
+    }
     #inputUtente{
         padding-top: 80px;
         padding-left: 20px;
@@ -1159,6 +1204,34 @@ a:hover{
         left: 50px;
         border-radius: 10px 10px 10px 10px;
         border: 2px solid #003366;
+    }
+    #contenutoProfilo #riepilogoAggiornamento #pulsanteOk{
+        position: relative;
+        bottom: 10px;
+        margin-left: 20px;
+        width: 305px
+    }
+    #pageProfilo #riepilogoAggiornamento p{
+        margin: 10px;
+        margin-left: 20px;
+    }
+    #contenutoProfilo #dataNonValida{
+        clear: both;
+        width: 300px;
+        border-radius: 0px 0px 10px 0px;
+        margin-left: 45px;
+        padding-left: 30px;
+        padding-right: 30px;
+        border-radius: 10px 10px 10px 10px;
+        border: 2px solid #003366;
+    }
+    #contenutoProfilo #dataNonValida p{
+        text-align: center;
+    }
+    #contenutoProfilo #dataNonValida button{
+        width: 250px;
+        margin-bottom: 20px;
+        margin-left: 25px;
     }
     #pageProfilo #riepilogoAggiornamento p{
         margin-left: 20px;

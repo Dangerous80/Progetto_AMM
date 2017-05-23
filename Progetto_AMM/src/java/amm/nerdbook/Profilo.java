@@ -42,7 +42,7 @@ public class Profilo extends HttpServlet {
                 List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
                 request.setAttribute("listaGruppi", listaGruppi);
                 
-                //codice di verifica modifica dati
+                //verifica e modifica dati utente
                 String pulsanteAggiornaDati=request.getParameter("pulsanteAggiornaDati");
                 boolean aggiornamento;
                 if(pulsanteAggiornaDati != null){
@@ -59,7 +59,16 @@ public class Profilo extends HttpServlet {
                         request.setAttribute("cognome",cognomeUtente);
                     }
                     if(dataNascita != nerd.getDataNascita()){
-                        request.setAttribute("data",dataNascita);
+                        boolean risultatoVerifica = NerdFactory.getInstance().validazioneData(dataNascita);
+                        if (risultatoVerifica==true){
+                            request.setAttribute("data",dataNascita);
+                        }
+                        else{
+                            boolean warningData = true;
+                            request.setAttribute("warningData",warningData);
+                            request.getRequestDispatcher("profilo.jsp").forward(request, response);
+                            return;
+                        }
                     }
                     if(fotoProfilo != nerd.getUrlFotoProfilo()){
                         request.setAttribute("foto",fotoProfilo);
@@ -81,7 +90,13 @@ public class Profilo extends HttpServlet {
                        request.setAttribute("aggiornamento", aggiornamento);  
                     }
                 }
-                
+                //cancellazione utente e tutti i suoi post
+                String pulsanteCancellaUtente = request.getParameter("pulsanteCancellaUtente");
+                boolean esitoCancellazione;
+                if(pulsanteCancellaUtente != null){
+                    esitoCancellazione = NerdFactory.getInstance().deleteUser(nerd);
+                    request.setAttribute("esitoCancellazione", esitoCancellazione);
+                }
                 request.getRequestDispatcher("profilo.jsp").forward(request, response);
             } 
             else {

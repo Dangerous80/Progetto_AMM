@@ -114,8 +114,35 @@
                                     <div id="pulsanteInvio">
                                         <button type="submit" name="pulsanteAggiornaDati" value="ok">Aggiorna</button>
                                     </div>
+                                    <div id="pulsanteCancellaUtente">
+                                        <button type="submit" name="pulsanteCancellaUtente" value="ok">Cancella Utente</button>
+                                    </div>
                                 </form>
                             </div>
+                            <c:if test="${warningData == true}">
+                                <div id="dataNonValida"> 
+                                    <p id="messaggioErroreData"><strong>Data Non Valida - inserire la data nel formato dd/mm/yyyy</strong></p>
+                                    <form action="Profilo" method="post">
+                                        <button type="submit" id="pulsanteReinserimentoData" name="pulsanteReinserimentoData">OK</button>
+                                    </form>
+                                </div>
+                            </c:if>
+                            <c:if test="${esitoCancellazione == true}">
+                                <div id="cancellazioneUtente"> 
+                                    <p id="messaggioCancellazioneUtente"><strong>Utente Cancellato</strong></p>
+                                    <form action="login.jsp" method="post">
+                                        <button type="submit" id="pulsanteTornaAllaLogin" name="pulsanteTornaAllaLogin">OK</button>
+                                    </form>
+                                </div>
+                            </c:if> 
+                            <c:if test="${esitoCancellazione == false}">
+                                <div id="cancellazioneUtente"> 
+                                    <p id="messaggioCancellazioneUtente"><strong>Utente Non Cancellato</strong></p>
+                                    <form action="Profilo" method="post">
+                                        <button type="submit" id="pulsanteTornaAlProfilo" name="pulsanteTornaAlProfilo">OK</button>
+                                    </form>
+                                </div>
+                            </c:if>        
                             <c:if test="${aggiornamento == true}">
                                 <div id="riepilogoAggiornamento"> 
                                     <p id="riepilogo"><strong>Riepilogo Aggiornamento</strong></p>

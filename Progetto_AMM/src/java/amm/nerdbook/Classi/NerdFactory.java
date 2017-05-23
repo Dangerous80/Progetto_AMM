@@ -6,12 +6,15 @@
 package amm.nerdbook.Classi;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 /**
  *
@@ -190,10 +193,10 @@ public class NerdFactory {
                     + "nome= ?, cognome= ?, datanascita= ?, frasepresentazione= ?, urlfotoprofilo= ?, password= ? "
                     + "where nerd_id= ?";
             
-            // Prepared Statement
+            //preparazione Statement
             PreparedStatement stmt = conn.prepareStatement(query);
             
-            // Si associano i valori
+            //si associano i valori all'operazione di update
             //imposto il nuovo nome
             stmt.setString(1, nome);
             //imposto il nuovo cognome
@@ -216,4 +219,77 @@ public class NerdFactory {
             e.printStackTrace();
         }
     }
+    //inseriamo un metodo che ci consenta di validare la data inserita da un utente
+    public boolean validazioneData(String data) {
+        boolean risultatoVerifica= false; 
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy",Locale.ITALIAN);
+            sdf.setLenient(false);
+            sdf.parse(data);
+            risultatoVerifica=true;
+            return risultatoVerifica;
+        } catch(Exception e) {
+            risultatoVerifica=false;
+            return risultatoVerifica;
+        }
+    }
+    //inseriamo un metodo che elimina tutti i post associati ad un utente e poi l'utente stesso
+    public boolean deleteUser(Nerd nerd){
+        //definiamo due Statement
+        PreparedStatement deletePost = null;
+        PreparedStatement deleteNerd = null;
+        
+        //definiamo le due operazioni da eseguire sul DB
+        //operazione che cancella tutti i post associati ad un utente, sia come autore che come ricevente
+        String cancellaPost = "delete from post "
+                            + "where autore = ? or userReciver= ?";
+        //operazione che cancella l'utente
+        String cancellaNerd = "delete from nerd "
+                            + "where nerd_id = ?";
+        try{
+            //accesso al DB indicando Username e Password
+            Connection conn = DriverManager.getConnection(connectionString, "Dangerous80", "DarkSchneider");
+            
+            // Attivazione del supporto delle transazioni. 
+            conn.setAutoCommit(false); 
+            
+            //preparazione degli Statement
+            deletePost= conn.prepareStatement(cancellaPost);
+            deleteNerd= conn.prepareStatement(cancellaNerd);
+            
+            //si associano i valori all'operazione di cancellazione dei post
+            deletePost.setInt(1, nerd.getId());
+            deletePost.setInt(2, nerd.getId());
+            
+            //esecuzione operazione cancella post
+            int esitoCancellazionePost = deletePost.executeUpdate();
+
+            //si associa il valore all'operazione di cancellazione dell'utente
+            deleteNerd.setInt(1, nerd.getId());
+            
+            //esecuzione operazione cancella utente
+            int esitoCancellazioneNerd = deleteNerd.executeUpdate();
+            
+            //verifichiamo se le due operazioni sono andate a buon fine e nel caso rendiamo permanenti le modifiche al DB
+            if(esitoCancellazionePost != 0 && esitoCancellazioneNerd != 0){
+                conn.commit();
+                deletePost.close();
+                deleteNerd.close();
+                conn.close();
+                boolean cancellazioneEseguita = true;
+                return cancellazioneEseguita;
+            }
+            else{
+                conn.rollback();
+                boolean cancellazioneEseguita = false;
+                return cancellazioneEseguita;
+            }
+            
+        } 
+        catch(SQLException e){
+           e.printStackTrace();
+           boolean cancellazioneEseguita = false;
+           return cancellazioneEseguita;
+        }
+    }    
 }    
