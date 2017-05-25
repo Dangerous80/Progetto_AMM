@@ -234,7 +234,7 @@ public class NerdFactory {
         }
     }
     //inseriamo un metodo che elimina tutti i post associati ad un utente e poi l'utente stesso
-    public boolean deleteUser(Nerd nerd){
+    public boolean deleteUser(Nerd nerd) throws SQLException{
         //definiamo due Statement
         PreparedStatement deletePost = null;
         PreparedStatement deleteNerd = null;
@@ -246,12 +246,13 @@ public class NerdFactory {
         //operazione che cancella l'utente
         String cancellaNerd = "delete from nerd "
                             + "where nerd_id = ?";
+        
+        //accesso al DB indicando Username e Password
+        Connection conn = DriverManager.getConnection(connectionString, "Dangerous80", "DarkSchneider");
+        
         try{
-            //accesso al DB indicando Username e Password
-            Connection conn = DriverManager.getConnection(connectionString, "Dangerous80", "DarkSchneider");
-            
             // Attivazione del supporto delle transazioni. 
-            conn.setAutoCommit(false); 
+            conn.setAutoCommit(false);
             
             //preparazione degli Statement
             deletePost= conn.prepareStatement(cancellaPost);
@@ -262,34 +263,36 @@ public class NerdFactory {
             deletePost.setInt(2, nerd.getId());
             
             //esecuzione operazione cancella post
-            int esitoCancellazionePost = deletePost.executeUpdate();
-
+            deletePost.executeUpdate();
+            
             //si associa il valore all'operazione di cancellazione dell'utente
             deleteNerd.setInt(1, nerd.getId());
             
             //esecuzione operazione cancella utente
-            int esitoCancellazioneNerd = deleteNerd.executeUpdate();
+            deleteNerd.executeUpdate();
             
             //verifichiamo se le due operazioni sono andate a buon fine e nel caso rendiamo permanenti le modifiche al DB
-            if(esitoCancellazionePost != 0 && esitoCancellazioneNerd != 0){
-                conn.commit();
-                deletePost.close();
-                deleteNerd.close();
-                conn.close();
-                boolean cancellazioneEseguita = true;
-                return cancellazioneEseguita;
-            }
-            else{
-                conn.rollback();
-                boolean cancellazioneEseguita = false;
-                return cancellazioneEseguita;
-            }
-            
+            conn.commit();
+            boolean cancellazioneEseguita = true;
+            return cancellazioneEseguita;
         } 
         catch(SQLException e){
-           e.printStackTrace();
-           boolean cancellazioneEseguita = false;
-           return cancellazioneEseguita;
+            e.printStackTrace();
+            if(conn!=null){
+                conn.rollback();
+            }
+            boolean cancellazioneEseguita = false;
+            return cancellazioneEseguita;
         }
-    }    
+        finally{
+            if(deletePost!=null){
+                deletePost.close();
+            }
+            if(deleteNerd!=null){
+                deleteNerd.close();
+            }
+            conn.setAutoCommit(true);
+        }
+    }
+    
 }    

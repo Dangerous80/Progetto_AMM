@@ -546,10 +546,9 @@ a:hover{
         border-bottom: 2px solid#003366;
         border-radius: 0px 0px 0px 10px;
     }
-    #pageProfilo #sidebar button{
-        width: 42px;
+    #pageProfilo #ricerca button{
+          width: 42px;
     }
-    
     #pageProfilo #sidebar .fotoPersona, #pageProfilo #sidebar .fotoGruppo{
         width: 40px;
         height: 40px;
@@ -643,7 +642,7 @@ a:hover{
         border-bottom: 2px solid#003366;
         border-radius: 0px 0px 0px 10px;
     }
-    #pageBacheca #sidebar button{
+    #pageBacheca #ricerca button{
         width: 42px;
     }
     #pageBacheca #sidebar .fotoPersona, #pageBacheca #sidebar .fotoGruppo{
@@ -748,26 +747,6 @@ a:hover{
         width: 550px;
         height: 370px;
     }    
-    #pageBacheca #icoCss img{
-        position: relative;
-        bottom: 40px;
-        left: 10px;
-    }
-    #pageProfilo #icoCss img{
-        position: relative;
-        bottom: 40px;
-        left: 10px;
-    }
-    #pageDescrizione #icoCss img{
-        position: relative;
-        top: 1490px;
-        left: 110px;
-    }
-    #pageLogin #icoCss img{
-        position: relative;
-        bottom: 40px;
-        left: 10px;
-    }
     #linkLogout{
         margin-left: -5px;
     }
@@ -883,7 +862,7 @@ a:hover{
         margin: 10px;
         margin-left: 20px;
     }
-    #pageProfilo #sidebar button{
+    #pageProfilo #ricerca button{
         width: 42px;
     }
     #pageProfilo #sidebar .fotoPersona, #pageProfilo #sidebar .fotoGruppo{
@@ -976,7 +955,7 @@ a:hover{
         border-bottom: 2px solid#003366;
         border-radius: 0px 0px 0px 10px;
     }
-    #pageBacheca #sidebar button{
+    #pageBacheca #ricerca button{
         width: 42px;
     }
     #pageBacheca #sidebar .fotoPersona, #pageBacheca #sidebar .fotoGruppo{
@@ -1100,26 +1079,6 @@ a:hover{
         width: 150px;
         height: 90px;
     }    
-    #pageBacheca #icoCss img{
-        position: relative;
-        bottom: 40px;
-        left: 10px;
-    }
-    #pageProfilo #icoCss img{
-        position: relative;
-        bottom: 40px;
-        left: 300px;
-    }
-    #pageDescrizione #icoCss img{
-        position: relative;
-        top: 2015px;
-        left:35px;
-    }
-    #pageLogin #icoCss img{
-        position: relative;
-        bottom: 40px;
-        left: 10px;
-    }
     #linkLogout{
         margin-left: -5px;
     }
@@ -1409,18 +1368,6 @@ a:hover{
         padding-left: 100px;
         width: 200px;
         height: 180px;
-    }
-    #pageDescrizione #icoCss {
-        display: none;
-    }
-    #pageBacheca #icoCss {
-        display: none;
-    }    
-    #pageLogin #icoCss {
-        display: none;;
-    }
-    #pageProfilo #icoCss {
-        display: none;
     }
     #pageBacheca #logout{
         position: relative;
