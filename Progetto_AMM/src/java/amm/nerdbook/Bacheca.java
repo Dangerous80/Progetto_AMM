@@ -46,7 +46,10 @@ public class Bacheca extends HttpServlet {
             String tipoPost=request.getParameter("tipoPost");
             boolean inserimento;
             boolean conferma;
-                                               
+            
+            //includiamo la sidebar
+            request.getRequestDispatcher("Sidebar").include(request, response);
+                
             if(user != null){
                 bachecaID = Integer.parseInt(user);
                 Integer loggedUserID = (Integer)session.getAttribute("loggedUserID");
@@ -67,14 +70,6 @@ public class Bacheca extends HttpServlet {
                    response.setStatus(HttpServletResponse.SC_NOT_FOUND);
                 }
               
-                //recuperiamo la lista degli utenti esistenti da passare alla sidebar
-                List<Nerd> listaUtenti = NerdFactory.getInstance().getNerdList();
-                request.setAttribute("listaUtenti", listaUtenti);
-                
-                //recuperiamo la lista dei gruppi esistenti da passare alla sidebar
-                List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
-                request.setAttribute("listaGruppi", listaGruppi);
-                
                 request.setAttribute("bachecaUtente", user);
                 
                 //verifichiamo ora se è stato inserito un nuovo post
@@ -167,14 +162,6 @@ public class Bacheca extends HttpServlet {
                         response.setStatus(HttpServletResponse.SC_NOT_FOUND);
                     }
                     
-                    //recuperiamo la lista degli utenti esistenti da passare alla sidebar
-                    List<Nerd> listaUtenti = NerdFactory.getInstance().getNerdList();
-                    request.setAttribute("listaUtenti", listaUtenti);
-                
-                    //recuperiamo la lista dei gruppi esistenti da passare alla sidebar
-                    List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
-                    request.setAttribute("listaGruppi", listaGruppi);
-                    
                     request.setAttribute("bachecaGruppo", group);
                     
                     //verifichiamo ora se è stato inserito un nuovo post
@@ -261,14 +248,7 @@ public class Bacheca extends HttpServlet {
                     else {
                         response.setStatus(HttpServletResponse.SC_NOT_FOUND);
                     }
-                    //recuperiamo la lista degli utenti esistenti da passare alla sidebar
-                    List<Nerd> listaUtenti = NerdFactory.getInstance().getNerdList();
-                    request.setAttribute("listaUtenti", listaUtenti);
-                
-                    //recuperiamo la lista dei gruppi esistenti da passare alla sidebar
-                    List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
-                    request.setAttribute("listaGruppi", listaGruppi);
-                    
+                                      
                     //verifichiamo ora se è stato inserito un nuovo post
                     if(pulsanteCreaPost != null){
                         if(testoPost != null){

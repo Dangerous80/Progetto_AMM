@@ -12,7 +12,7 @@
         <link rel="shortcut icon" type="image/x-icon" href="Asset/nerdLogo.jpg">
         <meta name="author" content="Daniele Pisano">
         <meta name="keywords" content="Nerd Star Wars world of warcraft scacchi dungeons and dragons software programmazione computer tecnologia giochi di ruolo film fantascienza serie tv fumetti videogiochi">
-        <meta http-equiv="refresh" content="240">
+        <meta http-equiv="refresh" content="30">
         <link rel="stylesheet" type="text/css" href="style.css" media="screen">
     </head>
 

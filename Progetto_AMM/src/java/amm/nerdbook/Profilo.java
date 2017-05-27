@@ -37,13 +37,8 @@ public class Profilo extends HttpServlet {
             if(nerd != null){
                 request.setAttribute("nerd", nerd);
                 
-                //recuperiamo la lista degli utenti esistenti da passare alla sidebar
-                List<Nerd> listaUtenti = NerdFactory.getInstance().getNerdList();
-                request.setAttribute("listaUtenti", listaUtenti);
-                
-                //recuperiamo la lista dei gruppi esistenti da passare alla sidebar
-                List<Gruppo> listaGruppi = GruppoFactory.getInstance().getGroupList();
-                request.setAttribute("listaGruppi", listaGruppi);
+                //includiamo la sidebar
+                request.getRequestDispatcher("Sidebar").include(request, response);
                 
                 //verifica e modifica dati utente
                 String pulsanteAggiornaDati=request.getParameter("pulsanteAggiornaDati");
