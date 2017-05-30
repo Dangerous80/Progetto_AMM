@@ -173,6 +173,52 @@ public class NerdFactory {
 
         return listaNerd;
     }
+    //inseriamo un metodo che ci consenta di recuperare la lista degli utenti che corrispondono ad un criterio di ricerca
+    public List getNerdList(String nomeCognome){
+        List<Nerd> listaNerd = new ArrayList<Nerd>();
+        
+        try {
+            //accesso al DB indicando Username e Password
+            Connection conn = DriverManager.getConnection(connectionString, "Dangerous80", "DarkSchneider");
+            
+            //prepariamo il testo della query
+            String query = "select * from nerd "
+                         + "join nerdtype on nerd.tipoutente = nerdtype.nerdtype_id "
+                         + "where nome like ? or cognome like ?";
+            
+            //preparazione Statement
+            PreparedStatement stmt = conn.prepareStatement(query);
+            
+            //si associano i valori alla query di ricerca
+            stmt.setString(1, "%" + nomeCognome + "%");
+            stmt.setString(2, "%" + nomeCognome + "%");
+            
+            //eseguo la  query
+            ResultSet res = stmt.executeQuery();
+
+            //ciclo sulle righe, creo un nerd e lo inserisco nella lista nerd
+            while (res.next()) {
+                Nerd currentNerd = new Nerd();
+                currentNerd.setId(res.getInt("nerd_id"));
+                currentNerd.setNome(res.getString("nome"));
+                currentNerd.setCognome(res.getString("cognome"));
+                currentNerd.setDataNascita(res.getString("dataNascita"));
+                currentNerd.setFrasePresentazione(res.getString("frasePresentazione"));
+                currentNerd.setUrlFotoProfilo(res.getString("urlFotoProfilo"));
+                currentNerd.setPassword(res.getString("password"));
+                currentNerd.setTipoUtente(this.tipoUtenteFromString(res.getString("nerdtype_abilitazione")));
+                
+                listaNerd.add(currentNerd);
+            }
+
+            stmt.close();
+            conn.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return listaNerd;
+    }
     //inseriamo un metodo che ci consenta di recuperare il tipo di utente
     private Nerd.Type tipoUtenteFromString(String type){
         

@@ -18,19 +18,15 @@
 
 <div id="sidebar">
     <!--barra ricerca-->
-    <form action="Profilo" method="post">
-        <div id="ricerca">
-            <input type="text" name="cerca" value="Cerca.." id="cerca">
-            <button type="submit" id="pulsanteRicerca">
-                <img src="Asset/lente.png" alt="lente">
-            </button>
-        </div>
-    </form>
+    <div id="ricerca">
+        <input id="cerca" type="text" name="cerca" value="" placeholder="cerca un Nerd !" >
+        <button id="pulsanteRicerca"><img src="Asset/lente.png" alt="lente"></button>
+    </div>
     <!--elenco persone-->
     <ul>
         <li id="persone">
             <h2>Persone</h2>
-            <ul>
+            <ul id="usersList">
                 <c:forEach var="nerd" items="${listaUtenti}">
                     <li><a href="Bacheca?user=${nerd.id}"><img class="fotoPersona" src="${nerd.urlFotoProfilo}" alt="Foto Persona">${nerd.nome} ${nerd.cognome}</a></li>
                 </c:forEach>

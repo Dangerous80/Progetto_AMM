@@ -53,43 +53,7 @@
                             </div>
                         </div>
                         <!--sidebar, inseriamo gli elementi per la ricerca di persone e Gruppi-->
-                        <div id="sidebar">
-                            <!--barra ricerca-->
-                            <form action="Profilo" method="post">
-                                <div id="ricerca">
-                                    <input type="text" name="cerca" value="Cerca.." id="cerca">
-                                    <button type="submit" id="pulsanteRicerca">
-                                        <img src="Asset/lente.png" alt="lente">
-                                    </button>
-                                </div>
-                            </form>
-                            <!--elenco persone-->
-                            <ul>
-                                <li id="persone">
-                                    <h2>Persone</h2>
-                                    <ul>
-                                        <c:forEach var="nerd" items="${listaUtenti}">
-                                            <li><a href="Bacheca?user=${nerd.id}"><img class="fotoPersona" src="${nerd.urlFotoProfilo}" alt="Foto Persona">${nerd.nome} ${nerd.cognome}</a></li>
-                                        </c:forEach>
-                                    </ul>           
-                                </li>
-                                <li id="gruppi">
-                                    <h2>Gruppi</h2>
-                                    <form action="Profilo" method="post">
-                                        <div id="aggiungiGruppi">
-                                            <button type="submit" id="pulsanteAggiungiGruppi">
-                                                <img src="Asset/add.jpg" alt="aggiungi gruppi">
-                                            </button>
-                                        </div>
-                                    </form>
-                                    <ul>
-                                        <c:forEach var="gruppo" items="${listaGruppi}" varStatus="status">
-                                            <li><a href="Bacheca?group=${gruppo.id}"><img class="fotoGruppo" src="${gruppo.urlImmagineGruppo}" alt="Immagine Gruppo">${gruppo.nomeGruppo}</a></li>
-                                        </c:forEach>
-                                    </ul>           
-                                </li>
-                            </ul>
-                        </div>
+                        <jsp:include page="sidebar.jsp"/>
                         <!--contenuto-->
                         <div id="contenutoBacheca">     
                             <!--inseriamo i dati dell'utente proprietario della bacheca-->
